@@ -1,11 +1,27 @@
-<header>
-  <div>
-    <a href="{{ "/" | prepend: site.baseurl | replace: '//', '/' }}">
-    {% assign owner_first_name = site.owner | split: " " %}
-    <h1>{{ owner_first_name[0] | downcase }}@home:~$</h1>
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a href="{{ "/" | prepend: site.baseurl | replace: '//', '/' }}" class="sidebar-brand">
+      {% assign owner_first_name = site.owner | split: " " %}
+      <span class="sidebar-brand-text">{{ owner_first_name[0] | downcase }}@home:~$</span>
+      <span class="sidebar-brand-icon">~$</span>
     </a>
-    <div class="header-links">
-      {% include links.html %}
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <nav class="sidebar-nav">
+    {% include links.html %}
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-content">
+      <span class="sidebar-footer-text">
+        <b>{{ site.owner }}</b> © {{ 'now' | date: "%Y" }}
+      </span>
+      <span class="sidebar-footer-icon">©</span>
     </div>
   </div>
-</header>
+</aside>

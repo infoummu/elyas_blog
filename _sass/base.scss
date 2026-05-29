@@ -11,6 +11,15 @@ $header: $conifer !default;
 $blockquote-color: $silver-chalice !default;
 $blockquote-border: $dove-grey !default;
 
+// Sidebar Variables
+$sidebar-width: 260px;
+$sidebar-collapsed-width: 70px;
+$sidebar-bg: rgba(0, 0, 0, 0.92);
+$sidebar-border: $conifer;
+$sidebar-hover: rgba(181, 232, 83, 0.08);
+$sidebar-active: rgba(181, 232, 83, 0.15);
+$transition-speed: 0.3s;
+
 body {
   margin: 0;
   padding: 0;
@@ -19,16 +28,17 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  overflow-x: hidden;
 }
 
 /* General & 'Reset' Stuff */
 
 .container {
-  width: 90%;
+  width: auto;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0 30px;
 }
-
 
 section {
   display: block;
@@ -43,46 +53,370 @@ li {
   line-height: 1.4 ;
 }
 
-/* Header, <header>
-   header   - container
-   h1       - project name
-   h2       - project description
-*/
+/* ==========================================
+   SIDEBAR LAYOUT
+   ========================================== */
 
-header {
-  background: rgba(0, 0, 0, 0.1);
-  border-bottom: 1px dashed $conifer; //header;
-  padding: 20px;
-  margin: 0 0 40px 0;
+.layout-wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.header-links {
-  text-align: center;
+/* --- Sidebar --- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $sidebar-width;
+  height: 100vh;
+  height: 100dvh;
+  background: $sidebar-bg;
+  border-right: 1px dashed $sidebar-border;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transition: width $transition-speed ease;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-.header-link {
+.sidebar.collapsed {
+  width: $sidebar-collapsed-width;
+}
+
+/* Prevent FOUC: applied before page renders via inline script */
+.sidebar-pre-collapsed .sidebar {
+  width: $sidebar-collapsed-width;
+}
+
+.sidebar-pre-collapsed .main-content {
+  margin-left: $sidebar-collapsed-width;
+}
+
+.sidebar-pre-collapsed .sidebar .sidebar-brand-text,
+.sidebar-pre-collapsed .sidebar .sidebar-text,
+.sidebar-pre-collapsed .sidebar .sidebar-footer-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.sidebar-pre-collapsed .sidebar .sidebar-brand-icon,
+.sidebar-pre-collapsed .sidebar .sidebar-footer-icon {
   display: inline;
 }
 
-header h1 {
-  font-size: 24px;
-  line-height: 1.5;
+.sidebar-pre-collapsed .sidebar .sidebar-link {
+  padding: 14px 0;
+  justify-content: center;
+}
+
+.sidebar-pre-collapsed .sidebar .sidebar-link .sidebar-text {
+  opacity: 0;
+  width: 0;
+  margin-left: 0;
+  overflow: hidden;
+}
+
+.sidebar-pre-collapsed .sidebar .sidebar-link .sidebar-icon {
   margin: 0;
-  text-align: center;
+}
+
+.sidebar-pre-collapsed .sidebar-toggle svg {
+  transform: rotate(180deg);
+}
+
+/* --- Sidebar Header / Brand --- */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px dashed rgba($sidebar-border, 0.3);
+  min-height: 56px;
+  flex-shrink: 0;
+}
+
+.sidebar-brand {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.sidebar-brand-text {
+  font-size: 18px;
   font-weight: bold;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: $conifer;//$header;
+  color: $conifer;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
                0 0 5px rgba(181, 232, 83, 0.1),
                0 0 10px rgba(181, 232, 83, 0.1);
   letter-spacing: -1px;
-  -webkit-font-smoothing: antialiased;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  opacity: 1;
+  transition: opacity $transition-speed ease, width $transition-speed ease;
 }
 
-header h2 {
-  font-size: 18px;
-  font-weight: 300;
-  color: #666;
+.sidebar-brand-icon {
+  display: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: $conifer;
+  text-shadow: 0 0 5px rgba(181, 232, 83, 0.3);
+}
+
+.sidebar.collapsed .sidebar-brand-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.sidebar.collapsed .sidebar-brand-icon {
+  display: inline;
+}
+
+/* --- Toggle Button --- */
+.sidebar-toggle {
+  background: none;
+  border: 1px solid rgba($sidebar-border, 0.3);
+  color: $body-foreground;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+  background: rgba($sidebar-border, 0.1);
+  border-color: $sidebar-border;
+}
+
+.sidebar-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed .sidebar-toggle svg {
+  transform: rotate(180deg);
+}
+
+/* --- Sidebar Navigation --- */
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: $body-foreground;
+  transition: background 0.2s ease, color 0.2s ease, padding 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-link:hover {
+  background: $sidebar-hover;
+  color: $conifer;
+  border-left-color: $conifer;
+}
+
+.sidebar-link .sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: $conifer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-link:hover .sidebar-icon {
+  opacity: 1;
+}
+
+.sidebar-link .sidebar-text {
+  margin-left: 14px;
+  font-size: 15px;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  opacity: 1;
+  transition: opacity $transition-speed ease, margin-left $transition-speed ease;
+}
+
+.sidebar.collapsed .sidebar-link {
+  padding: 14px 0;
+  justify-content: center;
+}
+
+.sidebar.collapsed .sidebar-link .sidebar-text {
+  opacity: 0;
+  width: 0;
+  margin-left: 0;
+  overflow: hidden;
+}
+
+.sidebar.collapsed .sidebar-link .sidebar-icon {
+  margin: 0;
+}
+
+/* --- Sidebar Footer --- */
+.sidebar-footer {
+  border-top: 1px dashed rgba($sidebar-border, 0.3);
+  padding: 12px 16px;
+  flex-shrink: 0;
+}
+
+.sidebar-footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $dove-grey;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.sidebar-footer-text {
+  opacity: 1;
+  transition: opacity $transition-speed ease;
+}
+
+.sidebar-footer-icon {
+  display: none;
+  font-size: 14px;
+  color: $dove-grey;
+}
+
+.sidebar.collapsed .sidebar-footer-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.sidebar.collapsed .sidebar-footer-icon {
+  display: inline;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+  flex: 1;
+  margin-left: $sidebar-width;
+  transition: margin-left $transition-speed ease;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content.expanded {
+  margin-left: $sidebar-collapsed-width;
+}
+
+/* --- Footer in Main Content --- */
+footer {
+  margin-top: auto;
+  padding: 12px 20px;
+  text-align: center;
+  border-top: 1px dashed rgba($conifer, 0.2);
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-link {
+  color: $dove-grey;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: $conifer;
+}
+
+/* ==========================================
+   PAGINATION
+   ========================================== */
+
+.pagination {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+/* ==========================================
+   RESPONSIVE: Mobile
+   ========================================== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: $sidebar-collapsed-width;
+  }
+
+  .sidebar .sidebar-brand-text,
+  .sidebar .sidebar-text,
+  .sidebar .sidebar-footer-text {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+  .sidebar .sidebar-brand-icon,
+  .sidebar .sidebar-footer-icon {
+    display: inline;
+  }
+
+  .sidebar .sidebar-link {
+    padding: 14px 0;
+    justify-content: center;
+  }
+
+  .main-content {
+    margin-left: $sidebar-collapsed-width;
+  }
+
+  // Allow expand on mobile via toggle
+  .sidebar:not(.collapsed) {
+    width: $sidebar-width;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar:not(.collapsed) .sidebar-brand-text,
+  .sidebar:not(.collapsed) .sidebar-text,
+  .sidebar:not(.collapsed) .sidebar-footer-text {
+    opacity: 1;
+    width: auto;
+    overflow: visible;
+  }
+
+  .sidebar:not(.collapsed) .sidebar-brand-icon,
+  .sidebar:not(.collapsed) .sidebar-footer-icon {
+    display: none;
+  }
+
+  .sidebar:not(.collapsed) .sidebar-link {
+    padding: 12px 16px;
+    justify-content: flex-start;
+  }
+
+  .sidebar:not(.collapsed) .sidebar-link .sidebar-text {
+    margin-left: 14px;
+  }
 }
 
 /* Main Content
@@ -260,14 +594,3 @@ a:active, a:focus {
   zoom:1;
 }
 
-/* Make footer stick to bottom */
-
-.pagination, footer {
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-}
-
-#wrapper {
-  min-height: calc(100vh - 100px);
-}

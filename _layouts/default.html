@@ -3,36 +3,72 @@
 {% include head.html %}
 
 <body>
-  <div id="wrapper">
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('sidebarCollapsed') === 'true') {
+          document.body.classList.add('sidebar-pre-collapsed');
+        }
+      } catch(e) {}
+    })();
+  </script>
+  <div class="layout-wrapper">
     {% include header.html %}
-    <div class="container">
-      <section id="main_content">
-        {{ content }}
-      </section>
-    </div>
+    <main class="main-content" id="mainContent">
+      <div class="container">
+        <section id="main_content">
+          {{ content }}
+        </section>
+      </div>
+
+      {% if paginator.total_pages > 1 %}
+      <div class="pagination">
+        {% if paginator.previous_page == 1 %}
+        <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&laquo;</a>
+        {% elsif paginator.previous_page%}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&laquo;</a>
+        {% else %}
+        <span class="page-item">&laquo;</span>
+        {% endif %} {% for page in (1..paginator.total_pages) %} {% if page == paginator.page %}
+        <span class="page-item">{{ page }}</span>
+        {% elsif page == 1 %}
+        <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">{{ page }}</a>
+        {% else %}
+        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}" class="page-item">{{ page }}</a>
+        {% endif %} {% endfor %} {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&raquo;</a>
+        {% else %}
+        <span class="page-item">&raquo;</span>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% include footer.html %}
+    </main>
   </div>
 
-  {% if paginator.total_pages > 1 %}
-  <div class="pagination">
-    {% if paginator.previous_page == 1 %}
-    <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&laquo;</a>
-    {% elsif paginator.previous_page%}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&laquo;</a>
-    {% else %}
-    <span class="page-item">&laquo;</span>
-    {% endif %} {% for page in (1..paginator.total_pages) %} {% if page == paginator.page %}
-    <span class="page-item">{{ page }}</span>
-    {% elsif page == 1 %}
-    <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">{{ page }}</a>
-    {% else %}
-    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}" class="page-item">{{ page }}</a>
-    {% endif %} {% endfor %} {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&raquo;</a>
-    {% else %}
-    <span class="page-item">&raquo;</span>
-    {% endif %}
-  </div>
-  {% endif %} {% include footer.html %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var sidebar = document.getElementById('sidebar');
+      var toggleBtn = document.getElementById('sidebarToggle');
+      var mainContent = document.getElementById('mainContent');
+
+      // Load saved state
+      var isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+      if (isCollapsed) {
+        sidebar.classList.add('collapsed');
+        mainContent.classList.add('expanded');
+      }
+      // Clean up FOUC-prevention class, allowing toggle to work normally
+      document.body.classList.remove('sidebar-pre-collapsed');
+
+      toggleBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('collapsed');
+        mainContent.classList.toggle('expanded');
+        localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+      });
+    });
+  </script>
 
   {% if site.google_analytics %}
     {% include analytics.html %}
