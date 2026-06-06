@@ -313,6 +313,7 @@ li {
 
 /* --- Main Content Area --- */
 .main-content {
+  margin-top:16px;
   flex: 1;
   margin-left: $sidebar-width;
   transition: margin-left $transition-speed ease;
