@@ -1,6 +1,8 @@
 ---
 title: Computer Science Curricula 2023 - Version Gamma
 published: true
+author: Ikhwan Elyas
+description: Executive Summary - CS2023 is an update of the curricular guidelines last published as CS2013 by a joint task force of the ACM and IEEE Computer Society. Given the increasing importance of Artificial Intelligence, AAAI also joined forces in the CS2023 task force.
 ---
 
 
