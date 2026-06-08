@@ -2,6 +2,7 @@
 title: PAJ Pertemuan 05 2025 - SSH Untuk Aksess File
 published: true
 author: Ikhwan Elyas
+category: class
 description: Menggunakan SSH untuk mengakses file di komputer yang di remote secara manual dan menggunakan coding Python (Netmiko/Paramiko). Langkah ini mengisolasi masalah jaringan dari potensi kesalahan kode, mempercepat debugging, dan memastikan fondasi yang benar sebelum automasi.
 ---
 

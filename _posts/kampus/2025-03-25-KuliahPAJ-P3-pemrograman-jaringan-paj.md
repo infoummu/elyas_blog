@@ -2,6 +2,7 @@
 title: PAJ Pertemuan 03 & 04 2025 - Dasar Pemrograman Jaringan
 published: true
 author: Ikhwan Elyas
+category: class
 description: Automasi jaringan mengacu pada penggunaan perangkat lunak dan alat untuk mengelola jaringan tanpa memerlukan banyak campur tangan manusia. Ini mencakup berbagai tugas, mulai dari konfigurasi perangkat hingga pemantauan jaringan. Dengan mengotomatisasi tugas-tugas ini, organisasi dapat meningkatkan efisiensi operasional, mengurangi kesalahan manusia, dan memastikan konsistensi dalam pengelolaan jaringan.
 ---
 

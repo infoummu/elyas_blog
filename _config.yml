@@ -10,8 +10,13 @@ baseurl: /
 source: .
 destination: ./_site
 permalink: /:title
-paginate: 3
-paginate_path: /page/:num/
+pagination:
+  enabled: true
+  per_page: 3
+  permalink: '/:num/'
+  title: ':title - page :num'
+  sort_field: 'date'
+  sort_reverse: true
 
 defaults:
   -
@@ -24,7 +29,7 @@ defaults:
 future: true
 plugins:
   - jekyll-seo-tag
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-sitemap
 
 # Custom variables

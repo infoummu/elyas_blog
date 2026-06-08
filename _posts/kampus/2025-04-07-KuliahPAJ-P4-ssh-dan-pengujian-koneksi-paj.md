@@ -1,6 +1,7 @@
 ---
 title: PAJ Pertemuan 04 2025 - SSH Untuk Uji Koneksi
 published: true
+category: class
 author: Ikhwan Elyas
 description: Menguji koneksi SSH manual sebelum coding Python (Netmiko/Paramiko) krusial untuk memverifikasi konektivitas dasar, kredensial, dan konfigurasi SSH perangkat. Langkah ini mengisolasi masalah jaringan dari potensi kesalahan kode, mempercepat debugging, dan memastikan fondasi yang benar sebelum automasi.
 ---

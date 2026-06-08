@@ -7,15 +7,39 @@
   </span>
   <span class="sidebar-text">Home</span>
 </a>
-<a href="{{ "/archive" | prepend: site.baseurl | replace: '//', '/' }}" class="sidebar-link">
+<a href="{{ "/kampus" | prepend: site.baseurl | replace: '//', '/' }}" class="sidebar-link">
   <span class="sidebar-icon">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2" y="3" width="20" height="5" rx="1"></rect>
-      <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path>
-      <path d="M10 12h4"></path>
+      <path d="M4 11V20H20V11"></path>
+      <path d="M4 11L12 7L20 11"></path>
+      <path d="M8 8V12L12 10L16 12V8L12 10L8 8Z"></path>
+      <path d="M11 20V16H13V20"></path>
     </svg>
   </span>
-  <span class="sidebar-text">Archive</span>
+  <span class="sidebar-text">Kampus</span>
+</a>
+<a href="{{ "/news" | prepend: site.baseurl | replace: '//', '/' }}" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9"></path>
+      <path d="M10 7h8"></path>
+      <path d="M10 11h8"></path>
+      <path d="M10 15h5"></path>
+      <path d="M6 10v6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">News</span>
+</a>
+<a href="{{ "/research" | prepend: site.baseurl | replace: '//', '/' }}" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="M21 21l-4.35-4.35"></path>
+      <path d="M11 8v6"></path>
+      <path d="M8 11h6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Research</span>
 </a>
 <a href="{{ "/about" | prepend: site.baseurl | replace: '//', '/' }}" class="sidebar-link">
   <span class="sidebar-icon">
@@ -25,27 +49,4 @@
     </svg>
   </span>
   <span class="sidebar-text">About</span>
-</a>
-<a href="{{ "/kampus" | prepend: site.baseurl | replace: '//', '/' }}" class="sidebar-link">
-  <span class="sidebar-icon">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <!-- <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path> -->
-        <path d="M4 11V20H20V11"></path>
-        <path d="M4 11L12 7L20 11"></path>
-        <path d="M8 8V12L12 10L16 12V8L12 10L8 8Z"></path>
-        <path d="M11 20V16H13V20"></path>
-      <circle cx="12" cy="7" r="4"></circle>
-    </svg>
-  </span>
-  <span class="sidebar-text">Kampus</span>
-</a>
-<a href="{{ "/atom.xml" | prepend: site.baseurl | replace: '//', '/' }}" class="sidebar-link">
-  <span class="sidebar-icon">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 11a9 9 0 0 1 9 9"></path>
-      <path d="M4 4a16 16 0 0 1 16 16"></path>
-      <circle cx="5" cy="19" r="1"></circle>
-    </svg>
-  </span>
-  <span class="sidebar-text">RSS</span>
 </a>
