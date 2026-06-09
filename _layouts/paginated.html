@@ -1,18 +1,10 @@
 ---
-layout: page
-title: News
-pagination:
-  enabled: true
-  category: news
-  per_page: 3
-  permalink: '/news/:num/'
-  sort_field: 'date'
-  sort_reverse: true
+layout: default
 ---
 
 <article>
-<h2>News</h2>
-<p>Semua postingan dengan kategori <strong>news</strong>:</p>
+<h2>{{ page.title }}</h2>
+<p>{{ page.description }}</p>
 <ul>
     {% for post in paginator.posts %}
       <li>
