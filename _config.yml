@@ -18,6 +18,9 @@ pagination:
   sort_field: 'date'
   sort_reverse: true
 
+autopages:
+  enabled: false
+
 defaults:
   -
     scope:
