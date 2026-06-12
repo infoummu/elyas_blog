@@ -19,8 +19,6 @@ technical_level: "Beginner"
 
 ---
 
-# Jedify Raup $24 Juta untuk Membantu Perusahaan Membekali Agen AI dengan Konteks Bisnis
-
 ## Ringkasan
 
 Jedify, startup yang berbasis di New York, berhasil mengamankan pendanaan Seri A sebesar $24 juta yang dipimpin oleh Norwest Venture Partners untuk membangun "context graph" enterprise yang membantu agen AI memahami konteks spesifik suatu bisnis. Putaran ini juga melibatkan investor strategis Snowflake Ventures, yang akan mengintegrasikan teknologi Jedify dengan layanan Cortex AI, Semantic Views, dan CoWork milik Snowflake.
@@ -47,4 +45,4 @@ Pendekatan model-agnostik Jedify secara strategis tepat karena lanskap model AI 
 
 ## Referensi
 
-1. TechCrunch - https://techcrunch.com/2026/06/10/jedify-raises-24m-to-help-companies-arm-ai-agents-with-context-on-their-business/
+- TechCrunch - <a href="https://techcrunch.com/2026/06/10/jedify-raises-24m-to-help-companies-arm-ai-agents-with-context-on-their-business/" target="_blank">https://techcrunch.com/2026/06/10/jedify-raises-24m-to-help-companies-arm-ai-agents-with-context-on-their-business/</a>

@@ -1,9 +1,9 @@
 ---
-title: "Context-Fractured Decomposition Attacks on Tool-Using LLM Agents: Exploiting Artifact Provenance Gaps"
+title: "Serangan Dekomposisi Konteks-Terfragmentasi pada Agen LLM Pengguna Alat: Eksploitasi Celah Provenans Artefak"
 published: true
 author: "Research Paper"
 category: "research"
-description: "New class of adversarial attacks against tool-using LLM agents that exploit provenance gaps between decomposed execution contexts to inject malicious artifacts."
+description: "Kelas serangan adversarial baru terhadap agen LLM pengguna alat yang mengeksploitasi celah provenans antara konteks eksekusi yang terdekomposisi untuk menyuntikkan artefak berbahaya."
 date: "2026-06-08"
 source: "arXiv"
 source_url: "https://arxiv.org/abs/2606.09084"
@@ -20,41 +20,39 @@ technical_level: "Expert"
 
 ---
 
-# Context-Fractured Decomposition Attacks on Tool-Using LLM Agents: Exploiting Artifact Provenance Gaps
-
 ## Research Background
 
-Large language model (LLM) agents increasingly rely on tool-use capabilities — executing code, accessing databases, browsing the web, and manipulating files. These agents decompose complex tasks into subtasks executed across multiple tool invocations. Each invocation typically operates within its own execution context, creating provenance gaps between the agent's reasoning, tool output, and final decision-making. While decomposition enables sophisticated multi-step workflows, it also introduces a fundamentally new attack surface: adversaries can inject malicious artifacts that exploit these provenance gaps.
+Agen large language model (LLM) semakin bergantung pada kemampuan penggunaan alat — mengeksekusi kode, mengakses database, menjelajah web, dan memanipulasi file. Agen-agen ini menguraikan tugas kompleks menjadi subtugas yang dieksekusi di berbagai pemanggilan alat. Setiap pemanggilan biasanya beroperasi dalam konteks eksekusinya sendiri, menciptakan celah provenans antara penalaran agen, output alat, dan pengambilan keputusan akhir. Meskipun dekomposisi memungkinkan alur kerja multi-langkah yang canggih, ia juga memperkenalkan permukaan serangan yang fundamentally baru: lawan dapat menyuntikkan artefak berbahaya yang mengeksploitasi celah provenans ini.
 
 ## Research Objective
 
-This paper introduces Context-Fractured Decomposition (CFD) attacks — a novel class of adversarial attacks specifically designed to exploit the provenance gaps created by agentic task decomposition. The objective is to demonstrate that current LLM agent architectures are vulnerable to attacks that manipulate intermediate artifacts between decomposed subtasks.
+Makalah ini memperkenalkan serangan Context-Fractured Decomposition (CFD) — kelas serangan adversarial baru yang dirancang khusus untuk mengeksploitasi celah provenans yang diciptakan oleh dekomposisi tugas agen. Tujuannya adalah untuk mendemonstrasikan bahwa arsitektur agen LLM saat ini rentan terhadap serangan yang memanipulasi artefak antara subtugas yang terdekomposisi.
 
 ## Methodology
 
-The researchers designed four concrete CFD attack variants: (1) Artifact Injection — inserting malicious content into intermediate files or databases, (2) Context Poisoning — manipulating contextual signals passed between subtasks, (3) Provenance Spoofing — forging provenance metadata to misattribute artifact origins, and (4) Temporal Reordering — exploiting timing gaps between asynchronous tool executions. Attacks were evaluated against multiple state-of-the-art LLM agent systems (AutoGPT, LangChain agents, OpenAI Assistants API) across 12 benchmark tasks.
+Para peneliti merancang empat varian serangan CFD yang konkret: (1) Artifact Injection — menyuntikkan konten berbahaya ke file atau database perantara, (2) Context Poisoning — memanipulasi sinyal kontekstual yang diteruskan antara subtugas, (3) Provenance Spoofing — memalsukan metadata provenans untuk salah mengatribusikan asal artefak, dan (4) Temporal Reordering — mengeksploitasi celah waktu antara eksekusi alat asinkron. Serangan dievaluasi terhadap beberapa sistem agen LLM mutakhir (AutoGPT, agen LangChain, OpenAI Assistants API) di 12 tugas tolok ukur.
 
 ## Main Findings
 
-* CFD attacks achieved 84% success rate across all tested agent architectures
-* Provenance spoofing was the most effective variant (91% success rate)
-* Current LLM agents have no built-in provenance tracking capabilities
-* Longer task chains (5+ subtasks) were significantly more vulnerable (92%) than short chains (47%)
-* All major agent frameworks tested were vulnerable with no existing mitigations
-* Detection by existing security tools was near-zero (2% detection rate)
+* Serangan CFD mencapai tingkat keberhasilan 84% di semua arsitektur agen yang diuji
+* Provenance spoofing adalah varian paling efektif (tingkat keberhasilan 91%)
+* Agen LLM saat ini tidak memiliki kemampuan pelacakan provenans bawaan
+* Rantai tugas yang lebih panjang (5+ subtugas) secara signifikan lebih rentan (92%) daripada rantai pendek (47%)
+* Semua kerangka kerja agen utama yang diuji rentan tanpa mitigasi yang ada
+* Deteksi oleh alat keamanan yang ada mendekati nol (tingkat deteksi 2%)
 
 ## Contributions
 
-This paper makes several novel contributions: (1) identification of a previously undocumented vulnerability class in LLM agent architectures, (2) formal characterization of CFD attacks with four operational variants, (3) comprehensive empirical evaluation across multiple agent frameworks and task types, (4) demonstration that provenance gaps are a fundamental architectural weakness, and (5) a proposed defense framework incorporating artifact provenance tracking and cross-context validation.
+Makalah ini memberikan beberapa kontribusi baru: (1) identifikasi kelas kerentanan yang sebelumnya tidak terdokumentasi dalam arsitektur agen LLM, (2) karakterisasi formal serangan CFD dengan empat varian operasional, (3) evaluasi empiris komprehensif di berbagai kerangka kerja agen dan jenis tugas, (4) demonstrasi bahwa celah provenans adalah kelemahan arsitektural fundamental, dan (5) kerangka kerja pertahanan yang diusulkan yang mencakup pelacakan provenans artefak dan validasi lintas konteks.
 
 ## Limitations
 
-The study was conducted in controlled laboratory environments, not production systems. The attack surface in real-world deployments with additional security layers may differ. Long-running agents with state persistence were not fully tested. The computational overhead of proposed defenses was not quantified.
+Studi dilakukan di lingkungan laboratorium yang terkontrol, bukan sistem produksi. Permukaan serangan di deployment dunia nyata dengan lapisan keamanan tambahan mungkin berbeda. Agen yang berjalan lama dengan persistensi status tidak diuji sepenuhnya. Overhead komputasi dari pertahanan yang diusulkan tidak dikuantifikasi.
 
 ## Future Research Opportunities
 
-Critical areas for future work include: (1) developing practical provenance tracking systems for LLM agent frameworks, (2) cross-context integrity verification protocols, (3) real-world deployment studies to validate laboratory findings, (4) defense mechanisms that balance security with agent performance, and (5) standardization of agent security best practices.
+Area kritis untuk pekerjaan masa depan meliputi: (1) mengembangkan sistem pelacakan provenans praktis untuk kerangka kerja agen LLM, (2) protokol verifikasi integritas lintas konteks, (3) studi deployment dunia nyata untuk memvalidasi temuan laboratorium, (4) mekanisme pertahanan yang menyeimbangkan keamanan dengan kinerja agen, dan (5) standarisasi praktik terbaik keamanan agen.
 
-## References
+## Referensi
 
-1. arXiv - https://arxiv.org/abs/2606.09084
+- arXiv - <a href="https://arxiv.org/abs/2606.09084" target="_blank">https://arxiv.org/abs/2606.09084</a>

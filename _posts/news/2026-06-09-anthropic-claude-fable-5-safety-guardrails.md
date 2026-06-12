@@ -1,9 +1,9 @@
 ---
-title: "Anthropic Says These Topics Are Too Dangerous to Let Its Fable 5 Model Talk About"
+title: "Anthropic Sebut Topik Ini Terlalu Berbahaya untuk Dibahas oleh Model Fable 5"
 published: true
 author: "Kyle Orland"
 category: "news"
-description: "Anthropic releases Claude Fable 5, its first Mythos-class model, with unprecedented safeguards blocking cybersecurity, biology, and chemistry queries to prevent AI uplift attacks."
+description: "Anthropic merilis Claude Fable 5, model Mythos-class pertama, dengan pengaman yang memblokir pertanyaan seputar keamanan siber, biologi, dan kimia untuk mencegah penyalahgunaan AI."
 date: "2026-06-09"
 source: "Ars Technica"
 source_url: "https://arstechnica.com/ai/2026/06/anthropic-says-these-topics-are-too-dangerous-to-let-its-fable-5-model-talk-about/"
@@ -20,32 +20,29 @@ technical_level: "Intermediate"
 
 ---
 
-# Anthropic Says These Topics Are Too Dangerous to Let Its Fable 5 Model Talk About
+## Ringkasan
 
-## Summary
+Anthropic secara resmi merilis Claude Fable 5, model "Mythos-class" pertama mereka, dengan pengaman berbasis topik yang belum pernah ada sebelumnya — model ini menolak menjawab pertanyaan seputar keamanan siber, biologi, dan kimia. Alih-alih memblokir pertanyaan sepenuhnya, model ini mengalihkan pertanyaan sensitif ke Claude Opus 4.8 yang lebih lama. Keputusan ini diambil karena Anthropic menilai model Mythos 5 yang mendasarinya terlalu berbahaya untuk akses publik tanpa batasan, karena khawatir dapat "mengangkat" kemampuan aktor jahat dalam riset senjata biologis dan peretasan agen. Rilis ini menandai pergeseran paradigma dalam deployment AI frontier — merilis model canggih sambil melapisinya dengan pagar pembatas ketat, bukan menahannya sepenuhnya.
 
-Anthropic publicly released Claude Fable 5, its first "Mythos-class" model, with unprecedented topic-based safeguards that refuse to answer queries on cybersecurity, biology, and chemistry. Instead of blocking the query entirely, the model funnels sensitive questions to the older Claude Opus 4.8. This trade-off was made because Anthropic judged the underlying Mythos 5 model too dangerous for unrestricted public access, fearing it could "uplift" malicious actors in areas like bioweapons research and agentic hacking. The release marks a paradigm shift in frontier AI deployment — releasing capable models while layering strict guardrails rather than withholding them entirely.
+## Poin-Poin Penting
 
-## Key Points
+* Fable 5 adalah versi publik dengan pembatasan dari Mythos 5 (model yang sama dengan classifier keamanan)
+* Pengaman memblokir pertanyaan keamanan siber, biologi, dan kimia dengan fallback otomatis ke Opus 4.8
+* Tingkat false positive kurang dari 5%; 95% sesi berjalan sepenuhnya di Fable tanpa fallback
+* Tidak ada jailbreak universal yang ditemukan dalam 1.000+ jam red-teaming eksternal
+* Mythos 5 mencetak 78% di ExploitBench (tolok ukur keamanan siber ofensif), naik dari 40% milik Opus 4.8
+* Harga: $10/juta token input, $50/juta token output — 67-100% lebih tinggi dari GPT-5.5
+* Project Glasswing memperluas akses tepercaya untuk profesional keamanan siber dan organisasi sains hayati
 
-* Fable 5 is the public, restricted version of Mythos 5 (the same underlying model with safety classifiers applied)
-* Safeguards block cybersecurity, biology, and chemistry queries with automatic fallback to Opus 4.8
-* Less than 5% false positive rate in testing; 95% of sessions run entirely on Fable without fallback
-* No universal jailbreaks found across 1,000+ hours of external red-teaming with bug bounty
-* Mythos 5 scored 78% on ExploitBench (offensive cybersecurity benchmark), up from 40% for Opus 4.8
-* Pricing set at $10/M input tokens, $50/M output tokens — 67-100% higher than GPT-5.5
-* Project Glasswing expands trusted access for cybersecurity professionals and life sciences organizations
-* Classifier-based prompt filtering used instead of model-level refusal training
+## Mengapa Ini Penting
 
-## Why It Matters
+Ini adalah momen penting dalam cara perusahaan AI frontier mengelola ketegangan antara rilis kemampuan dan keamanan. Alih-alih pilihan biner "rilis atau tahan," Anthropic memelopori model akses berjenjang: publik dengan pagar pembatas ketat, akses diperluas untuk profesional terverifikasi, dan akses penuh untuk organisasi tepercaya. Pendekatan "lebih ketat dari ideal" ini mengakui bahwa blokir positif palsu pada pertanyaan aman dapat diterima untuk mencegah penyalahgunaan bencana. Kolaborasi dengan pemerintah AS dalam keputusan akses menetapkan preseden untuk ko-regulasi pemerintah-industri atas kemampuan AI tingkat lanjut.
 
-This represents a pivotal moment in how frontier AI companies manage the tension between capability release and safety. Rather than the binary choice of "release or withhold," Anthropic is pioneering a tiered access model: public with strict guardrails, expanded access for vetted professionals, and full access for trusted organizations. The "stricter-than-ideal" approach acknowledges that false positive blocks on safe queries are acceptable to prevent catastrophic misuse. The collaboration with the US government on access decisions sets a precedent for government-industry co-regulation of advanced AI capabilities.
+## Dampak di Masa Depan
 
-## Future Impact
+Model akses berjenjang ini bisa menjadi standar industri untuk mengatur AI yang kuat. Yang bisa kita harapkan: (1) laboratorium frontier lain akan mengadopsi sistem keamanan berbasis classifier, (2) perluasan program akses tepercaya sebagai segmen pasar baru, (3) perdebatan yang semakin intens tentang siapa yang menentukan kriteria akses, dan (4) ekosistem AI dua tingkat di mana perusahaan membayar harga premium untuk model tanpa batasan.
 
-The tiered access model could become the industry standard for regulating powerful AI. We can expect: (1) other frontier labs to adopt similar classifier-based safety systems instead of model-level training, (2) expansion of trusted-access programs as a new market segment, (3) intensified debate about who decides access criteria and how transparent these processes should be, (4) a potential two-tier AI ecosystem where enterprises pay premium prices for unrestricted models.
+## Referensi
 
-## References
-
-1. Ars Technica - https://arstechnica.com/ai/2026/06/anthropic-says-these-topics-are-too-dangerous-to-let-its-fable-5-model-talk-about/
-2. The Verge - https://www.theverge.com/news/946725/anthropic-releases-claude-fable-5-mythos
+- Ars Technica - <a href="https://arstechnica.com/ai/2026/06/anthropic-says-these-topics-are-too-dangerous-to-let-its-fable-5-model-talk-about/" target="_blank">https://arstechnica.com/ai/2026/06/anthropic-says-these-topics-are-too-dangerous-to-let-its-fable-5-model-talk-about/</a>
+- The Verge - <a href="https://www.theverge.com/news/946725/anthropic-releases-claude-fable-5-mythos" target="_blank">https://www.theverge.com/news/946725/anthropic-releases-claude-fable-5-mythos</a>

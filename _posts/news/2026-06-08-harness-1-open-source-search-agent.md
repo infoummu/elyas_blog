@@ -19,8 +19,6 @@ technical_level: "Advanced"
 
 ---
 
-# Harness-1: Agen Pencari AI Open Source yang Mengalahkan GPT-5.4
-
 ## Ringkasan
 
 Sebuah kolaborasi riset antara University of Illinois Urbana-Champaign (UIUC), UC Berkeley, dan Chroma (platform basis data vektor open source) meluncurkan Harness-1, sebuah agen pencari AI open source dengan 20 miliar parameter yang dibangun di atas model dasar gpt-oss-20B milik OpenAI. Inovasi utamanya adalah arsitektur "state-externalizing harness" — sebuah pendekatan yang memisahkan memori kerja agen dari model AI itu sendiri, layaknya asisten riset yang memiliki meja dan lemari arsip terpisah.
@@ -47,4 +45,4 @@ Lisensi Apache 2.0 akan mempercepat adopsi dan kontribusi komunitas open source.
 
 ## Referensi
 
-1. VentureBeat - https://venturebeat.com/orchestration/researchers-trained-an-open-source-ai-search-agent-harness-1-that-outperforms-gpt-5-4-on-recalling-relevant-information/
+- VentureBeat - <a href="https://venturebeat.com/orchestration/researchers-trained-an-open-source-ai-search-agent-harness-1-that-outperforms-gpt-5-4-on-recalling-relevant-information/" target="_blank">https://venturebeat.com/orchestration/researchers-trained-an-open-source-ai-search-agent-harness-1-that-outperforms-gpt-5-4-on-recalling-relevant-information/</a>

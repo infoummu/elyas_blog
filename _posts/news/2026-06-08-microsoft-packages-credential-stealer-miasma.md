@@ -1,9 +1,9 @@
 ---
-title: "For the 2nd Time in Weeks, Microsoft Packages Laced with Credential Stealer"
+title: "Untuk Kedua Kalinya dalam Beberapa Minggu, Paket Microsoft Dibubuhi Pencuri Kredensial"
 published: true
 author: "Dan Goodin"
 category: "news"
-description: "73 cryptographically verified Microsoft npm packages were backdoored with the Miasma credential-stealing worm that triggers when opened in AI coding agents."
+description: "73 paket npm Microsoft yang terverifikasi secara kriptografis dibackdoor dengan worm Miasma yang mencuri kredensial dan aktif saat dibuka di agen coding AI."
 date: "2026-06-08"
 source: "Ars Technica"
 source_url: "https://arstechnica.com/security/2026/06/for-the-2nd-time-in-weeks-microsoft-packages-laced-with-credential-stealer/"
@@ -20,31 +20,29 @@ technical_level: "Advanced"
 
 ---
 
-# For the 2nd Time in Weeks, Microsoft Packages Laced with Credential Stealer
+## Ringkasan
 
-## Summary
+Untuk kedua kalinya dalam dua bulan, repositori GitHub resmi Microsoft dibobol. Sebanyak 73 paket npm yang terverifikasi secara kriptografis dibackdoor dengan worm Miasma, malware pencuri kredensial yang menjalankan payload sebesar 28 KB untuk mengambil kredensial dari AWS, Azure, GCP, Kubernetes, manajer kata sandi, dan 90+ alat pengembang. Yang paling kritis: malware ini aktif secara otomatis saat pengembang membuka paket di agen coding AI (Claude Code, Gemini CLI, Cursor, VS Code), tanpa perlu menjalankan kode apa pun. Serangan ini menggunakan token OIDC Microsoft yang dicuri untuk menerbitkan build berbahaya dengan bukti asal SLSA yang valid, melewati langkah-langkah keamanan rantai pasok konvensional.
 
-For the second time in two months, Microsoft's official GitHub repositories were compromised. 73 cryptographically verified npm packages were backdoored with the Miasma worm, a credential-stealing malware that executes a 28 KB payload harvesting credentials from AWS, Azure, GCP, Kubernetes, password managers, and 90+ developer tools. Critically, the malware triggers automatically when developers open the packages in AI coding agents (Claude Code, Gemini CLI, Cursor, VS Code), without needing to execute any code. The attack used stolen Microsoft OIDC tokens to publish malicious builds with valid SLSA provenance attestation, bypassing conventional supply-chain security measures.
+## Poin-Poin Penting
 
-## Key Points
+* 73 paket npm resmi Microsoft diracuni dengan worm pencuri kredensial Miasma
+* Payload aktif otomatis saat dibuka di agen coding AI (Claude Code, Gemini CLI, Cursor, VS Code)
+* Mencuri kredensial dari AWS, Azure, GCP, Kubernetes, 90+ alat pengembang, dan manajer kata sandi
+* Token OIDC Microsoft yang dicuri digunakan untuk menandatangani build berbahaya dengan bukti asal SLSA valid
+* Setiap infeksi memiliki payload yang dienkripsi secara unik — deteksi berbasis hash sama sekali tidak berguna
+* Akun Microsoft yang sama dibobol pada Mei 2026 (insiden durabletask di PyPI, 400k unduhan/bulan)
+* GitHub awalnya memberi label paket sebagai "pelanggaran Syarat Layanan" bukan malware
+* Worm Miasma (toolkit Mini Shai-Hulud oleh TeamPCP) bersifat open source dan tersedia luas
 
-* 73 official Microsoft npm packages poisoned with the Miasma credential-stealing worm
-* Payload fires automatically when opened in AI coding agents (Claude Code, Gemini CLI, Cursor, VS Code)
-* Steals credentials from AWS, Azure, GCP, Kubernetes, 90+ dev tools, and password managers
-* Stolen Microsoft OIDC tokens used to sign malicious builds with valid SLSA provenance
-* Uniquely encrypted payload per infection — hash-based detection completely useless
-* Same Microsoft account was compromised in May 2026 (durabletask incident on PyPI, 400k downloads/month)
-* GitHub initially labeled packages as "Terms of Service violations" rather than malware
-* The Miasma worm (Mini Shai-Hulud toolkit by TeamPCP) is open-sourced and widely available
+## Mengapa Ini Penting
 
-## Why It Matters
+Serangan ini mewakili evolusi berbahaya dalam serangan rantai pasok perangkat lunak di berbagai dimensi. Dengan menargetkan agen coding AI sebagai mekanisme pemicu, permukaan serangan meluas secara dramatis — pengembang tidak perlu lagi menjalankan kode, cukup membuka file di IDE mereka. Senjataisasi bukti asal SLSA melawan dirinya sendiri sangat meresahkan: verifikasi kriptografis dirancang untuk meningkatkan kepercayaan, tetapi penyerang mengubahnya menjadi senjata. Bobolnya akun Microsoft yang sama dua kali menimbulkan pertanyaan serius tentang kebersihan kredensial di salah satu perusahaan teknologi terbesar dunia.
 
-This attack represents a dangerous evolution in software supply-chain attacks across multiple dimensions. By targeting AI coding agents as the trigger mechanism, the attack surface expands dramatically — developers no longer need to run code, just open a file in their IDE. The weaponization of SLSA provenance attestation against itself is particularly troubling: cryptographic verification was designed to increase trust, but attackers turned it into a weapon. The double-compromise of the same Microsoft account raises serious questions about credential hygiene at one of the world's largest tech companies.
+## Dampak di Masa Depan
 
-## Future Impact
+Harapkan beberapa perubahan di tingkat industri: (1) alat coding AI akan menambahkan sandboxing wajib untuk paket yang dibuka, (2) revisi kerangka kerja SLSA untuk mengatasi serangan token OIDC curian, (3) pengawasan ketat di semua registry paket utama (npm, PyPI, GitHub Packages), (4) serangan tiruan yang menargetkan penerbit terkenal lainnya, dan (5) desain ulang fundamental tentang cara kerja penandatanganan paket dan verifikasi identitas dalam rantai pasok perangkat lunak.
 
-Expect several industry-wide changes: (1) AI coding tools will add mandatory sandboxing for opened packages, (2) SLSA framework revisions to address stolen-OIDC-token attacks, (3) heightened scrutiny across all major package registries (npm, PyPI, GitHub Packages), (4) copycat attacks targeting other high-profile publishers, and (5) fundamental redesign of package signing and identity verification in the software supply chain.
+## Referensi
 
-## References
-
-1. Ars Technica - https://arstechnica.com/security/2026/06/for-the-2nd-time-in-weeks-microsoft-packages-laced-with-credential-stealer/
+- Ars Technica - <a href="https://arstechnica.com/security/2026/06/for-the-2nd-time-in-weeks-microsoft-packages-laced-with-credential-stealer/" target="_blank">https://arstechnica.com/security/2026/06/for-the-2nd-time-in-weeks-microsoft-packages-laced-with-credential-stealer/</a>

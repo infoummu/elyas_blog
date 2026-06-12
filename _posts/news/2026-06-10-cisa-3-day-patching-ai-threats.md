@@ -19,8 +19,6 @@ technical_level: "Intermediate"
 
 ---
 
-# CISA Perintahkan Instansi AS Perbaiki Celah Keamanan dalam 3 Hari Akibat Ancaman AI
-
 ## Ringkasan
 
 Badan Keamanan Siber dan Infrastruktur AS (CISA) menerbitkan arahan operasional baru (Binding Operational Directive) pada 10 Juni 2026 yang mewajibkan instansi federal sipil untuk menambal celah keamanan perangkat lunak jauh lebih agresif dari sebelumnya — dengan kasus kritis menuntut perbaikan hanya dalam waktu tiga hari. Percepatan jadwal ini secara langsung disebabkan oleh munculnya model AI yang dapat menemukan dan mengeksploitasi kerentanan dengan kecepatan dan skala yang belum pernah terjadi sebelumnya.
@@ -47,4 +45,4 @@ Arahan ini kemungkinan akan mempengaruhi praktik sektor swasta, terutama di infr
 
 ## Referensi
 
-1. WIRED - https://www.wired.com/story/cisa-ai-vulnerability-directive/
+- WIRED - <a href="https://www.wired.com/story/cisa-ai-vulnerability-directive/" target="_blank">https://www.wired.com/story/cisa-ai-vulnerability-directive/</a>

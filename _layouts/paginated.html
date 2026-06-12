@@ -12,7 +12,7 @@ layout: default
           <time datetime="{{ post.date | date_to_xmlschema }}" class="by-line">
               <i>{{ post.date | date_to_string }}</i> | {{ post.author }}
           </time>
-          <p>{{ post.description | strip_html | truncatewords:40 }}</p>
+          <p>{{ post.description | strip_html | truncatewords:45 }}</p>
       </li>
     {% endfor %}
 </ul>

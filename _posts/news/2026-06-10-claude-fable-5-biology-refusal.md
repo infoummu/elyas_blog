@@ -19,8 +19,6 @@ technical_level: "Beginner"
 
 ---
 
-# Claude Fable 5 Menolak Menjawab Pertanyaan Biologi Dasar — Korban Pengaman Terlalu Ketat
-
 ## Ringkasan
 
 Claude Fable 5 — model AI paling canggih milik Anthropic dan bagian dari keluarga model Mythos yang sangat mumpuni — menolak menjawab pertanyaan biologi dasar yang seharusnya mudah dijawab oleh siswa SMA. Pengujian yang dilakukan The Verge mengungkapkan bahwa Fable tidak mau menjawab pertanyaan seperti "jelaskan tentang membran sel," "apa itu mitokondria," "apa itu prion," "bagaimana cara kerja vaksin mRNA," "apa penyebab demam," "jelaskan cara kerja obat asma," "bagaimana resistensi antibiotik muncul," dan "apa itu Ebola dan bagaimana penyebarannya."
@@ -50,4 +48,4 @@ Tingkat false positive yang ditunjukkan di sini (memblokir pertanyaan biologi SM
 
 ## Referensi
 
-1. The Verge - https://www.theverge.com/ai-artificial-intelligence/947973/fable-wont-answer-basic-biology-questions
+- The Verge - <a href="https://www.theverge.com/ai-artificial-intelligence/947973/fable-wont-answer-basic-biology-questions" target="_blank">https://www.theverge.com/ai-artificial-intelligence/947973/fable-wont-answer-basic-biology-questions</a>

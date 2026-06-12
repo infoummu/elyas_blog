@@ -1,9 +1,9 @@
 ---
-title: "Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations"
+title: "Resolusi Insiden Otonom di Hyperscale: Arsitektur AI Agen untuk Operasi Jaringan"
 published: true
 author: "Research Paper"
 category: "research"
-description: "A novel agentic AI architecture for fully autonomous network incident resolution at hyperscale, achieving 92% first-touch resolution without human intervention."
+description: "Arsitektur AI agen baru untuk resolusi insiden jaringan yang sepenuhnya otonom di hyperscale, mencapai 92% resolusi sentuhan pertama tanpa intervensi manusia."
 date: "2026-06-08"
 source: "arXiv"
 source_url: "https://arxiv.org/abs/2606.09122"
@@ -20,41 +20,39 @@ technical_level: "Advanced"
 
 ---
 
-# Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations
-
 ## Research Background
 
-Modern hyperscale cloud and network infrastructures generate millions of operational incidents daily. Traditional incident response relies heavily on human operators using runbooks, dashboards, and manual escalation chains. As infrastructure scales, this approach becomes unsustainable — mean time to resolution (MTTR) increases, human error rates rise, and operational costs balloon. Previous automation attempts focused on rule-based systems or single-task ML models, but lacked the reasoning and adaptability needed for complex, multi-step incident resolution.
+Infrastruktur cloud dan jaringan hyperscale modern menghasilkan jutaan insiden operasional setiap harinya. Respons insiden tradisional sangat bergantung pada operator manusia yang menggunakan runbook, dasbor, dan rantai eskalasi manual. Seiring skala infrastruktur bertambah, pendekatan ini menjadi tidak berkelanjutan — mean time to resolution (MTTR) meningkat, tingkat kesalahan manusia naik, dan biaya operasional membengkak. Upaya otomatisasi sebelumnya berfokus pada sistem berbasis aturan atau model ML tugas tunggal, tetapi tidak memiliki penalaran dan kemampuan adaptasi yang diperlukan untuk resolusi insiden multi-langkah yang kompleks.
 
 ## Research Objective
 
-This paper proposes and evaluates a novel agentic AI architecture designed for fully autonomous network incident resolution at hyperscale. The system aims to achieve complete end-to-end incident management — from detection and triage through diagnosis, root cause analysis, remediation, and verification — without any human intervention in the loop.
+Makalah ini mengusulkan dan mengevaluasi arsitektur AI agen baru yang dirancang untuk resolusi insiden jaringan yang sepenuhnya otonom di hyperscale. Sistem ini bertujuan mencapai manajemen insiden ujung-ke-ujung yang lengkap — dari deteksi dan triase melalui diagnosis, analisis akar masalah, remediasi, dan verifikasi — tanpa intervensi manusia dalam loop.
 
 ## Methodology
 
-The architecture employs a multi-agent system with specialized agents (detection, triage, diagnosis, remediation, verification agents) coordinated by an orchestrator using a hierarchical task decomposition framework. The system integrates with existing observability platforms (Prometheus, Grafana, Elastic), incident management tools (PagerDuty, ServiceNow), and infrastructure APIs (Kubernetes, Terraform, cloud provider APIs). Evaluation was conducted on a production-scale network serving millions of users across multiple cloud regions, running over 90 consecutive days.
+Arsitektur ini menggunakan sistem multi-agen dengan agen khusus (deteksi, triase, diagnosis, remediasi, verifikasi) yang dikoordinasikan oleh orchestrator menggunakan kerangka kerja dekomposisi tugas hierarkis. Sistem terintegrasi dengan platform observabilitas yang ada (Prometheus, Grafana, Elastic), alat manajemen insiden (PagerDuty, ServiceNow), dan API infrastruktur (Kubernetes, Terraform, API penyedia cloud). Evaluasi dilakukan pada jaringan skala produksi yang melayani jutaan pengguna di beberapa wilayah cloud, berjalan selama 90 hari berturut-turut.
 
 ## Main Findings
 
-* 92% first-touch resolution rate — incidents resolved autonomously without human escalation
-* Average MTTR reduced from 28 minutes (human operators) to 47 seconds (AI system)
-* 97% accuracy in root cause identification across all incident types
-* Zero false negatives in critical/high-severity incidents (P0/P1)
-* System successfully handled concurrent incidents (up to 50 simultaneous) with no degradation
-* Effective across diverse incident types: network failures, resource exhaustion, configuration drift, and dependency failures
+* Tingkat resolusi sentuhan pertama 92% — insiden diselesaikan secara otonom tanpa eskalasi manusia
+* Rata-rata MTTR berkurang dari 28 menit (operator manusia) menjadi 47 detik (sistem AI)
+* Akurasi 97% dalam identifikasi akar masalah di semua jenis insiden
+* Nol false negative pada insiden kritis/berat (P0/P1)
+* Sistem berhasil menangani insiden bersamaan (hingga 50 simultan) tanpa degradasi
+* Efektif di berbagai jenis insiden: kegagalan jaringan, kehabisan sumber daya, penyimpangan konfigurasi, dan kegagalan dependensi
 
 ## Contributions
 
-This work makes several contributions: (1) a novel hierarchical multi-agent architecture for autonomous incident resolution, (2) empirical validation at production hyperscale demonstrating 92% autonomy rate, (3) a task decomposition framework enabling complex multi-step incident workflows, and (4) integration patterns with existing observability and incident management tooling.
+Karya ini memberikan beberapa kontribusi: (1) arsitektur multi-agen hierarkis baru untuk resolusi insiden otonom, (2) validasi empiris di hyperscale produksi yang menunjukkan tingkat otonomi 92%, (3) kerangka kerja dekomposisi tugas yang memungkinkan alur kerja insiden multi-langkah yang kompleks, dan (4) pola integrasi dengan alat observabilitas dan manajemen insiden yang ada.
 
 ## Limitations
 
-The study was conducted in a single organization's infrastructure environment, potentially limiting generalizability. Incident types requiring physical infrastructure intervention (hardware replacement, fiber cuts) remain outside the system's scope. Long-term model drift and concept drift in evolving infrastructure patterns were not addressed.
+Studi dilakukan di lingkungan infrastruktur satu organisasi, berpotensi membatasi generalisabilitas. Jenis insiden yang memerlukan intervensi infrastruktur fisik (penggantian perangkat keras, pemotongan kabel) tetap berada di luar cakupan sistem. Model drift jangka panjang dan concept drift dalam pola infrastruktur yang berkembang tidak ditangani.
 
 ## Future Research Opportunities
 
-Key areas for future work include: (1) cross-organizational validation to assess generalizability, (2) integration with physical infrastructure automation, (3) long-term stability and drift detection in production AI operations systems, (4) economic modeling comparing AI-driven vs. human-driven operations at scale, and (5) safety mechanisms for autonomous systems making potentially destructive remediation decisions.
+Area kunci untuk pekerjaan masa depan meliputi: (1) validasi lintas organisasi untuk menilai generalisabilitas, (2) integrasi dengan otomatisasi infrastruktur fisik, (3) stabilitas jangka panjang dan deteksi drift dalam sistem operasi AI produksi, (4) pemodelan ekonomi yang membandingkan operasi berbasis AI vs. manusia dalam skala besar, dan (5) mekanisme keamanan untuk sistem otonom yang membuat keputusan remediasi yang berpotensi merusak.
 
 ## References
 
-1. arXiv - https://arxiv.org/abs/2606.09122
+- arXiv - <a href="https://arxiv.org/abs/2606.09122" target="_blank">https://arxiv.org/abs/2606.09122</a>

@@ -19,8 +19,6 @@ technical_level: "Intermediate"
 
 ---
 
-# Microsoft Gratiskan Runtime Agen AI — dan Moneterisasi di Sekitarnya
-
 ## Ringkasan
 
 Pada Microsoft Build 2026, perusahaan resmi meluncurkan Scout — produk "Autopilot" pertama mereka — sebuah agen AI yang selalu aktif dan bertindak atas nama pengguna dengan identitas terkelola. Scout berjalan di atas OpenClaw, sebuah runtime open source yang kini diadopsi penuh oleh Microsoft sebagai lapisan dasar strategi agen mereka. Langkah ini sangat mirip dengan strategi Android Google: buat runtime gratis dan terbuka, lalu monetisasi semua yang ada di sekitarnya.
@@ -47,4 +45,4 @@ Integrasi identitas (Entra) dengan tindakan agen menciptakan paradigma baru tata
 
 ## Referensi
 
-1. The New Stack - https://thenewstack.io/microsoft-scout-openclaw-runtime/
+- The New Stack - <a href="https://thenewstack.io/microsoft-scout-openclaw-runtime/" target="_blank">https://thenewstack.io/microsoft-scout-openclaw-runtime/</a>
