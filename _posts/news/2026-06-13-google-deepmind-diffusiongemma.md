@@ -2,8 +2,19 @@
 layout: post
 title: "Google DeepMind Rilis DiffusionGemma: Model AI Lokal 4x Lebih Cepat dengan Teknik Difusi Teks"
 date: 2026-06-13 10:00:00 +0700
-categories: [AI, Open Source, Google DeepMind]
-tags: [diffusiongemma, google, deepmind, ai, open-source, generative-ai, moe, local-ai]
+category:
+  - AI
+  - Open Source
+  - Google DeepMind
+tags:
+  - diffusiongemma
+  - google
+  - deepmind
+  - ai
+  - open-source
+  - generative-ai
+  - moe
+  - local-ai
 author: Ars Technica / Hacker Blog
 description: "Google DeepMind meluncurkan DiffusionGemma, model open-source yang menggunakan difusi teks untuk menghasilkan output 4x lebih cepat dibandingkan model autoregresif tradisional, dengan hanya ~18 GB VRAM."
 image: https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroVisual.max-1000x1000.format-webp.webp

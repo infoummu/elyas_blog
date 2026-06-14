@@ -4,6 +4,7 @@ published: true
 author: Elyas 
 category: class
 description: deskripsi class secara singkat 
+summary: AdfasdX Google menggugat jaringan siber China yang memanfaatkan AI Gemini untuk membuat situs palsu dan mengirim 2,5 juta SMS penipuan.
 ---
 
 ## Sub Title Class 

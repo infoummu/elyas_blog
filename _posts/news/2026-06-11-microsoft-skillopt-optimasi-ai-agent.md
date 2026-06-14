@@ -2,8 +2,17 @@
 layout: post
 title: "SkillOpt Microsoft: Framework Open-Source yang Optimalkan Skill AI Agent Tanpa Menyentuh Bobot Model"
 date: 2026-06-11 23:37:00 +0000
-categories: [berita, kecerdasan-buatan]
-tags: [venturebeat, ai-agent, agentic-ai, microsoft, skillopt, open-source, prompt-optimization]
+category:
+  - berita
+  - kecerdasan-buatan
+tags:
+  - venturebeat
+  - ai-agent
+  - agentic-ai
+  - microsoft
+  - skillopt
+  - open-source
+  - prompt-optimization
 author: Ben Dickson
 source: VentureBeat
 source_url: https://venturebeat.com/orchestration/microsofts-open-source-skillopt-automatically-upgrades-ai-agent-skills-without-touching-model-weights

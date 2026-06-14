@@ -2,10 +2,19 @@
 layout: post
 title: "Apple Luncurkan Alat Edit Foto AI di iOS 27: Reframe, Extend, dan Clean Up"
 date: 2026-06-13 12:00:00 +0000
-categories: [AI, Apple, Photography]
-tags: [apple, ai, photo-editing, ios-27, wwdc-2026]
+category: 
+    - News 
+    - AI 
+    - Apple 
+    - Photography
+tags: 
+    - pple
+    - ai
+    - photo-editing
+    - ios-27
+    - wwdc-2026
 author: Allison Johnson (The Verge)
-source: The Verge
+source: "The Verge"
 lang: id
 description: Apple menghadirkan tiga fitur edit foto berbasis AI di iOS 27 — Clean Up, Extend, dan Spatial Reframing. Sebagian besar berfungsi dengan baik, tapi ada catatan penting.
 ---

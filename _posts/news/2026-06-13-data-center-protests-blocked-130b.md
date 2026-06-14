@@ -4,8 +4,11 @@ published: true
 author: Ars Technica (Ashley Belanger)
 layout: post
 date: 2026-06-13 00:00:00 +0700
-categories: [teknologi, ai, data-center, lingkungan]
-category: news
+category:
+  - teknologi
+  - ai
+  - data-center
+  - lingkungan
 tags:
   - data-center
   - ai

@@ -2,8 +2,16 @@
 layout: post
 title: "Satu Karakter Salah dalam Kernel Linux — Celah Use-After-Free Beri Akses Root ke Penyerang Lokal"
 date: 2026-06-13 09:00:00 +0700
-categories: [keamanan, linux, kernel]
-tags: [CVE-2026-23111, linux-kernel, use-after-free, privilege-escalation, nf_tables]
+category:
+  - keamanan
+  - linux
+  - kernel
+tags:
+  - CVE-2026-23111
+  - linux-kernel
+  - use-after-free
+  - privilege-escalation
+  - nf_tables
 author: diaspora
 description: "Satu tanda seru (!) yang salah letak di subsistem nf_tables kernel Linux memicu celah use-after-free kritis. Penyerang lokal tanpa hak istimewa bisa eskalasi ke root. Simak analisis lengkapnya."
 image: /assets/img/posts/linux-kernel-bug.jpg

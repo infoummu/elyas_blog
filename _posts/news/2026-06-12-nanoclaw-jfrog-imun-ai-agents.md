@@ -2,8 +2,16 @@
 layout: post
 title: "NanoClaw dan JFrog Luncurkan 'Sistem Imun' untuk Blokir AI Agents dari Mengunduh Kode Berbahaya"
 date: 2026-06-12 16:46:00 +0000
-categories: [berita, keamanan-siber]
-tags: [venturebeat, ai-security, agentic-ai, nanoclaw, jfrog, supply-chain-security]
+category:
+  - berita
+  - keamanan-siber
+tags:
+  - venturebeat
+  - ai-security
+  - agentic-ai
+  - nanoclaw
+  - jfrog
+  - supply-chain-security
 author: Carl Franzen
 source: VentureBeat
 source_url: https://venturebeat.com/security/nanoclaw-and-jfrog-launch-immune-system-to-block-ai-agents-from-downloading-malicious-code

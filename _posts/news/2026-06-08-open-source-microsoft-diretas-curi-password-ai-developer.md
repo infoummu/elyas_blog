@@ -2,7 +2,11 @@
 layout: post
 title: "Alat Open Source Microsoft Diretas untuk Mencuri Kata Sandi Developer AI"
 date: 2026-06-08 13:03:00 +0700
-categories: [keamanan-siber, open-source, ai, microsoft]
+category:
+  - keamanan-siber
+  - open-source
+  - ai
+  - microsoft
 source: TechCrunch
 source_url: https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-developers/
 author: Zack Whittaker

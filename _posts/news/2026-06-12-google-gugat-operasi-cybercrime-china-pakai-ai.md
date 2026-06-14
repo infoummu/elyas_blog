@@ -2,7 +2,10 @@
 layout: post
 title: "Google Gugat Operasi Cybercrime China yang Gunakan AI untuk Menipu Ratusan Ribu Korban"
 date: 2026-06-12 18:00:00 +0700
-categories: [keamanan-siber, ai, teknologi]
+category:
+  - keamanan-siber
+  - ai
+  - teknologi
 source: TechCrunch
 source_url: https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thousands-of-victims-sued-by-google/
 author: Lorenzo Franceschi-Bicchierai

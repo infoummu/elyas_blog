@@ -2,8 +2,17 @@
 layout: post
 title: "Inilah yang Akan Dilakukan Startup Baru Jeff Bezos, Prometheus"
 date: 2026-06-13 00:00:00 +0700
-categories: [teknologi, ai, startup]
-tags: [jeff bezos, prometheus, physical ai, kecerdasan buatan, robotika, startup]
+category:
+  - teknologi
+  - ai
+  - startup
+tags:
+  - jeff bezos
+  - prometheus
+  - physical ai
+  - kecerdasan buatan
+  - robotika
+  - startup
 author: Ars Technica
 source: Ars Technica
 original: https://arstechnica.com/ai/2026/06/heres-what-jeff-bezos-new-startup-prometheus-will-do/

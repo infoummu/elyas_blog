@@ -5,7 +5,7 @@ description: "Semua postingan dengan kategori research"
 pagination:
   enabled: true
   category: research
-  per_page: 3
+  per_page: 4
   permalink: '/research/:num/'
   sort_field: 'date'
   sort_reverse: true
