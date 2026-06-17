@@ -2,6 +2,7 @@
    original: https://github.com/pages-themes/hacker 
 */
 
+@import "fonts";
 @import "rouge-base16-dark";
 @import "default_colors";
 
@@ -25,9 +26,9 @@ body {
   padding: 0;
   background: $body-background url("../assets/bkg.png") 0 0;
   color: $body-foreground;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-family: "Courier New", Courier, monospace;
   overflow-x: hidden;
 }
 
@@ -47,6 +48,8 @@ section {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 20px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
 }
 
 li {
@@ -154,7 +157,7 @@ li {
                0 0 5px rgba(181, 232, 83, 0.1),
                0 0 10px rgba(181, 232, 83, 0.1);
   letter-spacing: -1px;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-family: "Courier New", Courier, monospace;
   opacity: 1;
   transition: opacity $transition-speed ease, width $transition-speed ease;
 }
@@ -252,7 +255,7 @@ li {
 .sidebar-link .sidebar-text {
   margin-left: 14px;
   font-size: 15px;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-family: "Courier New", Courier, monospace;
   opacity: 1;
   transition: opacity $transition-speed ease, margin-left $transition-speed ease;
 }
@@ -373,7 +376,7 @@ footer {
   height: 44px;
   padding: 0 14px;
   font-size: 16px;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-family: "Courier New", Courier, monospace;
   color: #b5e853;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(181, 232, 83, 0.2);
@@ -530,8 +533,8 @@ section img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
   color: $header;
   letter-spacing: -0.03em;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
@@ -638,7 +641,7 @@ hr {
   border-bottom: 2px solid rgba(0, 0, 0, 0.7);
   border-top: 2px solid rgba(0, 0, 0, 1);
   color: rgba(255, 255, 255, 0.8);
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   font-size: 13px;
   text-decoration: none;
