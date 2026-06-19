@@ -559,13 +559,18 @@ a.page-item:active {
   .sidebar {
     transform: translateX(-100%);
     width: $sidebar-collapsed-width;
-    transition: transform $transition-speed ease, width $transition-speed ease;
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .main-content {
     margin-left: 0;
     /* Space for floating hamburger when sidebar hidden */
     padding-top: 60px;
+    transition: padding-top 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Override desktop collapsed class on mobile */
@@ -582,6 +587,7 @@ a.page-item:active {
   .sidebar.mobile-icon {
     transform: translateX(0);
     width: $sidebar-collapsed-width;
+    opacity: 1;
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
   }
 
@@ -646,6 +652,7 @@ a.page-item:active {
   .sidebar.mobile-full {
     transform: translateX(0);
     width: $sidebar-width;
+    opacity: 1;
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
   }
 

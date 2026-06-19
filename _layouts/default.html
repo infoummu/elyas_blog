@@ -131,6 +131,20 @@
         });
       }
 
+      // ---- Close sidebar when tapping outside on mobile ----
+      function closeMobileSidebar(e) {
+        if (sidebar.classList.contains('mobile-icon') || sidebar.classList.contains('mobile-full')) {
+          // Don't close if clicking inside sidebar or on the hamburger button
+          if (!sidebar.contains(e.target) && (!hamburger || !hamburger.contains(e.target))) {
+            mobilePhase = 0;
+            applyMobileState(0);
+            localStorage.setItem('mobilePhase', 0);
+          }
+        }
+      }
+      document.addEventListener('mousedown', closeMobileSidebar);
+      document.addEventListener('touchstart', closeMobileSidebar, { passive: true });
+
       // ---- Theme toggle ----
       if (themeToggle) {
         themeToggle.addEventListener('click', function() {
