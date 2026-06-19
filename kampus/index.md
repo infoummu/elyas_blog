@@ -1,7 +1,7 @@
 ---
 layout: paginated
 title: Kampus
-description: "Semua postingan dengan kategori class"
+description: "beberapa infomasi seputar dunia Kampus untuk pengetahuan"
 pagination:
   enabled: true
   category: class

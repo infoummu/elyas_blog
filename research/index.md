@@ -1,7 +1,7 @@
 ---
 layout: paginated
 title: Research
-description: "Semua postingan dengan kategori research"
+description: "Beberapa infomasi penelitian dan publikasi seputar dunia IT untuk pengetahuan"
 pagination:
   enabled: true
   category: research

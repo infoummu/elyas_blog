@@ -1,7 +1,7 @@
 ---
 layout: paginated
 title: Local News
-description: "Semua postingan dengan kategori Local news"
+description: "Beberapa infomasi seputar berita lokal (daerah) untuk pengetahuan"
 pagination:
   enabled: true
   category: lnews

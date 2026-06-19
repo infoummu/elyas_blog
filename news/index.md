@@ -1,7 +1,7 @@
 ---
 layout: paginated
 title: News
-description: "Semua postingan dengan kategori news"
+description: "Beberapa infomasi seputar dunia IT untuk pengetahuan"
 pagination:
   enabled: true
   category: news

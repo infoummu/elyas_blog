@@ -1,7 +1,7 @@
 ---
 layout: paginated
 title: Home
-description: "Semua postingan terbaru"
+description: "Beberapa infomasi seputar Kampus, Berita IT dan Penelitain"
 pagination:
   enabled: true
   per_page: 4

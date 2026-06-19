@@ -14,7 +14,8 @@ pagination:
   enabled: true
   per_page: 4
   permalink: '/:num/'
-  title: ':title - page :num'
+  # title: ':title - page :num'
+  title: ':title [:num]'
   sort_field: 'date'
   sort_reverse: true
 
