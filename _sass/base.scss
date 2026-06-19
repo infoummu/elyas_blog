@@ -13,7 +13,7 @@ $blockquote-color: $silver-chalice !default;
 $blockquote-border: $dove-grey !default;
 
 // Sidebar Variables
-$sidebar-width: 260px;
+$sidebar-width: 235px;
 $sidebar-collapsed-width: 70px;
 $sidebar-bg: rgba(0, 0, 0, 0.92);
 $sidebar-border: $conifer;
@@ -134,7 +134,8 @@ li {
 .sidebar-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 14px;
   padding: 16px;
   border-bottom: 1px dashed rgba($sidebar-border, 0.3);
   min-height: 56px;
@@ -622,10 +623,11 @@ a.page-item:active {
     display: none;
   }
 
-  /* Icon mode: hamburger inside sidebar header - tighter padding */
+  /* Icon mode: hamburger inside sidebar header - centered to align with menu icons */
   .sidebar.mobile-icon .sidebar-header {
-    padding: 16px 4px;
-    gap: 2px;
+    padding: 16px 0;
+    justify-content: center;
+    gap: 0;
   }
 
   /* Smaller hamburger in icon mode to fit 70px sidebar */
