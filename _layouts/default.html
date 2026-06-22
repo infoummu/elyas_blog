@@ -24,28 +24,6 @@
         </section>
       </div>
 
-      {% if paginator.total_pages > 1 %}
-      <div class="pagination">
-        {% if paginator.previous_page == 1 %}
-        <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&laquo;</a>
-        {% elsif paginator.previous_page%}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&laquo;</a>
-        {% else %}
-        <span class="page-item">&laquo;</span>
-        {% endif %}        {% for trail in paginator.page_trail %}
-          {% if trail.num == paginator.page %}
-          <span class="page-item">{{ trail.num }}</span>
-          {% else %}
-          <a href="{{ trail.path | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">{{ trail.num }}</a>
-          {% endif %}
-        {% endfor %} {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&raquo;</a>
-        {% else %}
-        <span class="page-item">&raquo;</span>
-        {% endif %}
-      </div>
-      {% endif %}
-
       {% include footer.html %}
     </main>
 
