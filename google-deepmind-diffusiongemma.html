@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Google DeepMind Rilis DiffusionGemma: Model AI Lokal 4x Lebih Cepat dengan Teknik Difusi Teks</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Google DeepMind Rilis DiffusionGemma: Model AI Lokal 4x Lebih Cepat dengan Teknik Difusi Teks | Elyas-Blog</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Google DeepMind Rilis DiffusionGemma: Model AI Lokal 4x Lebih Cepat dengan Teknik Difusi Teks" />
+<meta name="author" content="Ars Technica / Hacker Blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Google DeepMind meluncurkan DiffusionGemma, model open-source yang menggunakan difusi teks untuk menghasilkan output 4x lebih cepat dibandingkan model autoregresif tradisional, dengan hanya ~18 GB VRAM." />
+<meta property="og:description" content="Google DeepMind meluncurkan DiffusionGemma, model open-source yang menggunakan difusi teks untuk menghasilkan output 4x lebih cepat dibandingkan model autoregresif tradisional, dengan hanya ~18 GB VRAM." />
+<link rel="canonical" href="http://0.0.0.0:4000/google-deepmind-diffusiongemma" />
+<meta property="og:url" content="http://0.0.0.0:4000/google-deepmind-diffusiongemma" />
+<meta property="og:site_name" content="Elyas-Blog" />
+<meta property="og:image" content="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroVisual.max-1000x1000.format-webp.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-13T03:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroVisual.max-1000x1000.format-webp.webp" />
+<meta property="twitter:title" content="Google DeepMind Rilis DiffusionGemma: Model AI Lokal 4x Lebih Cepat dengan Teknik Difusi Teks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ars Technica / Hacker Blog"},"dateModified":"2026-06-13T03:00:00+00:00","datePublished":"2026-06-13T03:00:00+00:00","description":"Google DeepMind meluncurkan DiffusionGemma, model open-source yang menggunakan difusi teks untuk menghasilkan output 4x lebih cepat dibandingkan model autoregresif tradisional, dengan hanya ~18 GB VRAM.","headline":"Google DeepMind Rilis DiffusionGemma: Model AI Lokal 4x Lebih Cepat dengan Teknik Difusi Teks","image":"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroVisual.max-1000x1000.format-webp.webp","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/google-deepmind-diffusiongemma"},"url":"http://0.0.0.0:4000/google-deepmind-diffusiongemma"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('sidebarCollapsed') === 'true') {
+          document.body.classList.add('sidebar-pre-collapsed');
+        }
+        if (localStorage.getItem('theme') === 'light') {
+          document.body.classList.add('light-theme');
+        }
+      } catch(e) {}
+    })();
+  </script>
+  <div class="layout-wrapper">
+    <button class="mobile-hamburger" id="mobileHamburger" aria-label="Toggle menu">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <a href="/" class="sidebar-brand">
+      
+      <span class="sidebar-brand-text">elyas-blog</span>
+    </a>
+
+  </div>
+  <nav class="sidebar-nav">
+    <a href="/" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+  </span>
+  <span class="sidebar-text">Home</span>
+</a>
+<a href="/kampus" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 11V20H20V11"></path>
+      <path d="M4 11L12 7L20 11"></path>
+      <path d="M8 8V12L12 10L16 12V8L12 10L8 8Z"></path>
+      <path d="M11 20V16H13V20"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Kampus</span>
+</a>
+<a href="/news" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9"></path>
+      <path d="M10 7h8"></path>
+      <path d="M10 11h8"></path>
+      <path d="M10 15h5"></path>
+      <path d="M6 10v6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">News</span>
+</a>
+<a href="/research" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="M21 21l-4.35-4.35"></path>
+      <path d="M11 8v6"></path>
+      <path d="M8 11h6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Research</span>
+</a>
+<a href="/lnews" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9"></path>
+      <path d="M10 7h8"></path>
+      <path d="M10 11h8"></path>
+      <path d="M10 15h5"></path>
+      <path d="M6 10v6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Local News</span>
+</a>
+<a href="/about" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </svg>
+  </span>
+  <span class="sidebar-text">About</span>
+</a>
+<a href="/archive" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="21 8 21 21 3 21 3 8"></polyline>
+      <rect x="1" y="3" width="22" height="5" rx="1"></rect>
+      <line x1="10" y1="12" x2="14" y2="12"></line>
+    </svg>
+  </span>
+  <span class="sidebar-text">Archive</span>
+</a>
+
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-content">
+      <span class="sidebar-footer-text">
+        <b>Elyas-Blog</b> © 2026
+      </span>
+      <span class="sidebar-footer-icon">©</span>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </div>
+</aside>
+
+    <main class="main-content" id="mainContent">
+      <div class="container">
+        <section id="main_content">
+          <article>
+  <h2>Google DeepMind Rilis DiffusionGemma: Model AI Lokal 4x Lebih Cepat dengan Teknik Difusi Teks</h2>
+  <time datetime="2026-06-13T03:00:00+00:00" class="by-line">13 Jun 2026 | Ars Technica / Hacker Blog | AI, Open Source, Google DeepMind</time>
+  <hr/>
+  <h2 id="summary">Summary</h2>
+
+<p>Google DeepMind secara resmi meluncurkan <strong>DiffusionGemma</strong> pada 10 Juni 2026 — sebuah model AI open-source revolusioner yang menggunakan teknik <strong>difusi teks (text diffusion)</strong> sebagai pengganti metode autoregresif tradisional. Pendekatan ini memungkinkan model menghasilkan <strong>256 token secara paralel</strong> dalam satu langkah, bukan satu per satu secara sekuensial, menghasilkan percepatan <strong>hingga 4x lebih cepat</strong> dibandingkan model Gemma konvensional dengan ukuran sebanding.</p>
+
+<p>DiffusionGemma hadir dengan arsitektur <strong>26 miliar parameter total — hanya 3,8 miliar aktif per inferensi</strong> — berkat desain Mixture-of-Experts (MoE). Model ini dapat berjalan di <strong>GPU konsumen dengan ~18 GB VRAM</strong> (seperti RTX 4090 atau RTX 5090), menjadikannya solusi AI lokal yang sangat terjangkau untuk pengembang.</p>
+
+<p>Di atas GPU NVIDIA H100 enterprise, DiffusionGemma mencapai <strong>1.000+ token per detik</strong>, sementara di RTX 5090 mencapai <strong>700+ token per detik</strong>. Di NVIDIA DGX Station, throughput mencapai <strong>2.000 token per detik</strong>. Model ini dirilis di bawah lisensi <strong>Apache 2.0</strong> dan tersedia di Hugging Face bersama dengan dukungan penuh dari vLLM, Hugging Face Transformers, NVIDIA NIM, dan Unsloth untuk fine-tuning.</p>
+
+<p>Meskipun kecepatannya luar biasa, Google menekankan bahwa DiffusionGemma bersifat <strong>eksperimental</strong> — kualitas outputnya secara umum masih di bawah Gemma 4 standar untuk tugas-tugas yang membutuhkan presisi maksimal. Model ini unggul dalam tugas <strong>non-linier</strong> seperti pengeditan teks langsung, penyusunan kode, pemecahan teka-teki, dan inferensi grafik matematika.</p>
+
+<h2 id="key-points">Key Points</h2>
+
+<ul>
+  <li><strong>Percepatan 4x</strong>: DiffusionGemma menggunakan difusi diskrit untuk memproses 256 token secara paralel, menggeser bottleneck dari bandwidth memori ke komputasi, menghasilkan hingga 4x percepatan dibanding model autoregresif.</li>
+  <li><strong>Arsitektur MoE 26B-A4B</strong>: Total 25,2 miliar parameter dengan hanya 3,8 miliar aktif per token (8 dari 128 expert + 1 shared expert), memungkinkan inferensi efisien dalam ~18 GB VRAM.</li>
+  <li><strong>Kecepatan Luar Biasa</strong>: 1.000+ token/detik pada H100, 700+ token/detik pada RTX 5090, 150 token/detik pada DGX Spark, hingga 2.000 token/detik pada DGX Station.</li>
+  <li><strong>Open Source (Apache 2.0)</strong>: Model weights tersedia di Hugging Face, dapat diunduh, dimodifikasi, dan digunakan secara bebas termasuk untuk penggunaan komersial.</li>
+  <li><strong>Dukungan Multimodal</strong>: Selain teks, DiffusionGemma mendukung input gambar (hingga 60 detik video pada 1 fps) dengan encoder vision ~550M parameter.</li>
+  <li><strong>Konteks Panjang hingga 256K token</strong>: Model ini mampu menangani konteks hingga 256.000 token, ideal untuk dokumen panjang dan percakapan multi-putaran.</li>
+  <li><strong>Self-Correction &amp; Bi-directional Attention</strong>: Tidak seperti model autoregresif yang hanya melihat ke belakang, DiffusionGemma dapat memperbaiki outputnya sendiri selama proses denoising dengan memperhatikan konteks kiri dan kanan.</li>
+  <li><strong>Fine-tuning untuk Tugas Spesifik</strong>: Contoh nyata — model dasar tidak bisa memecahkan Sudoku (0% sukses), tetapi setelah SFT (supervised fine-tuning) menggunakan JAX, tingkat keberhasilan melonjak ke 80%.</li>
+  <li><strong>Tidak Cocok untuk Cloud Serving dengan QPS Tinggi</strong>: Karena sifat decoding paralelnya, DiffusionGemma lebih hemat biaya untuk skenario lokal/latensi rendah, bukan untuk cloud serving dengan konkurensi tinggi.</li>
+  <li><strong>Keterbatasan di Apple Silicon</strong>: Arsitektur memori terpadu Apple tidak mendapat percepatan signifikan karena bottleneck bandwidth memori.</li>
+</ul>
+
+<h2 id="why-it-matters">Why It Matters</h2>
+
+<p>Peluncuran DiffusionGemma menandai <strong>pergeseran paradigma</strong> dalam arsitektur model bahasa besar. Selama bertahun-tahun, hampir semua model generative AI — dari GPT hingga LLaMA dan Gemma — menggunakan pendekatan autoregresif: menghasilkan satu token demi satu token secara berurutan. Pendekatan ini, meskipun sangat efektif, memiliki inefisiensi inheren karena setiap token berikutnya harus menunggu token sebelumnya selesai diproses.</p>
+
+<p>Dengan mengadaptasi <strong>teknik difusi</strong> — yang sudah terbukti sukses di dunia generasi gambar (Stable Diffusion, DALL-E, Imagen) — ke ranah teks, Google DeepMind membuka jalan baru untuk inferensi AI yang jauh lebih cepat. Analoginya: jika autoregresif adalah mesin ketik satu huruf, difusi teks adalah mesin cetak yang mampu mencetak seluruh halaman dalam satu waktu.</p>
+
+<p>Ini sangat penting untuk <strong>AI lokal (on-device AI)</strong> . Dengan hanya membutuhkan ~18 GB VRAM, DiffusionGemma dapat berjalan di GPU gaming konsumen yang harganya jauh di bawah akselerator enterprise. Ini berarti pengembang individu, startup, dan peneliti dapat menjalankan model AI canggih di desktop mereka sendiri tanpa bergantung pada API cloud — menghemat biaya, meningkatkan privasi data, dan memungkinkan aplikasi real-time.</p>
+
+<p>Selain itu, pendekatan <strong>bi-directional attention</strong> memungkinkan DiffusionGemma unggul dalam tugas-tugas yang merupakan titik lemah model autoregresif: pengeditan in-line, infilling kode, pemecahan teka-teki, dan inferensi ilmiah yang membutuhkan pemahaman konteks dua arah. Ini membuka kemungkinan baru untuk AI-assisted coding, alat produktivitas, dan agen otonom yang perlu merencanakan dan merevisi output mereka.</p>
+
+<p>Dalam ekosistem open-source, ketersediaan model ini di bawah lisensi Apache 2.0 dengan dukungan dari vLLM, Hugging Face, NVIDIA, dan Unsloth berarti adopsi dapat terjadi dengan sangat cepat. Pengembang tidak perlu menunggu tooling khusus — semuanya sudah siap sejak hari pertama.</p>
+
+<h2 id="future-impact">Future Impact</h2>
+
+<p><strong>1. Demokratisasi AI Cepat untuk Pengembang Lokal</strong><br />
+Dengan kemampuan mencapai 700+ token/detik pada GPU konsumen seperti RTX 5090, DiffusionGemma berpotensi mengubah lanskap pengembangan AI lokal. Pengembang tidak lagi perlu menyewa GPU cloud yang mahal untuk mendapatkan performa tinggi — cukup dengan GPU desktop yang relatif terjangkau. Ini akan mempercepat inovasi di negara berkembang dan memperkuat ekosistem open-source.</p>
+
+<p><strong>2. Aplikasi Real-Time Baru</strong><br />
+Kecepatan 1.000+ token/detik membuka pintu untuk aplikasi yang sebelumnya tidak praktis dengan AI lokal: asisten coding real-time, copilot dokumen, penerjemah simultan, dan agen AI interaktif yang merespons dengan latensi hampir nol. Model ini sangat cocok untuk antarmuka suara interaktif.</p>
+
+<p><strong>3. Perubahan Arsitektur Industri</strong><br />
+Keberhasilan difusi teks dapat memicu gelombang baru arsitektur model yang meninggalkan autoregresi murni. Jika DiffusionGemma membuktikan diri dalam produksi, kita mungkin melihat generasi berikutnya dari GPT, LLaMA, Claude, dan model besar lainnya mengadopsi pendekatan difusi atau hybrid (difusi-autoregresif). Sudah ada indikasi dengan pendekatan “block autoregressive diffusion” yang menggabungkan kecepatan difusi dengan stabilitas autoregresif.</p>
+
+<p><strong>4. AI Agent dengan Self-Correction Bawaan</strong><br />
+Kemampuan self-correction DiffusionGemma — memperbaiki token yang salah selama proses denoising — adalah fitur yang sangat berharga untuk AI agent. Agen otonom saat ini sering terjebak dalam kesalahan yang tidak bisa diperbaiki (error propagation). Dengan self-correction bawaan, agen AI dapat mendeteksi dan memperbaiki kesalahan mereka secara real-time, menghasilkan sistem yang lebih andal untuk tugas-tugas kompleks seperti coding, analisis data, dan perencanaan.</p>
+
+<p><strong>5. Fine-tuning untuk Domain Spesifik</strong><br />
+Kombinasi arsitektur MoE yang efisien dengan fine-tuning menggunakan Unsloth dan NeMo AutoModel akan mendorong adopsi di domain spesifik: biologi komputasi (prediksi struktur protein, urutan asam amino), keuangan (analisis grafik), logistik (optimasi rute), dan pendidikan (tutor AI interaktif). Contoh Sudoku (dari 0% ke 80% akurasi setelah fine-tuning) menunjukkan potensi besar untuk tugas-tugas yang bergantung pada kendala (constraint satisfaction).</p>
+
+<p><strong>6. Tantangan yang Tersisa</strong><br />
+Adopsi luas DiffusionGemma masih menghadapi beberapa hambatan. Pertama, kualitas output secara umum masih di bawah Gemma 4 standar — model ini belum siap menggantikan model flagship untuk tugas-tugas yang membutuhkan presisi maksimal. Kedua, tidak ada percepatan signifikan di Apple Silicon, yang berarti sebagian besar pengguna Mac tidak akan merasakan manfaat kecepatan penuh. Ketiga, untuk beban kerja cloud dengan konkurensi tinggi, model autoregresif tradisional masih lebih efisien. Keempat, efisiensi fine-tuning dan inference pada hardware konsumen masih perlu dioptimalkan lebih lanjut.</p>
+
+<p><strong>7. Potensi Pergeseran ke Arah “Diffusion-First”</strong><br />
+Jika tren ini berlanjut, kita mungkin melihat pengembang mulai mendesain aplikasi AI dengan asumsi “diffusion-first” — memanfaatkan generasi paralel untuk tugas-tugas yang membutuhkan kecepatan, dan hanya beralih ke autoregresif untuk tugas yang membutuhkan kualitas output maksimal. Arsitektur hybrid seperti block-autoregressive diffusion yang digunakan DiffusionGemma bisa menjadi standar baru di industri.</p>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li>
+    <p><strong>Google Blog (Official)</strong> — “DiffusionGemma: 4x Faster Text Generation” oleh Brendan O’Donoghue &amp; Sebastian Flennerhag, 10 Juni 2026.<br />
+https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/</p>
+  </li>
+  <li>
+    <p><strong>Google Developers Blog</strong> — “DiffusionGemma: The Developer Guide” oleh Ian Ballantyne &amp; Omar Sanseviero, 10 Juni 2026.<br />
+https://developers.googleblog.com/diffusiongemma-the-developer-guide</p>
+  </li>
+  <li>
+    <p><strong>Hugging Face</strong> — Model weights DiffusionGemma-26B-A4B-it (Apache 2.0).<br />
+https://huggingface.co/google/diffusiongemma-26B-A4B-it</p>
+  </li>
+  <li>
+    <p><strong>NVIDIA Technical Blog</strong> — “Run DiffusionGemma on NVIDIA for Developer-Ready, High-Throughput Text Generation” oleh Anu Srivastava, 10 Juni 2026.<br />
+https://developer.nvidia.com/blog/run-diffusiongemma-on-nvidia-for-developer-ready-high-throughput-text-generation/</p>
+  </li>
+  <li>
+    <p><strong>Kompas Tekno</strong> — “Google Rilis DiffusionGemma, AI Open-source Kecepatan 4 Kali Lebih Kencang” oleh Lely Maulida &amp; Yudha Pratomo, 11 Juni 2026.<br />
+https://tekno.kompas.com/read/2026/06/11/16020087/google-rilis-diffusiongemma-ai-open-source-kecepatan-4-kali-lebih-kencang</p>
+  </li>
+  <li>
+    <p><strong>Maarten Grootendorst</strong> — “A Visual Guide to DiffusionGemma” (Visual Guide).<br />
+https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-diffusiongemma</p>
+  </li>
+  <li>
+    <p><strong>NVIDIA NIM Catalog</strong> — DiffusionGemma containerized inference microservice.<br />
+https://catalog.ngc.nvidia.com/orgs/nim/teams/google/containers/diffusiongemma-26b-a4b-it</p>
+  </li>
+  <li>
+    <p><strong>Ars Technica</strong> — “Google DeepMind releases DiffusionGemma, a model that runs local AI 4× faster” oleh Ryan Whitwam, 10 Juni 2026.<br />
+https://arstechnica.com/ai/2026/06/google-deepmind-releases-diffusiongemma-a-model-that-runs-local-ai-4x-faster/</p>
+  </li>
+  <li>
+    <p><strong>Google AI for Developers</strong> — Gemma Documentation (DiffusionGemma).<br />
+https://ai.google.dev/gemma/docs/diffusiongemma</p>
+  </li>
+  <li>
+    <p><strong>vLLM Blog</strong> — “Diffusion-Gemma support in vLLM”, 10 Juni 2026.<br />
+https://vllm-project.github.io/2026/06/10/diffusion-gemma</p>
+  </li>
+</ol>
+
+</article>
+        </section>
+      </div>
+
+      
+
+      <footer>
+  <div class="footer-inner">
+    <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US" class="footer-link">
+      <span><b>Elyas-Blog</b></span>
+      
+      <span>© 2026</span>
+    </a>
+  </div>
+</footer>
+    </main>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var sidebar = document.getElementById('sidebar');
+      var toggleBtn = document.getElementById('sidebarToggle');
+      var mainContent = document.getElementById('mainContent');
+      var hamburger = document.getElementById('mobileHamburger');
+      var themeToggle = document.getElementById('themeToggle');
+
+      // Load saved sidebar state
+      var isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+      if (isCollapsed) {
+        sidebar.classList.add('collapsed');
+        mainContent.classList.add('expanded');
+      }
+      // Clean up FOUC-prevention class, allowing toggle to work normally
+      document.body.classList.remove('sidebar-pre-collapsed');
+
+      // ---- Desktop sidebar toggle (collapsed/expanded) ----
+      toggleBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('collapsed');
+        mainContent.classList.toggle('expanded');
+        localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+      });
+
+      // ---- Mobile hamburger 3-state cycling ----
+      var mobilePhase = 0; // 0=hidden, 1=icon(up), 2=full, 3=icon(down)
+      var layoutWrapper = document.querySelector('.layout-wrapper');
+      var sidebarHeader = sidebar.querySelector('.sidebar-header');
+
+      function applyMobileState(phase) {
+        sidebar.classList.remove('mobile-icon', 'mobile-full');
+        mainContent.classList.remove('hamburger-sidebar-visible');
+        
+        if (phase === 1 || phase === 3) {
+          sidebar.classList.add('mobile-icon');
+          mainContent.classList.add('hamburger-sidebar-visible');
+          // Move hamburger INSIDE sidebar header (merges with sidebar)
+          if (hamburger && hamburger.parentNode !== sidebarHeader) {
+            sidebarHeader.insertBefore(hamburger, sidebarHeader.firstChild);
+          }
+        } else if (phase === 2) {
+          sidebar.classList.add('mobile-full');
+          mainContent.classList.add('hamburger-sidebar-visible');
+          // Move hamburger INSIDE sidebar header (merges with sidebar)
+          if (hamburger && hamburger.parentNode !== sidebarHeader) {
+            sidebarHeader.insertBefore(hamburger, sidebarHeader.firstChild);
+          }
+        } else {
+          // phase 0: hidden - move hamburger OUTSIDE sidebar (floating fixed)
+          if (hamburger && hamburger.parentNode !== layoutWrapper) {
+            layoutWrapper.insertBefore(hamburger, sidebar);
+          }
+        }
+      }
+
+      if (hamburger) {
+        // Check if a saved mobile phase exists
+        var savedPhase = parseInt(localStorage.getItem('mobilePhase'), 10);
+        if (!isNaN(savedPhase) && savedPhase >= 0 && savedPhase <= 3) {
+          mobilePhase = savedPhase;
+          applyMobileState(mobilePhase);
+        } else {
+          // Ensure hamburger starts outside sidebar on fresh load
+          mobilePhase = 0;
+          applyMobileState(0);
+        }
+
+        hamburger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          mobilePhase = (mobilePhase + 1) % 4;
+          applyMobileState(mobilePhase);
+          localStorage.setItem('mobilePhase', mobilePhase);
+        });
+      }
+
+      // ---- Close sidebar when tapping outside on mobile ----
+      function closeMobileSidebar(e) {
+        if (sidebar.classList.contains('mobile-icon') || sidebar.classList.contains('mobile-full')) {
+          // Don't close if clicking inside sidebar or on the hamburger button
+          if (!sidebar.contains(e.target) && (!hamburger || !hamburger.contains(e.target))) {
+            mobilePhase = 0;
+            applyMobileState(0);
+            localStorage.setItem('mobilePhase', 0);
+          }
+        }
+      }
+      document.addEventListener('mousedown', closeMobileSidebar);
+      document.addEventListener('touchstart', closeMobileSidebar, { passive: true });
+
+      // ---- Theme toggle ----
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          if (document.body.classList.contains('light-theme')) {
+            document.body.classList.remove('light-theme');
+            localStorage.setItem('theme', 'dark');
+          } else {
+            document.body.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
+          }
+        });
+      }
+    });
+  </script>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+
+      // The scrollable element is the main content area
+      var scrollContainer = document.getElementById('mainContent');
+
+      function checkScroll() {
+        if (scrollContainer.scrollTop > 300) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+      }
+
+      scrollContainer.addEventListener('scroll', checkScroll);
+      checkScroll();
+
+      btn.addEventListener('click', function() {
+        scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+  
+</body>
+
+</html>

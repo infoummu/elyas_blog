@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>MAStrike: Red-Teaming Kolusif pada Sistem Multi-Agent Berbasis Shapley</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>MAStrike: Red-Teaming Kolusif pada Sistem Multi-Agent Berbasis Shapley | Elyas-Blog</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="MAStrike: Red-Teaming Kolusif pada Sistem Multi-Agent Berbasis Shapley" />
+<meta name="author" content="Tim Riset Hacker Blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="MAStrike adalah framework closed-loop untuk red-teaming kolusif pada hierarchical multi-agent systems, menggunakan analisis Shapley value untuk mengidentifikasi koalisi agen rentan dan menghasilkan serangan terkoordinasi." />
+<meta property="og:description" content="MAStrike adalah framework closed-loop untuk red-teaming kolusif pada hierarchical multi-agent systems, menggunakan analisis Shapley value untuk mengidentifikasi koalisi agen rentan dan menghasilkan serangan terkoordinasi." />
+<link rel="canonical" href="http://0.0.0.0:4000/mastrike-collusive-red-teaming-multi-agent" />
+<meta property="og:url" content="http://0.0.0.0:4000/mastrike-collusive-red-teaming-multi-agent" />
+<meta property="og:site_name" content="Elyas-Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-13T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="MAStrike: Red-Teaming Kolusif pada Sistem Multi-Agent Berbasis Shapley" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tim Riset Hacker Blog"},"dateModified":"2026-06-13T00:00:00+00:00","datePublished":"2026-06-13T00:00:00+00:00","description":"MAStrike adalah framework closed-loop untuk red-teaming kolusif pada hierarchical multi-agent systems, menggunakan analisis Shapley value untuk mengidentifikasi koalisi agen rentan dan menghasilkan serangan terkoordinasi.","headline":"MAStrike: Red-Teaming Kolusif pada Sistem Multi-Agent Berbasis Shapley","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/mastrike-collusive-red-teaming-multi-agent"},"url":"http://0.0.0.0:4000/mastrike-collusive-red-teaming-multi-agent"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('sidebarCollapsed') === 'true') {
+          document.body.classList.add('sidebar-pre-collapsed');
+        }
+        if (localStorage.getItem('theme') === 'light') {
+          document.body.classList.add('light-theme');
+        }
+      } catch(e) {}
+    })();
+  </script>
+  <div class="layout-wrapper">
+    <button class="mobile-hamburger" id="mobileHamburger" aria-label="Toggle menu">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <a href="/" class="sidebar-brand">
+      
+      <span class="sidebar-brand-text">elyas-blog</span>
+    </a>
+
+  </div>
+  <nav class="sidebar-nav">
+    <a href="/" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+  </span>
+  <span class="sidebar-text">Home</span>
+</a>
+<a href="/kampus" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 11V20H20V11"></path>
+      <path d="M4 11L12 7L20 11"></path>
+      <path d="M8 8V12L12 10L16 12V8L12 10L8 8Z"></path>
+      <path d="M11 20V16H13V20"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Kampus</span>
+</a>
+<a href="/news" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9"></path>
+      <path d="M10 7h8"></path>
+      <path d="M10 11h8"></path>
+      <path d="M10 15h5"></path>
+      <path d="M6 10v6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">News</span>
+</a>
+<a href="/research" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="M21 21l-4.35-4.35"></path>
+      <path d="M11 8v6"></path>
+      <path d="M8 11h6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Research</span>
+</a>
+<a href="/lnews" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9"></path>
+      <path d="M10 7h8"></path>
+      <path d="M10 11h8"></path>
+      <path d="M10 15h5"></path>
+      <path d="M6 10v6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Local News</span>
+</a>
+<a href="/about" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </svg>
+  </span>
+  <span class="sidebar-text">About</span>
+</a>
+<a href="/archive" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="21 8 21 21 3 21 3 8"></polyline>
+      <rect x="1" y="3" width="22" height="5" rx="1"></rect>
+      <line x1="10" y1="12" x2="14" y2="12"></line>
+    </svg>
+  </span>
+  <span class="sidebar-text">Archive</span>
+</a>
+
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-content">
+      <span class="sidebar-footer-text">
+        <b>Elyas-Blog</b> © 2026
+      </span>
+      <span class="sidebar-footer-icon">©</span>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </div>
+</aside>
+
+    <main class="main-content" id="mainContent">
+      <div class="container">
+        <section id="main_content">
+          <article>
+  <h2>MAStrike: Red-Teaming Kolusif pada Sistem Multi-Agent Berbasis Shapley</h2>
+  <time datetime="2026-06-13T00:00:00+00:00" class="by-line">13 Jun 2026 | Tim Riset Hacker Blog | research</time>
+  <hr/>
+  <h2 id="research-background">Research Background</h2>
+
+<p>Sistem multi-agent hierarkis (MAS) semakin banyak diadopsi dalam workflow berisiko tinggi di bidang keuangan, rekayasa perangkat lunak, dan CRM. Dalam sistem ini, keamanan dan keselamatan terdistribusi di seluruh agen yang memiliki peran khusus, yang secara signifikan memperluas permukaan serangan — khususnya terhadap perilaku adversarial terkoordinasi seperti privilege escalation dan collusion antar agen.</p>
+
+<p>Pendekatan red-teaming yang ada masih sangat terbatas: metode sebelumnya hanya mengandalkan pemilihan agen target secara heuristik dan mengganggu alur pesan secara terisolasi. Pertanyaan kritis seperti agen mana yang paling bertanggung jawab terhadap keamanan sistem, dan bagaimana agen yang dikompromikan dapat berkoordinasi untuk melewati pertahanan, masih belum terjawab.</p>
+
+<h2 id="research-objective">Research Objective</h2>
+
+<p>Penelitian ini bertujuan untuk mengembangkan MAStrike, sebuah framework closed-loop untuk red-teaming kolusif pada MAS hierarkis yang mampu:</p>
+<ol>
+  <li>Mengukur kontribusi marjinal setiap agen terhadap ketahanan sistem menggunakan analisis Shapley value tingkat agen pertama di MAS.</li>
+  <li>Mengidentifikasi koalisi agen yang rentan dan menghasilkan manipulasi adversarial terkoordinasi yang sadar-peran.</li>
+  <li>Menyempurnakan serangan secara iteratif melalui diagnosis kausal terstruktur.</li>
+</ol>
+
+<h2 id="methodology">Methodology</h2>
+
+<p>Peneliti memperkenalkan beberapa kontribusi metodologis utama:</p>
+
+<p><strong>Analisis Shapley Value Tingkat Agen:</strong> Untuk setiap tugas q, nilai koalisi didefinisikan sebagai v_q(C) = ASR_q(C) (Attack Success Rate). Shapley value individu dihitung sebagai:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>φ_i(q) = Σ_{C ⊆ A \ {a_i}} (</td>
+      <td>C</td>
+      <td>!(</td>
+      <td>A</td>
+      <td>-</td>
+      <td>C</td>
+      <td>-1)!/</td>
+      <td>A</td>
+      <td>!) × [v_q(C ∪ {a_i}) - v_q(C)]</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Interaksi Shapley berpasangan mengukur sinergi antara dua agen. Estimasi efisien dilakukan melalui stratified coalition sampling.</p>
+
+<p><strong>Optimasi Red-Teaming Berbasis Shapley:</strong> Koalisi optimal dipilih dengan objective fungsi yang mempertimbangkan Shapley value individu dan interaksi berpasangan. Similarity-weighted aggregation mentransfer pengetahuan dari tugas sampel ke tugas target.</p>
+
+<p><strong>Closed-Loop Iterative Optimization:</strong> Red-teaming agent menghasilkan injeksi terkoordinasi untuk koalisi terpilih, menjalankannya pada MAS, mengevaluasi dengan judge, dan jika gagal, mendiagnosis kondisi blocking untuk menyempurnakan injeksi.</p>
+
+<p><strong>MABENCH Benchmark:</strong> Dibangun lingkungan MAS yang dapat dikontrol di tiga domain (finansial, rekayasa perangkat lunak, CRM) dengan topologi hierarkis yang beragam.</p>
+
+<h2 id="main-findings">Main Findings</h2>
+
+<ol>
+  <li>
+    <p><strong>Kinerja Unggul:</strong> MAStrike mencapai 61.8% Attack Success Rate (ASR) terhadap Claude Opus 4.7 dan 55.6% terhadap GPT-5.5, secara signifikan mengungguli baseline heuristik.</p>
+  </li>
+  <li>
+    <p><strong>Distribusi Shapley Non-Trivial:</strong> Analisis mengungkapkan bahwa kontribusi agen terhadap keamanan sistem tidak merata — beberapa agen memiliki pengaruh yang jauh lebih besar terhadap ketahanan sistem secara keseluruhan.</p>
+  </li>
+  <li>
+    <p><strong>Pola Interaksi Tingkat Tinggi:</strong> Ditemukan struktur interaksi orde-tinggi antar agen yang tidak terdeteksi oleh metode single-agent atau template-based sebelumnya.</p>
+  </li>
+  <li>
+    <p><strong>Kerentanan Koordinasi:</strong> MAStrike berhasil mengeksploitasi celah keamanan yang muncul dari koordinasi antar agen, menunjukkan bagaimana agen yang dikompromikan dapat bekerja sama untuk melewati pertahanan.</p>
+  </li>
+</ol>
+
+<h2 id="contributions">Contributions</h2>
+
+<ol>
+  <li><strong>Analisis Shapley value tingkat agen pertama di MAS</strong> — mengukur kepentingan individu dan efek interaksi dengan estimasi efisien.</li>
+  <li><strong>Framework red-teaming closed-loop berbasis Shapley</strong> — integrasi pemilihan berbasis Shapley, pembangkitan injeksi terkoordinasi, dan diagnosis kegagalan terstruktur.</li>
+  <li><strong>MABENCH</strong> — lingkungan MAS yang dapat dikontrol dan benchmark red-teaming komprehensif di tiga domain.</li>
+  <li><strong>Validasi ekstensif</strong> di berbagai model frontier (Claude Opus 4.7, GPT-5.5, dll.) yang mengungkap pola kerentanan baru.</li>
+</ol>
+
+<h2 id="limitations">Limitations</h2>
+
+<ol>
+  <li>Framework saat ini berfokus pada arsitektur MAS hierarkis — belum diuji pada topologi non-hierarkis seperti MAS yang terdesentralisasi sepenuhnya atau berbasis graph.</li>
+  <li>Asumsi bahwa penyerang memiliki pengetahuan tentang struktur MAS (peran agen, topologi komunikasi) mungkin tidak selalu realistis dalam semua skenario.</li>
+  <li>Komputasi Shapley value membutuhkan sumber daya yang signifikan untuk sistem dengan jumlah agen yang sangat besar.</li>
+</ol>
+
+<h2 id="future-research-opportunities">Future Research Opportunities</h2>
+
+<ol>
+  <li><strong>Ekstensi ke Arsitektur Non-Hierarkis:</strong> Mengadaptasi MAStrike untuk topologi MAS yang lebih kompleks seperti graph-based atau fully decentralized.</li>
+  <li><strong>Partial-Knowledge Attacks:</strong> Mengembangkan varian yang bekerja dengan pengetahuan terbatas tentang struktur MAS.</li>
+  <li><strong>Defense Mechanisms:</strong> Merancang mekanisme pertahanan berdasarkan wawasan Shapley value untuk melindungi agen-agen kritis.</li>
+  <li><strong>Real-time Shapley Estimation:</strong> Mengoptimalkan estimasi Shapley value untuk penggunaan real-time dalam sistem produksi.</li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>Xu, C., Chen, Z., Zhang, J., Lecue, F., Kothari, A., Tan, S., Guo, W., &amp; Li, B. (2026). “MAStrike: Shapley-Guided Collusive Red-Teaming on Multi-Agent Systems.” arXiv:2606.12918 [cs.CR].</li>
+  <li>OWASP Foundation. (2025). “OWASP Top 10 for LLM Applications.”</li>
+  <li>Shapley, L.S. (1953). “A Value for n-Person Games.” Contributions to the Theory of Games.</li>
+</ul>
+
+</article>
+        </section>
+      </div>
+
+      
+
+      <footer>
+  <div class="footer-inner">
+    <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US" class="footer-link">
+      <span><b>Elyas-Blog</b></span>
+      
+      <span>© 2026</span>
+    </a>
+  </div>
+</footer>
+    </main>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var sidebar = document.getElementById('sidebar');
+      var toggleBtn = document.getElementById('sidebarToggle');
+      var mainContent = document.getElementById('mainContent');
+      var hamburger = document.getElementById('mobileHamburger');
+      var themeToggle = document.getElementById('themeToggle');
+
+      // Load saved sidebar state
+      var isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+      if (isCollapsed) {
+        sidebar.classList.add('collapsed');
+        mainContent.classList.add('expanded');
+      }
+      // Clean up FOUC-prevention class, allowing toggle to work normally
+      document.body.classList.remove('sidebar-pre-collapsed');
+
+      // ---- Desktop sidebar toggle (collapsed/expanded) ----
+      toggleBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('collapsed');
+        mainContent.classList.toggle('expanded');
+        localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+      });
+
+      // ---- Mobile hamburger 3-state cycling ----
+      var mobilePhase = 0; // 0=hidden, 1=icon(up), 2=full, 3=icon(down)
+      var layoutWrapper = document.querySelector('.layout-wrapper');
+      var sidebarHeader = sidebar.querySelector('.sidebar-header');
+
+      function applyMobileState(phase) {
+        sidebar.classList.remove('mobile-icon', 'mobile-full');
+        mainContent.classList.remove('hamburger-sidebar-visible');
+        
+        if (phase === 1 || phase === 3) {
+          sidebar.classList.add('mobile-icon');
+          mainContent.classList.add('hamburger-sidebar-visible');
+          // Move hamburger INSIDE sidebar header (merges with sidebar)
+          if (hamburger && hamburger.parentNode !== sidebarHeader) {
+            sidebarHeader.insertBefore(hamburger, sidebarHeader.firstChild);
+          }
+        } else if (phase === 2) {
+          sidebar.classList.add('mobile-full');
+          mainContent.classList.add('hamburger-sidebar-visible');
+          // Move hamburger INSIDE sidebar header (merges with sidebar)
+          if (hamburger && hamburger.parentNode !== sidebarHeader) {
+            sidebarHeader.insertBefore(hamburger, sidebarHeader.firstChild);
+          }
+        } else {
+          // phase 0: hidden - move hamburger OUTSIDE sidebar (floating fixed)
+          if (hamburger && hamburger.parentNode !== layoutWrapper) {
+            layoutWrapper.insertBefore(hamburger, sidebar);
+          }
+        }
+      }
+
+      if (hamburger) {
+        // Check if a saved mobile phase exists
+        var savedPhase = parseInt(localStorage.getItem('mobilePhase'), 10);
+        if (!isNaN(savedPhase) && savedPhase >= 0 && savedPhase <= 3) {
+          mobilePhase = savedPhase;
+          applyMobileState(mobilePhase);
+        } else {
+          // Ensure hamburger starts outside sidebar on fresh load
+          mobilePhase = 0;
+          applyMobileState(0);
+        }
+
+        hamburger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          mobilePhase = (mobilePhase + 1) % 4;
+          applyMobileState(mobilePhase);
+          localStorage.setItem('mobilePhase', mobilePhase);
+        });
+      }
+
+      // ---- Close sidebar when tapping outside on mobile ----
+      function closeMobileSidebar(e) {
+        if (sidebar.classList.contains('mobile-icon') || sidebar.classList.contains('mobile-full')) {
+          // Don't close if clicking inside sidebar or on the hamburger button
+          if (!sidebar.contains(e.target) && (!hamburger || !hamburger.contains(e.target))) {
+            mobilePhase = 0;
+            applyMobileState(0);
+            localStorage.setItem('mobilePhase', 0);
+          }
+        }
+      }
+      document.addEventListener('mousedown', closeMobileSidebar);
+      document.addEventListener('touchstart', closeMobileSidebar, { passive: true });
+
+      // ---- Theme toggle ----
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          if (document.body.classList.contains('light-theme')) {
+            document.body.classList.remove('light-theme');
+            localStorage.setItem('theme', 'dark');
+          } else {
+            document.body.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
+          }
+        });
+      }
+    });
+  </script>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+
+      // The scrollable element is the main content area
+      var scrollContainer = document.getElementById('mainContent');
+
+      function checkScroll() {
+        if (scrollContainer.scrollTop > 300) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+      }
+
+      scrollContainer.addEventListener('scroll', checkScroll);
+      checkScroll();
+
+      btn.addEventListener('click', function() {
+        scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+  
+</body>
+
+</html>

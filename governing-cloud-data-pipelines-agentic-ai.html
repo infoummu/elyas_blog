@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Governing Cloud Data Pipelines with Agentic AI — Arsitektur Kontrol Berbasis Kebijakan untuk Pipeline Data Cloud</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Governing Cloud Data Pipelines with Agentic AI — Arsitektur Kontrol Berbasis Kebijakan untuk Pipeline Data Cloud | Elyas-Blog</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Governing Cloud Data Pipelines with Agentic AI — Arsitektur Kontrol Berbasis Kebijakan untuk Pipeline Data Cloud" />
+<meta name="author" content="Aswathnarayan Muthukrishnan Kirubakaran, Adithya Parthasarathy, Nitin Saksena, Ram Sekhar Bodala, Akshay Deshpande, Suhas Malempati, Shiva Carimireddy, Abhirup Mazumder" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Arsitektur Agentic Cloud Data Engineering yang mengintegrasikan AI agent terikat kebijakan ke dalam bidang kendali pipeline data cloud untuk mengurangi waktu pemulihan hingga 45%." />
+<meta property="og:description" content="Arsitektur Agentic Cloud Data Engineering yang mengintegrasikan AI agent terikat kebijakan ke dalam bidang kendali pipeline data cloud untuk mengurangi waktu pemulihan hingga 45%." />
+<link rel="canonical" href="http://0.0.0.0:4000/governing-cloud-data-pipelines-agentic-ai" />
+<meta property="og:url" content="http://0.0.0.0:4000/governing-cloud-data-pipelines-agentic-ai" />
+<meta property="og:site_name" content="Elyas-Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-13T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Governing Cloud Data Pipelines with Agentic AI — Arsitektur Kontrol Berbasis Kebijakan untuk Pipeline Data Cloud" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Aswathnarayan Muthukrishnan Kirubakaran, Adithya Parthasarathy, Nitin Saksena, Ram Sekhar Bodala, Akshay Deshpande, Suhas Malempati, Shiva Carimireddy, Abhirup Mazumder"},"dateModified":"2026-06-13T00:00:00+00:00","datePublished":"2026-06-13T00:00:00+00:00","description":"Arsitektur Agentic Cloud Data Engineering yang mengintegrasikan AI agent terikat kebijakan ke dalam bidang kendali pipeline data cloud untuk mengurangi waktu pemulihan hingga 45%.","headline":"Governing Cloud Data Pipelines with Agentic AI — Arsitektur Kontrol Berbasis Kebijakan untuk Pipeline Data Cloud","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/governing-cloud-data-pipelines-agentic-ai"},"url":"http://0.0.0.0:4000/governing-cloud-data-pipelines-agentic-ai"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('sidebarCollapsed') === 'true') {
+          document.body.classList.add('sidebar-pre-collapsed');
+        }
+        if (localStorage.getItem('theme') === 'light') {
+          document.body.classList.add('light-theme');
+        }
+      } catch(e) {}
+    })();
+  </script>
+  <div class="layout-wrapper">
+    <button class="mobile-hamburger" id="mobileHamburger" aria-label="Toggle menu">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <a href="/" class="sidebar-brand">
+      
+      <span class="sidebar-brand-text">elyas-blog</span>
+    </a>
+
+  </div>
+  <nav class="sidebar-nav">
+    <a href="/" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+  </span>
+  <span class="sidebar-text">Home</span>
+</a>
+<a href="/kampus" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 11V20H20V11"></path>
+      <path d="M4 11L12 7L20 11"></path>
+      <path d="M8 8V12L12 10L16 12V8L12 10L8 8Z"></path>
+      <path d="M11 20V16H13V20"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Kampus</span>
+</a>
+<a href="/news" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9"></path>
+      <path d="M10 7h8"></path>
+      <path d="M10 11h8"></path>
+      <path d="M10 15h5"></path>
+      <path d="M6 10v6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">News</span>
+</a>
+<a href="/research" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="M21 21l-4.35-4.35"></path>
+      <path d="M11 8v6"></path>
+      <path d="M8 11h6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Research</span>
+</a>
+<a href="/lnews" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9"></path>
+      <path d="M10 7h8"></path>
+      <path d="M10 11h8"></path>
+      <path d="M10 15h5"></path>
+      <path d="M6 10v6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Local News</span>
+</a>
+<a href="/about" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </svg>
+  </span>
+  <span class="sidebar-text">About</span>
+</a>
+<a href="/archive" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="21 8 21 21 3 21 3 8"></polyline>
+      <rect x="1" y="3" width="22" height="5" rx="1"></rect>
+      <line x1="10" y1="12" x2="14" y2="12"></line>
+    </svg>
+  </span>
+  <span class="sidebar-text">Archive</span>
+</a>
+
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-content">
+      <span class="sidebar-footer-text">
+        <b>Elyas-Blog</b> © 2026
+      </span>
+      <span class="sidebar-footer-icon">©</span>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </div>
+</aside>
+
+    <main class="main-content" id="mainContent">
+      <div class="container">
+        <section id="main_content">
+          <article>
+  <h2>Governing Cloud Data Pipelines with Agentic AI — Arsitektur Kontrol Berbasis Kebijakan untuk Pipeline Data Cloud</h2>
+  <time datetime="2026-06-13T00:00:00+00:00" class="by-line">13 Jun 2026 | Aswathnarayan Muthukrishnan Kirubakaran, Adithya Parthasarathy, Nitin Saksena, Ram Sekhar Bodala, Akshay Deshpande, Suhas Malempati, Shiva Carimireddy, Abhirup Mazumder | research</time>
+  <hr/>
+  <h2 id="research-background">Research Background</h2>
+
+<p>Pipeline data cloud modern beroperasi di bawah beban kerja dinamis, skema yang terus berkembang, batasan biaya, dan persyaratan tata kelola yang ketat. Meskipun ada kemajuan dalam kerangka orkestrasi cloud-native, sebagian besar pipeline produksi masih mengandalkan konfigurasi statis dan praktik operasional reaktif. Hal ini mengakibatkan waktu pemulihan yang berkepanjangan, utilisasi sumber daya yang tidak efisien, dan overhead manual yang tinggi. Kesenjangan antara kebutuhan tata kelola yang kompleks dan kemampuan orkestrasi statis menjadi masalah kritis di lingkungan enterprise berskala besar.</p>
+
+<h2 id="research-objective">Research Objective</h2>
+
+<p>Penelitian ini bertujuan untuk mengusulkan dan mengevaluasi <strong>Agentic Cloud Data Engineering</strong> — sebuah arsitektur kontrol sadar-kebijakan yang mengintegrasikan AI agent terikat (bounded AI agents) ke dalam bidang kendali dan tata kelola pipeline data cloud. Tujuan utamanya adalah mengurangi intervensi manual, menurunkan biaya operasional, dan mempercepat pemulihan kegagalan pipeline sambil mempertahankan kepatuhan terhadap kebijakan tata kelola data.</p>
+
+<h2 id="methodology">Methodology</h2>
+
+<p>Peneliti merancang platform Agentic Cloud Data Engineering dengan komponen-komponen berikut:</p>
+
+<ol>
+  <li><strong>Specialized AI Agents</strong>: Agen khusus yang menganalisis telemetri dan metadata pipeline, melakukan penalaran atas kebijakan biaya dan kepatuhan deklaratif, serta mengusulkan tindakan operasional terbatas.</li>
+  <li><strong>Constrained Action Space</strong>: Tindakan yang diusulkan dibatasi pada rekonfigurasi sumber daya adaptif, rekonsiliasi skema, dan pemulihan kegagalan otomatis.</li>
+  <li><strong>Policy Validation Layer</strong>: Semua tindakan agen divalidasi terhadap kebijakan tata kelola untuk memastikan perilaku yang dapat diprediksi dan diaudit.</li>
+</ol>
+
+<p>Evaluasi dilakukan menggunakan beban kerja batch dan streaming analitik representatif yang dibangun dari dataset publik bergaya enterprise.</p>
+
+<h2 id="main-findings">Main Findings</h2>
+
+<p>Hasil eksperimen menunjukkan peningkatan signifikan pada tiga metrik utama:</p>
+
+<ul>
+  <li><strong>Mean pipeline recovery time</strong>: Berkurang hingga <strong>45%</strong> dibandingkan orkestrasi statis.</li>
+  <li><strong>Operational cost</strong>: Turun sekitar <strong>25%</strong> melalui alokasi sumber daya yang lebih efisien.</li>
+  <li><strong>Manual intervention events</strong>: Menurun lebih dari <strong>70%</strong> karena agen AI menangani kegagalan secara otonom.</li>
+</ul>
+
+<p>Seluruh peningkatan ini dicapai tanpa mengorbankan <strong>data freshness</strong> dan <strong>policy compliance</strong>, yang tetap terjaga pada tingkat yang sama dengan pendekatan tradisional.</p>
+
+<h2 id="contributions">Contributions</h2>
+
+<ol>
+  <li><strong>Arsitektur baru</strong> untuk tata kelola pipeline data cloud yang memadukan AI agent dengan kebijakan deklaratif.</li>
+  <li><strong>Validasi empiris</strong> pada beban kerja batch dan streaming yang menunjukkan pengurangan biaya dan waktu pemulihan yang signifikan.</li>
+  <li><strong>Pendekatan policy-bounded agentic control</strong> yang memastikan tindakan agen dapat diaudit dan diprediksi, mengatasi masalah kepercayaan pada AI otonom di enterprise.</li>
+  <li><strong>Kerangka kerja</strong> yang dapat direproduksi menggunakan dataset publik untuk memfasilitasi penelitian lanjutan.</li>
+</ol>
+
+<h2 id="limitations">Limitations</h2>
+
+<ol>
+  <li>Evaluasi dilakukan pada dataset sintetis bergaya enterprise, bukan pada pipeline produksi langsung dari perusahaan tertentu.</li>
+  <li>Studi ini tidak membahas aspek keamanan siber secara mendalam, seperti potensi serangan adversarial terhadap agen AI itu sendiri.</li>
+  <li>Skalabilitas arsitektur pada lingkungan dengan ribuan pipeline paralel belum diuji secara ekstensif.</li>
+  <li>Biaya komputasi tambahan dari menjalankan AI agent belum dianalisis secara detail.</li>
+</ol>
+
+<h2 id="future-research-opportunities">Future Research Opportunities</h2>
+
+<ol>
+  <li><strong>Integrasi dengan MLOps</strong>: Menggabungkan agentic control dengan pipeline machine learning untuk governance model端-to-end.</li>
+  <li><strong>Multi-cloud orchestration</strong>: Memperluas arsitektur untuk menangani pipeline yang tersebar di beberapa penyedia cloud.</li>
+  <li><strong>Human-in-the-loop optimization</strong>: Meneliti keseimbangan optimal antara otonomi agen dan pengawasan manusia.</li>
+  <li><strong>Real-time policy adaptation</strong>: Mengembangkan mekanisme pembaruan kebijakan dinamis berdasarkan perubahan kondisi bisnis dan regulasi.</li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><strong>arXiv</strong> - <a href="https://arxiv.org/abs/2512.23737" target="_blank">https://arxiv.org/abs/2512.23737</a></li>
+  <li><strong>IJCST Volume 13 Issue 6</strong> - <a href="https://www.ijcstjournal.org/volume-13/issue-6/IJCST-V13I6P44.pdf" target="_blank">https://www.ijcstjournal.org/volume-13/issue-6/IJCST-V13I6P44.pdf</a></li>
+  <li><strong>DOI</strong> - <a href="https://doi.org/10.5281/zenodo.18048728" target="_blank">10.5281/zenodo.18048728</a></li>
+</ul>
+
+</article>
+        </section>
+      </div>
+
+      
+
+      <footer>
+  <div class="footer-inner">
+    <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US" class="footer-link">
+      <span><b>Elyas-Blog</b></span>
+      
+      <span>© 2026</span>
+    </a>
+  </div>
+</footer>
+    </main>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var sidebar = document.getElementById('sidebar');
+      var toggleBtn = document.getElementById('sidebarToggle');
+      var mainContent = document.getElementById('mainContent');
+      var hamburger = document.getElementById('mobileHamburger');
+      var themeToggle = document.getElementById('themeToggle');
+
+      // Load saved sidebar state
+      var isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+      if (isCollapsed) {
+        sidebar.classList.add('collapsed');
+        mainContent.classList.add('expanded');
+      }
+      // Clean up FOUC-prevention class, allowing toggle to work normally
+      document.body.classList.remove('sidebar-pre-collapsed');
+
+      // ---- Desktop sidebar toggle (collapsed/expanded) ----
+      toggleBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('collapsed');
+        mainContent.classList.toggle('expanded');
+        localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+      });
+
+      // ---- Mobile hamburger 3-state cycling ----
+      var mobilePhase = 0; // 0=hidden, 1=icon(up), 2=full, 3=icon(down)
+      var layoutWrapper = document.querySelector('.layout-wrapper');
+      var sidebarHeader = sidebar.querySelector('.sidebar-header');
+
+      function applyMobileState(phase) {
+        sidebar.classList.remove('mobile-icon', 'mobile-full');
+        mainContent.classList.remove('hamburger-sidebar-visible');
+        
+        if (phase === 1 || phase === 3) {
+          sidebar.classList.add('mobile-icon');
+          mainContent.classList.add('hamburger-sidebar-visible');
+          // Move hamburger INSIDE sidebar header (merges with sidebar)
+          if (hamburger && hamburger.parentNode !== sidebarHeader) {
+            sidebarHeader.insertBefore(hamburger, sidebarHeader.firstChild);
+          }
+        } else if (phase === 2) {
+          sidebar.classList.add('mobile-full');
+          mainContent.classList.add('hamburger-sidebar-visible');
+          // Move hamburger INSIDE sidebar header (merges with sidebar)
+          if (hamburger && hamburger.parentNode !== sidebarHeader) {
+            sidebarHeader.insertBefore(hamburger, sidebarHeader.firstChild);
+          }
+        } else {
+          // phase 0: hidden - move hamburger OUTSIDE sidebar (floating fixed)
+          if (hamburger && hamburger.parentNode !== layoutWrapper) {
+            layoutWrapper.insertBefore(hamburger, sidebar);
+          }
+        }
+      }
+
+      if (hamburger) {
+        // Check if a saved mobile phase exists
+        var savedPhase = parseInt(localStorage.getItem('mobilePhase'), 10);
+        if (!isNaN(savedPhase) && savedPhase >= 0 && savedPhase <= 3) {
+          mobilePhase = savedPhase;
+          applyMobileState(mobilePhase);
+        } else {
+          // Ensure hamburger starts outside sidebar on fresh load
+          mobilePhase = 0;
+          applyMobileState(0);
+        }
+
+        hamburger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          mobilePhase = (mobilePhase + 1) % 4;
+          applyMobileState(mobilePhase);
+          localStorage.setItem('mobilePhase', mobilePhase);
+        });
+      }
+
+      // ---- Close sidebar when tapping outside on mobile ----
+      function closeMobileSidebar(e) {
+        if (sidebar.classList.contains('mobile-icon') || sidebar.classList.contains('mobile-full')) {
+          // Don't close if clicking inside sidebar or on the hamburger button
+          if (!sidebar.contains(e.target) && (!hamburger || !hamburger.contains(e.target))) {
+            mobilePhase = 0;
+            applyMobileState(0);
+            localStorage.setItem('mobilePhase', 0);
+          }
+        }
+      }
+      document.addEventListener('mousedown', closeMobileSidebar);
+      document.addEventListener('touchstart', closeMobileSidebar, { passive: true });
+
+      // ---- Theme toggle ----
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          if (document.body.classList.contains('light-theme')) {
+            document.body.classList.remove('light-theme');
+            localStorage.setItem('theme', 'dark');
+          } else {
+            document.body.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
+          }
+        });
+      }
+    });
+  </script>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+
+      // The scrollable element is the main content area
+      var scrollContainer = document.getElementById('mainContent');
+
+      function checkScroll() {
+        if (scrollContainer.scrollTop > 300) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+      }
+
+      scrollContainer.addEventListener('scroll', checkScroll);
+      checkScroll();
+
+      btn.addEventListener('click', function() {
+        scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+  
+</body>
+
+</html>

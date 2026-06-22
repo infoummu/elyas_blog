@@ -1,27 +1,861 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    <title>Elyas-Blog</title>
+    <description>Just a Summary Notes For A Personal Blog</description>
+    <link>http://0.0.0.0:4000</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
     <author>
-      <name>{{ site.author.name }}</name>
-      <email>{{ site.author.email }}</email>
-      <uri>{{ site.author.url }}</uri>
+      <name>SomeHacker</name>
+      <email>elyas@google.com</email>
+      <uri>https://ashishchaudhary.in/hacker-blog</uri>
     </author>
-    {% for post in site.posts limit:10 %}
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{ site.url }}/{{ post.url }}</link>
-        <link href="{{ site.url }}{{ post.url }}"/>
-        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        <title>Apple Luncurkan Alat Edit Foto AI di iOS 27: Reframe, Extend, dan Clean Up</title>
+        <description>&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;Apple akhirnya memperkenalkan fitur edit foto berbasis AI serius pertama di aplikasi Photos bawaan iOS 27. Tiga fitur utama — &lt;strong&gt;Clean Up&lt;/strong&gt;, &lt;strong&gt;Extend&lt;/strong&gt;, dan &lt;strong&gt;Spatial Reframing&lt;/strong&gt; — dibekali Synth ID untuk menandai hasil editan AI. Meskipun lebih konservatif dibanding Google Pixel, langkah ini menandai titik balik penting bagi ekosistem fotografi iPhone.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;key-points&quot;&gt;Key Points&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Clean Up 2.0&lt;/strong&gt;: Kini menggunakan model cloud yang lebih kuat untuk menghapus objek tak diinginkan dari foto — peningkatan drastis dari versi sebelumnya yang hanya menggunakan on-device model.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Extend&lt;/strong&gt;: Memperluas tepi foto dengan konten yang dihasilkan AI — semacam “kebalikan dari crop.” Hasilnya meyakinkan, meski terkadang menambahkan objek yang tidak ada (contoh: tanaman hias yang tidak nyata).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Spatial Reframing&lt;/strong&gt;: Fitur paling ambisius — menambahkan dimensi ketiga ke foto 2D sehingga pengguna bisa “memindahkan kamera” dan mengubah komposisi. Namun, lebih rentan terhadap artefak dan halusinasi (contoh: AI menciptakan orang palsu di foto panggung Apple).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Synth ID&lt;/strong&gt;: Semua gambar yang diedit dengan AI mendapatkan label yang menunjukkan modifikasi, dan Instagram sudah mendeteksi label ini saat diunggah.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ketersediaan&lt;/strong&gt;: Masih dalam developer beta dan bisa berubah sebelum rilis publik.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;why-it-matters&quot;&gt;Why It Matters&lt;/h2&gt;
+
+&lt;p&gt;Selama bertahun-tahun, Apple memegang teguh pendekatan konservatif terhadap pengeditan foto AI di iPhone — kamera paling populer di dunia. Dengan iOS 27, pagar itu mulai terbuka. &lt;strong&gt;Ini adalah kali pertama pengguna iPhone biasa bisa dengan mudah memanipulasi foto secara generatif langsung dari aplikasi bawaan.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Dampaknya bersifat dua sisi:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Positif&lt;/strong&gt;: Pengguna bisa menyelamatkan momen berharga — menghapus fotobomber, memperbaiki komposisi, atau memperluas bidikan yang terlalu sempit.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Negatif&lt;/strong&gt;: Fitur seperti Spatial Reframing rawan “menciptakan” hal yang tidak pernah ada. Bahkan perubahan kecil (seperti tanaman hias palsu di meja) secara perlahan mengikis kepercayaan pada keaslian foto.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Seperti yang ditulis Allison Johnson: &lt;em&gt;“Bahkan keraguan kecil tentang asal-usul tanaman hias di meja samping… bisa menumpuk menjadi masalah besar seiring waktu.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;future-impact&quot;&gt;Future Impact&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Jangka Pendek&lt;/strong&gt;: Fitur Clean Up 2.0 kemungkinan besar akan sangat populer di kalangan pengguna iPhone — fungsinya jelas, hasilnya memuaskan, dan risikonya minimal. Extend akan berguna untuk komposisi, sementara Spatial Reframing mungkin akan jarang digunakan karena hasilnya yang kurang konsisten.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Jangka Menengah&lt;/strong&gt;: Dengan Synth ID yang sudah diadopsi platform seperti Instagram, standar transparansi konten AI di foto mulai terbentuk. Namun, label yang tidak terlihat secara default masih menjadi celah — rata-rata pengguna mungkin tidak akan mengetuk “AI Info” untuk memeriksa keaslian.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Jangka Panjang&lt;/strong&gt;: Apple membuka jalan menuju era baru fotografi komputasional. Pertanyaannya bukan lagi &lt;em&gt;apakah&lt;/em&gt; foto bisa diedit AI, tapi &lt;em&gt;seberapa banyak&lt;/em&gt; yang bisa diubah sebelum disebut foto asli. Perdebatan tentang autentisitas visual akan semakin memanas — dan iPhone, sebagai kamera paling populer di dunia, berada di pusatnya.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Sumber Asli&lt;/strong&gt;: &lt;a href=&quot;https://www.theverge.com/tech/949360/apple-ai-photo-edit-reframe-extend-clean-up-hands-on&quot;&gt;Apple’s new AI photo editing tools mostly work, for better and worse&lt;/a&gt; — Allison Johnson, The Verge (13 Juni 2026)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;WWDC 2026 Coverage&lt;/strong&gt;: The Verge&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Topik Terkait&lt;/strong&gt;: &lt;a href=&quot;https://www.theverge.com/podcast/949079/siri-ai-good-vergecast&quot;&gt;Siri is good now??&lt;/a&gt; — The Vergecast&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 13 Jun 2026 12:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000//apple-ai-photo-editing-ios-27</link>
+        <link href="http://0.0.0.0:4000/apple-ai-photo-editing-ios-27"/>
+        <guid isPermaLink="true">http://0.0.0.0:4000/apple-ai-photo-editing-ios-27</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Google Gugat Jaringan Kejahatan Siber China yang Gunakan Gemini untuk Otomatisasi Penipuan</title>
+        <description>&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;Google secara resmi mengajukan gugatan hukum perdata terhadap jaringan kejahatan siber asal China yang dikenal sebagai &lt;strong&gt;Outsider Enterprise&lt;/strong&gt;, yang beroperasi melalui Telegram dan menyediakan layanan &lt;em&gt;phishing-as-a-service&lt;/em&gt;. Yang membuat kasus ini unik adalah kelompok tersebut memanfaatkan &lt;strong&gt;Google Gemini&lt;/strong&gt;, model kecerdasan buatan generatif milik Google, untuk membuat halaman web palsu yang meyakinkan secara otomatis.&lt;/p&gt;
+
+&lt;p&gt;Jaringan ini telah mengirimkan &lt;strong&gt;lebih dari 2,5 juta pesan teks penipuan&lt;/strong&gt; kepada pengguna Android di Amerika Serikat. Dalam periode dua minggu saja pada bulan lalu, tercatat &lt;strong&gt;55.000 pesan&lt;/strong&gt; berhasil dikirim. Google melacak &lt;strong&gt;9.000 situs web palsu&lt;/strong&gt; dan &lt;strong&gt;1 juta URL&lt;/strong&gt; yang terhubung dengan jaringan ini. Outsider Enterprise menawarkan &lt;strong&gt;hampir 300 templat penipuan&lt;/strong&gt; — mulai dari tiruan halaman login Google, YouTube, hingga sistem tol New York E-ZPass.&lt;/p&gt;
+
+&lt;p&gt;Para korban menerima SMS yang mengklaim adanya masalah akun atau pengiriman paket, lalu diarahkan ke tautan situs palsu yang dibuat dengan bantuan Gemini. Situs-situs tersebut dirancang untuk mencuri data pribadi dan informasi perbankan korban.&lt;/p&gt;
+
+&lt;p&gt;Ini adalah &lt;strong&gt;gugatan pertama&lt;/strong&gt; di mana Google menargetkan kelompok yang secara spesifik menggunakan Gemini untuk aksi penipuan. Google menyatakan bahwa mereka bekerja sama dengan FBI dalam penyelidikan kriminal paralel, serta menggandeng operator seluler AT&amp;amp;T, Verizon, dan T-Mobile untuk memblokir pesan berbahaya. Perusahaan juga menyerukan pengesahan tujuh undang-undang federal baru untuk memperkuat pertahanan terhadap kejahatan siber berbasis AI.&lt;/p&gt;
+
+&lt;p&gt;Meskipun ratusan orang dilaporkan telah mengalami kerugian finansial, tantangan besar tetap ada: para pelaku berada di China dan nama mereka tidak diketahui, sehingga Google hanya dapat mengganggu domain dan akun Telegram yang digunakan.&lt;/p&gt;
+
+&lt;h2 id=&quot;key-points&quot;&gt;Key Points&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Target gugatan:&lt;/strong&gt; Outsider Enterprise — jaringan kejahatan siber asal China yang beroperasi lewat Telegram.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Modus operandi:&lt;/strong&gt; Phishing-as-a-service — menyediakan templat penipuan + instruksi menggunakan Google Gemini untuk membuat situs web palsu secara otomatis.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Skala serangan:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Lebih dari &lt;strong&gt;2,5 juta SMS penipuan&lt;/strong&gt; terkirim ke pengguna Android.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;55.000 pesan&lt;/strong&gt; dalam dua minggu terakhir.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;9.000 situs palsu&lt;/strong&gt; dan &lt;strong&gt;1 juta URL&lt;/strong&gt; terdeteksi.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Hampir 300 templat penipuan&lt;/strong&gt; tersedia bagi pelanggan.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Teknik penipuan:&lt;/strong&gt; SMS palsu tentang masalah akun/pengiriman paket → tautan menuju situs Gemini-crafted → pencurian data pribadi &amp;amp; perbankan.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Kolaborasi penegakan hukum:&lt;/strong&gt; Google bekerja sama dengan FBI, AT&amp;amp;T, Verizon, dan T-Mobile.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pertahanan teknis:&lt;/strong&gt; Google Messages mendeteksi &lt;strong&gt;10 miliar SMS penipuan per bulan&lt;/strong&gt; secara on-device menggunakan AI.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Seruan regulasi:&lt;/strong&gt; Google mendorong pengesahan 7 undang-undang federal AS, termasuk AI Plan Act dan AI Public Awareness and Education Campaign Act.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;why-it-matters&quot;&gt;Why It Matters&lt;/h2&gt;
+
+&lt;p&gt;Kasus ini menandai &lt;strong&gt;titik balik dalam hubungan antara AI generatif dan kejahatan siber&lt;/strong&gt;. Selama ini, Google gencar mempromosikan Gemini sebagai alat produktivitas yang dapat membantu bisnis, kreator, dan pengembang. Namun, celah keamanan yang memungkinkan Gemini digunakan untuk membuat halaman phishing yang meyakinkan menunjukkan bahwa kecerdasan buatan adalah &lt;strong&gt;pisau bermata dua&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Yang lebih mengkhawatirkan, teknologi AI generatif membuat konten palsu &lt;strong&gt;semakin sulit dibedakan dari aslinya&lt;/strong&gt; oleh manusia awam. Dengan Gemini, seorang penipu tanpa keterampilan coding pun dapat membuat situs web tiruan yang tampak profesional hanya dalam hitungan menit. Demokratisasi akses terhadap AI — yang seharusnya menjadi kekuatan positif — justru dimanfaatkan untuk memperluas skala operasi kriminal.&lt;/p&gt;
+
+&lt;p&gt;Gugatan ini juga menjadi &lt;strong&gt;preseden hukum penting&lt;/strong&gt;. Ini adalah pertama kalinya Google menempuh jalur litigasi terhadap penyalahgunaan model AI-nya secara spesifik. Jika berhasil, kasus ini dapat membuka jalan bagi tuntutan serupa terhadap pelaku kejahatan siber berbasis AI di masa depan.&lt;/p&gt;
+
+&lt;p&gt;Selain itu, keterlibatan tiga operator seluler terbesar AS — AT&amp;amp;T, Verizon, dan T-Mobile — menyoroti perlunya pendekatan lintas industri untuk memerangi penipuan digital. Tidak cukup hanya mengandalkan deteksi di sisi pengguna; infrastruktur telekomunikasi harus ikut berperan.&lt;/p&gt;
+
+&lt;p&gt;Namun, tantangan yurisdiksi tetap menjadi &lt;strong&gt;hambatan utama&lt;/strong&gt;. Pelaku yang berada di China dan identitas yang tidak diketahui membuat penegakan hukum menjadi sangat sulit. Google hanya bisa mengganggu infrastruktur digital mereka, tetapi jaringan ini kemungkinan akan bermunculan kembali dalam bentuk lain.&lt;/p&gt;
+
+&lt;h2 id=&quot;future-impact&quot;&gt;Future Impact&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Eskalasi senjata AI:&lt;/strong&gt; Kejahatan siber akan semakin memanfaatkan model AI canggih untuk otomatisasi phishing, deepfake, dan serangan rekayasa sosial. Industri keamanan harus berlomba mengembangkan deteksi berbasis AI yang lebih canggih pula.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Regulasi AI yang lebih ketat:&lt;/strong&gt; Kasus ini memperkuat argumen bagi pengesahan undang-undang seperti AI Plan Act dan AI Public Awareness and Education Campaign Act. Kita mungkin akan melihat lebih banyak negara mengikuti jejak dengan regulasi serupa.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Perubahan kebijakan platform AI:&lt;/strong&gt; Google, OpenAI, dan penyedia AI lainnya kemungkinan akan memperketat &lt;em&gt;guardrails&lt;/em&gt; model mereka untuk mencegah penyalahgunaan dalam pembuatan konten phishing. Ini bisa berarti pembatasan yang lebih ketat pada kemampuan generasi konten web.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Peningkatan kolaborasi lintas sektor:&lt;/strong&gt; Kemitraan antara perusahaan teknologi, operator telekomunikasi, dan lembaga penegak hukum akan menjadi norma baru dalam memerangi kejahatan siber berskala besar.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Kesadaran publik yang lebih tinggi:&lt;/strong&gt; Kampanye edukasi publik tentang cara mengenali penipuan berbasis AI akan semakin penting. Masyarakat perlu dibekali kemampuan untuk mengidentifikasi konten buatan AI yang mencurigakan.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Berkurangnya efektivitas deteksi tradisional:&lt;/strong&gt; Metode deteksi phishing konvensional yang mengandalkan pola statis akan semakin tidak efektif karena AI mampu menghasilkan variasi konten yang tak terbatas. Deteksi akan bergeser ke analisis perilaku dan konteks.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Whitwam, Ryan. “Google sues Chinese cybercrime network that used Gemini to automate scams.” &lt;em&gt;Ars Technica&lt;/em&gt;, 12 Juni 2026. &lt;a href=&quot;https://arstechnica.com/ai/2026/06/google-sues-chinese-cybercrime-network-that-used-gemini-to-automate-scams/&quot;&gt;https://arstechnica.com/ai/2026/06/google-sues-chinese-cybercrime-network-that-used-gemini-to-automate-scams/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Gugatan hukum perdata Google terhadap Outsider Enterprise (2026)&lt;/li&gt;
+  &lt;li&gt;Laporan kolaborasi Google dengan FBI, AT&amp;amp;T, Verizon, dan T-Mobile&lt;/li&gt;
+  &lt;li&gt;Google Messages — statistik deteksi 10 miliar SMS penipuan per bulan&lt;/li&gt;
+  &lt;li&gt;RUU federal AS: National Strategy for Combating Scams Act, Strategic Task Force on Scam Prevention Act, AI Plan Act, dan Artificial Intelligence Public Awareness and Education Campaign Act&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 13 Jun 2026 03:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000//google-sues-chinese-cybercrime-gemini</link>
+        <link href="http://0.0.0.0:4000/google-sues-chinese-cybercrime-gemini"/>
+        <guid isPermaLink="true">http://0.0.0.0:4000/google-sues-chinese-cybercrime-gemini</guid>
+      </item>
+    
+      <item>
+        <title>Google DeepMind Rilis DiffusionGemma: Model AI Lokal 4x Lebih Cepat dengan Teknik Difusi Teks</title>
+        <description>&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;Google DeepMind secara resmi meluncurkan &lt;strong&gt;DiffusionGemma&lt;/strong&gt; pada 10 Juni 2026 — sebuah model AI open-source revolusioner yang menggunakan teknik &lt;strong&gt;difusi teks (text diffusion)&lt;/strong&gt; sebagai pengganti metode autoregresif tradisional. Pendekatan ini memungkinkan model menghasilkan &lt;strong&gt;256 token secara paralel&lt;/strong&gt; dalam satu langkah, bukan satu per satu secara sekuensial, menghasilkan percepatan &lt;strong&gt;hingga 4x lebih cepat&lt;/strong&gt; dibandingkan model Gemma konvensional dengan ukuran sebanding.&lt;/p&gt;
+
+&lt;p&gt;DiffusionGemma hadir dengan arsitektur &lt;strong&gt;26 miliar parameter total — hanya 3,8 miliar aktif per inferensi&lt;/strong&gt; — berkat desain Mixture-of-Experts (MoE). Model ini dapat berjalan di &lt;strong&gt;GPU konsumen dengan ~18 GB VRAM&lt;/strong&gt; (seperti RTX 4090 atau RTX 5090), menjadikannya solusi AI lokal yang sangat terjangkau untuk pengembang.&lt;/p&gt;
+
+&lt;p&gt;Di atas GPU NVIDIA H100 enterprise, DiffusionGemma mencapai &lt;strong&gt;1.000+ token per detik&lt;/strong&gt;, sementara di RTX 5090 mencapai &lt;strong&gt;700+ token per detik&lt;/strong&gt;. Di NVIDIA DGX Station, throughput mencapai &lt;strong&gt;2.000 token per detik&lt;/strong&gt;. Model ini dirilis di bawah lisensi &lt;strong&gt;Apache 2.0&lt;/strong&gt; dan tersedia di Hugging Face bersama dengan dukungan penuh dari vLLM, Hugging Face Transformers, NVIDIA NIM, dan Unsloth untuk fine-tuning.&lt;/p&gt;
+
+&lt;p&gt;Meskipun kecepatannya luar biasa, Google menekankan bahwa DiffusionGemma bersifat &lt;strong&gt;eksperimental&lt;/strong&gt; — kualitas outputnya secara umum masih di bawah Gemma 4 standar untuk tugas-tugas yang membutuhkan presisi maksimal. Model ini unggul dalam tugas &lt;strong&gt;non-linier&lt;/strong&gt; seperti pengeditan teks langsung, penyusunan kode, pemecahan teka-teki, dan inferensi grafik matematika.&lt;/p&gt;
+
+&lt;h2 id=&quot;key-points&quot;&gt;Key Points&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Percepatan 4x&lt;/strong&gt;: DiffusionGemma menggunakan difusi diskrit untuk memproses 256 token secara paralel, menggeser bottleneck dari bandwidth memori ke komputasi, menghasilkan hingga 4x percepatan dibanding model autoregresif.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Arsitektur MoE 26B-A4B&lt;/strong&gt;: Total 25,2 miliar parameter dengan hanya 3,8 miliar aktif per token (8 dari 128 expert + 1 shared expert), memungkinkan inferensi efisien dalam ~18 GB VRAM.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Kecepatan Luar Biasa&lt;/strong&gt;: 1.000+ token/detik pada H100, 700+ token/detik pada RTX 5090, 150 token/detik pada DGX Spark, hingga 2.000 token/detik pada DGX Station.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Open Source (Apache 2.0)&lt;/strong&gt;: Model weights tersedia di Hugging Face, dapat diunduh, dimodifikasi, dan digunakan secara bebas termasuk untuk penggunaan komersial.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Dukungan Multimodal&lt;/strong&gt;: Selain teks, DiffusionGemma mendukung input gambar (hingga 60 detik video pada 1 fps) dengan encoder vision ~550M parameter.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Konteks Panjang hingga 256K token&lt;/strong&gt;: Model ini mampu menangani konteks hingga 256.000 token, ideal untuk dokumen panjang dan percakapan multi-putaran.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Self-Correction &amp;amp; Bi-directional Attention&lt;/strong&gt;: Tidak seperti model autoregresif yang hanya melihat ke belakang, DiffusionGemma dapat memperbaiki outputnya sendiri selama proses denoising dengan memperhatikan konteks kiri dan kanan.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Fine-tuning untuk Tugas Spesifik&lt;/strong&gt;: Contoh nyata — model dasar tidak bisa memecahkan Sudoku (0% sukses), tetapi setelah SFT (supervised fine-tuning) menggunakan JAX, tingkat keberhasilan melonjak ke 80%.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tidak Cocok untuk Cloud Serving dengan QPS Tinggi&lt;/strong&gt;: Karena sifat decoding paralelnya, DiffusionGemma lebih hemat biaya untuk skenario lokal/latensi rendah, bukan untuk cloud serving dengan konkurensi tinggi.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Keterbatasan di Apple Silicon&lt;/strong&gt;: Arsitektur memori terpadu Apple tidak mendapat percepatan signifikan karena bottleneck bandwidth memori.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;why-it-matters&quot;&gt;Why It Matters&lt;/h2&gt;
+
+&lt;p&gt;Peluncuran DiffusionGemma menandai &lt;strong&gt;pergeseran paradigma&lt;/strong&gt; dalam arsitektur model bahasa besar. Selama bertahun-tahun, hampir semua model generative AI — dari GPT hingga LLaMA dan Gemma — menggunakan pendekatan autoregresif: menghasilkan satu token demi satu token secara berurutan. Pendekatan ini, meskipun sangat efektif, memiliki inefisiensi inheren karena setiap token berikutnya harus menunggu token sebelumnya selesai diproses.&lt;/p&gt;
+
+&lt;p&gt;Dengan mengadaptasi &lt;strong&gt;teknik difusi&lt;/strong&gt; — yang sudah terbukti sukses di dunia generasi gambar (Stable Diffusion, DALL-E, Imagen) — ke ranah teks, Google DeepMind membuka jalan baru untuk inferensi AI yang jauh lebih cepat. Analoginya: jika autoregresif adalah mesin ketik satu huruf, difusi teks adalah mesin cetak yang mampu mencetak seluruh halaman dalam satu waktu.&lt;/p&gt;
+
+&lt;p&gt;Ini sangat penting untuk &lt;strong&gt;AI lokal (on-device AI)&lt;/strong&gt; . Dengan hanya membutuhkan ~18 GB VRAM, DiffusionGemma dapat berjalan di GPU gaming konsumen yang harganya jauh di bawah akselerator enterprise. Ini berarti pengembang individu, startup, dan peneliti dapat menjalankan model AI canggih di desktop mereka sendiri tanpa bergantung pada API cloud — menghemat biaya, meningkatkan privasi data, dan memungkinkan aplikasi real-time.&lt;/p&gt;
+
+&lt;p&gt;Selain itu, pendekatan &lt;strong&gt;bi-directional attention&lt;/strong&gt; memungkinkan DiffusionGemma unggul dalam tugas-tugas yang merupakan titik lemah model autoregresif: pengeditan in-line, infilling kode, pemecahan teka-teki, dan inferensi ilmiah yang membutuhkan pemahaman konteks dua arah. Ini membuka kemungkinan baru untuk AI-assisted coding, alat produktivitas, dan agen otonom yang perlu merencanakan dan merevisi output mereka.&lt;/p&gt;
+
+&lt;p&gt;Dalam ekosistem open-source, ketersediaan model ini di bawah lisensi Apache 2.0 dengan dukungan dari vLLM, Hugging Face, NVIDIA, dan Unsloth berarti adopsi dapat terjadi dengan sangat cepat. Pengembang tidak perlu menunggu tooling khusus — semuanya sudah siap sejak hari pertama.&lt;/p&gt;
+
+&lt;h2 id=&quot;future-impact&quot;&gt;Future Impact&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;1. Demokratisasi AI Cepat untuk Pengembang Lokal&lt;/strong&gt;&lt;br /&gt;
+Dengan kemampuan mencapai 700+ token/detik pada GPU konsumen seperti RTX 5090, DiffusionGemma berpotensi mengubah lanskap pengembangan AI lokal. Pengembang tidak lagi perlu menyewa GPU cloud yang mahal untuk mendapatkan performa tinggi — cukup dengan GPU desktop yang relatif terjangkau. Ini akan mempercepat inovasi di negara berkembang dan memperkuat ekosistem open-source.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. Aplikasi Real-Time Baru&lt;/strong&gt;&lt;br /&gt;
+Kecepatan 1.000+ token/detik membuka pintu untuk aplikasi yang sebelumnya tidak praktis dengan AI lokal: asisten coding real-time, copilot dokumen, penerjemah simultan, dan agen AI interaktif yang merespons dengan latensi hampir nol. Model ini sangat cocok untuk antarmuka suara interaktif.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. Perubahan Arsitektur Industri&lt;/strong&gt;&lt;br /&gt;
+Keberhasilan difusi teks dapat memicu gelombang baru arsitektur model yang meninggalkan autoregresi murni. Jika DiffusionGemma membuktikan diri dalam produksi, kita mungkin melihat generasi berikutnya dari GPT, LLaMA, Claude, dan model besar lainnya mengadopsi pendekatan difusi atau hybrid (difusi-autoregresif). Sudah ada indikasi dengan pendekatan “block autoregressive diffusion” yang menggabungkan kecepatan difusi dengan stabilitas autoregresif.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4. AI Agent dengan Self-Correction Bawaan&lt;/strong&gt;&lt;br /&gt;
+Kemampuan self-correction DiffusionGemma — memperbaiki token yang salah selama proses denoising — adalah fitur yang sangat berharga untuk AI agent. Agen otonom saat ini sering terjebak dalam kesalahan yang tidak bisa diperbaiki (error propagation). Dengan self-correction bawaan, agen AI dapat mendeteksi dan memperbaiki kesalahan mereka secara real-time, menghasilkan sistem yang lebih andal untuk tugas-tugas kompleks seperti coding, analisis data, dan perencanaan.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5. Fine-tuning untuk Domain Spesifik&lt;/strong&gt;&lt;br /&gt;
+Kombinasi arsitektur MoE yang efisien dengan fine-tuning menggunakan Unsloth dan NeMo AutoModel akan mendorong adopsi di domain spesifik: biologi komputasi (prediksi struktur protein, urutan asam amino), keuangan (analisis grafik), logistik (optimasi rute), dan pendidikan (tutor AI interaktif). Contoh Sudoku (dari 0% ke 80% akurasi setelah fine-tuning) menunjukkan potensi besar untuk tugas-tugas yang bergantung pada kendala (constraint satisfaction).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;6. Tantangan yang Tersisa&lt;/strong&gt;&lt;br /&gt;
+Adopsi luas DiffusionGemma masih menghadapi beberapa hambatan. Pertama, kualitas output secara umum masih di bawah Gemma 4 standar — model ini belum siap menggantikan model flagship untuk tugas-tugas yang membutuhkan presisi maksimal. Kedua, tidak ada percepatan signifikan di Apple Silicon, yang berarti sebagian besar pengguna Mac tidak akan merasakan manfaat kecepatan penuh. Ketiga, untuk beban kerja cloud dengan konkurensi tinggi, model autoregresif tradisional masih lebih efisien. Keempat, efisiensi fine-tuning dan inference pada hardware konsumen masih perlu dioptimalkan lebih lanjut.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;7. Potensi Pergeseran ke Arah “Diffusion-First”&lt;/strong&gt;&lt;br /&gt;
+Jika tren ini berlanjut, kita mungkin melihat pengembang mulai mendesain aplikasi AI dengan asumsi “diffusion-first” — memanfaatkan generasi paralel untuk tugas-tugas yang membutuhkan kecepatan, dan hanya beralih ke autoregresif untuk tugas yang membutuhkan kualitas output maksimal. Arsitektur hybrid seperti block-autoregressive diffusion yang digunakan DiffusionGemma bisa menjadi standar baru di industri.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Google Blog (Official)&lt;/strong&gt; — “DiffusionGemma: 4x Faster Text Generation” oleh Brendan O’Donoghue &amp;amp; Sebastian Flennerhag, 10 Juni 2026.&lt;br /&gt;
+https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Google Developers Blog&lt;/strong&gt; — “DiffusionGemma: The Developer Guide” oleh Ian Ballantyne &amp;amp; Omar Sanseviero, 10 Juni 2026.&lt;br /&gt;
+https://developers.googleblog.com/diffusiongemma-the-developer-guide&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Hugging Face&lt;/strong&gt; — Model weights DiffusionGemma-26B-A4B-it (Apache 2.0).&lt;br /&gt;
+https://huggingface.co/google/diffusiongemma-26B-A4B-it&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;NVIDIA Technical Blog&lt;/strong&gt; — “Run DiffusionGemma on NVIDIA for Developer-Ready, High-Throughput Text Generation” oleh Anu Srivastava, 10 Juni 2026.&lt;br /&gt;
+https://developer.nvidia.com/blog/run-diffusiongemma-on-nvidia-for-developer-ready-high-throughput-text-generation/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Kompas Tekno&lt;/strong&gt; — “Google Rilis DiffusionGemma, AI Open-source Kecepatan 4 Kali Lebih Kencang” oleh Lely Maulida &amp;amp; Yudha Pratomo, 11 Juni 2026.&lt;br /&gt;
+https://tekno.kompas.com/read/2026/06/11/16020087/google-rilis-diffusiongemma-ai-open-source-kecepatan-4-kali-lebih-kencang&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Maarten Grootendorst&lt;/strong&gt; — “A Visual Guide to DiffusionGemma” (Visual Guide).&lt;br /&gt;
+https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-diffusiongemma&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;NVIDIA NIM Catalog&lt;/strong&gt; — DiffusionGemma containerized inference microservice.&lt;br /&gt;
+https://catalog.ngc.nvidia.com/orgs/nim/teams/google/containers/diffusiongemma-26b-a4b-it&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Ars Technica&lt;/strong&gt; — “Google DeepMind releases DiffusionGemma, a model that runs local AI 4× faster” oleh Ryan Whitwam, 10 Juni 2026.&lt;br /&gt;
+https://arstechnica.com/ai/2026/06/google-deepmind-releases-diffusiongemma-a-model-that-runs-local-ai-4x-faster/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Google AI for Developers&lt;/strong&gt; — Gemma Documentation (DiffusionGemma).&lt;br /&gt;
+https://ai.google.dev/gemma/docs/diffusiongemma&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;vLLM Blog&lt;/strong&gt; — “Diffusion-Gemma support in vLLM”, 10 Juni 2026.&lt;br /&gt;
+https://vllm-project.github.io/2026/06/10/diffusion-gemma&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sat, 13 Jun 2026 03:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000//google-deepmind-diffusiongemma</link>
+        <link href="http://0.0.0.0:4000/google-deepmind-diffusiongemma"/>
+        <guid isPermaLink="true">http://0.0.0.0:4000/google-deepmind-diffusiongemma</guid>
+      </item>
+    
+      <item>
+        <title>Satu Karakter Salah dalam Kernel Linux — Celah Use-After-Free Beri Akses Root ke Penyerang Lokal</title>
+        <description>&lt;h2 id=&quot;ringkasan&quot;&gt;Ringkasan&lt;/h2&gt;
+
+&lt;p&gt;Celah keamanan &lt;strong&gt;kritis dengan skor CVSS tinggi&lt;/strong&gt; ditemukan di kernel Linux, dipicu oleh &lt;strong&gt;satu karakter yang salah&lt;/strong&gt; — sebuah tanda seru (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!&lt;/code&gt;) yang tidak pada tempatnya di dalam subsistem &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nf_tables&lt;/code&gt;. Kerentanan yang dilacak sebagai &lt;strong&gt;CVE-2026-23111&lt;/strong&gt; ini adalah celah &lt;em&gt;use-after-free&lt;/em&gt; (UAF) pada komponen packet filtering kernel, yaitu &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nf_tables&lt;/code&gt; — penerus modern dari &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iptables&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ip6tables&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arptables&lt;/code&gt;, dan &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ebtables&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ditemukan oleh peneliti dari &lt;strong&gt;Exodus Intelligence&lt;/strong&gt;, bug ini memungkinkan &lt;strong&gt;penyerang lokal tanpa hak istimewa&lt;/strong&gt; (unprivileged user/process) untuk &lt;strong&gt;menaikkan hak aksesnya menjadi root&lt;/strong&gt; pada sistem yang belum dipatch. Celah ini memengaruhi secara khusus distribusi Linux seperti &lt;strong&gt;Debian dan Ubuntu&lt;/strong&gt; yang belum menerapkan backport perbaikan, namun secara prinsip berpotensi berdampak pada distribusi lain yang menjalankan kernel dengan kode &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nf_tables&lt;/code&gt; yang rentan.&lt;/p&gt;
+
+&lt;p&gt;Akar masalahnya terletak pada proses penghapusan &lt;em&gt;verdict map&lt;/em&gt; — struktur data yang menentukan aksi (&lt;em&gt;verdict&lt;/em&gt;) terhadap paket yang cocok dengan suatu aturan. Saat sebuah &lt;em&gt;verdict map&lt;/em&gt; dihapus, elemen &lt;em&gt;catchall&lt;/em&gt; (bersifat wildcard) dinonaktifkan, dan penghitung referensi (&lt;em&gt;reference counter&lt;/em&gt;) sebuah &lt;em&gt;chain&lt;/em&gt; diturunkan. Karena operator negasi (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!&lt;/code&gt;) yang salah, penghitung referensi bisa &lt;strong&gt;diturunkan berkali-kali secara tidak terkendali&lt;/strong&gt; (&lt;em&gt;arbitrary decrement&lt;/em&gt;), menyebabkan chain dibebaskan dari memori sementara objek lain masih merujuknya — inilah esensi &lt;em&gt;use-after-free&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Eksploitasi terhadap celah ini telah didemonstrasikan dengan &lt;strong&gt;tingkat keberhasilan &amp;gt;99% pada sistem idle&lt;/strong&gt; menurut klaim Exodus Intelligence. Proof-of-concept (PoC) telah dipublikasikan, dan eksploitasi dilakukan dengan memicu UAF berkali-kali untuk membocorkan alamat base kernel, alamat heap, dan akhirnya membajak aliran kendali (&lt;em&gt;control flow hijack&lt;/em&gt;). Meskipun bukan kerentanan yang dapat dieksploitasi dari jarak jauh (&lt;em&gt;remote&lt;/em&gt;), bug ini menjadi &lt;strong&gt;senjata andalan dalam rantai serangan&lt;/strong&gt; — penyerang yang sudah mendapatkan akses terbatas dapat menggunakannya untuk mengambil alih penuh sistem.&lt;/p&gt;
+
+&lt;p&gt;Perbaikan telah disertakan dalam &lt;strong&gt;kernel utama sejak Februari 2026&lt;/strong&gt; (commit: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;f41c5d151078c5348271ffaf8e7410d96f2d82f8&lt;/code&gt;), namun banyak sistem yang belum melakukan upgrade masih dalam risiko. Artikel ini mengulas secara mendalam tentang teknis kerentanan, implikasinya terhadap ekosistem keamanan Linux, dan langkah mitigasi yang harus diambil.&lt;/p&gt;
+
+&lt;h2 id=&quot;poin-poin-kunci&quot;&gt;Poin-Poin Kunci&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;CVE-2026-23111&lt;/strong&gt; — celah &lt;em&gt;use-after-free&lt;/em&gt; pada subsistem &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nf_tables&lt;/code&gt; kernel Linux.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Penyebab akar&lt;/strong&gt;: satu tanda seru (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!&lt;/code&gt;) yang salah letak dalam penanganan penghapusan &lt;em&gt;verdict map&lt;/em&gt;, menyebabkan penghitung referensi chain dapat diturunkan secara tidak terbatas.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Dampak&lt;/strong&gt;: &lt;em&gt;Local Privilege Escalation&lt;/em&gt; (LPE) — pengguna tanpa hak istimewa bisa menjadi &lt;strong&gt;root&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ditemukan oleh&lt;/strong&gt;: Exodus Intelligence; PoC terpisah juga telah diterbitkan oleh FuzzingLabs pada April 2026.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tingkat keberhasilan eksploitasi&lt;/strong&gt;: &amp;gt;99% pada sistem idle menurut Exodus Intelligence.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Distro terdampak&lt;/strong&gt;: Debian dan Ubuntu (dan kemungkinan distribusi lain yang belum menerapkan patch).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Waktu perbaikan&lt;/strong&gt;: Patch sudah masuk ke kernel utama Linux sejak &lt;strong&gt;Februari 2026&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tidak eksploitable dari jarak jauh&lt;/strong&gt;, namun sangat berbahaya jika dikombinasikan dengan eksploit &lt;em&gt;remote&lt;/em&gt; dalam serangan bertahap.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Salah satu dari setidaknya tiga&lt;/strong&gt; celah LPE signifikan yang ditemukan di Linux dalam beberapa minggu terakhir.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;mengapa-ini-penting&quot;&gt;Mengapa Ini Penting&lt;/h2&gt;
+
+&lt;p&gt;CVE-2026-23111 menjadi pengingat yang gamblang bahwa &lt;strong&gt;kesalahan sekecil satu karakter&lt;/strong&gt; dalam basis kode sekompleks kernel Linux dapat membuka pintu ke konsekuensi keamanan yang dahsyat. Dunia open-source dan enterprise sangat bergantung pada Linux sebagai tulang punggung infrastruktur — server cloud, perangkat IoT, sistem embedded, workstation pengembang, hingga superkomputer. Sebuah celah LPE yang andal dengan tingkat keberhasilan &amp;gt;99% adalah &lt;strong&gt;ancaman serius bagi setiap organisasi yang menerapkan model &lt;em&gt;multi-tenant&lt;/em&gt;&lt;/strong&gt; atau mengizinkan akses pengguna non-root ke sistem.&lt;/p&gt;
+
+&lt;p&gt;Yang membuat celah ini semakin kritis adalah beberapa faktor:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Efektivitas eksploitasi tinggi&lt;/strong&gt;: Dengan reliabilitas hampir sempurna pada sistem idle, penyerang dapat mengotomatiskan eskalasi privilege tanpa risiko crash yang tinggi.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Luasnya permukaan serangan&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nf_tables&lt;/code&gt; adalah komponen inti yang aktif di hampir semua distribusi Linux modern. Setiap sistem yang menjalankan kernel tanpa patch adalah target potensial.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Peran dalam rantai serangan&lt;/strong&gt;: Dalam skenario serangan dunia nyata, LPE adalah &lt;em&gt;puzzle piece&lt;/em&gt; krusial. Penyerang yang berhasil mengeksploitasi kerentanan di aplikasi &lt;em&gt;user-space&lt;/em&gt; (browser, server web, service) akan menggunakan LPE untuk melepaskan diri dari kurungan &lt;em&gt;sandbox&lt;/em&gt; dan mengambil alih penuh sistem.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Jendela kerentanan lebar&lt;/strong&gt;: Meskipun patch sudah ada sejak Februari, praktik pembaruan yang lambat di banyak organisasi — terutama di lingkungan enterprise dan embedded — membuat sejumlah besar sistem masih terpapar hingga berbulan-bulan setelah perbaikan dirilis.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Celah ini juga muncul di saat yang mengkhawatirkan, bersamaan dengan setidaknya dua celah LPE signifikan lainnya di kernel Linux. Tren ini menunjukkan bahwa &lt;strong&gt;kernel Linux tetap menjadi permukaan serangan yang sangat diminati&lt;/strong&gt; oleh peneliti keamanan dan aktor ancaman.&lt;/p&gt;
+
+&lt;h2 id=&quot;dampak-di-masa-depan&quot;&gt;Dampak di Masa Depan&lt;/h2&gt;
+
+&lt;p&gt;Ke depan, CVE-2026-23111 memberikan beberapa pelajaran dan implikasi jangka panjang bagi ekosistem keamanan Linux:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. Peningkatan otomatisasi deteksi kesalahan satu karakter&lt;/strong&gt;
+Kesalahan satu karakter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!&lt;/code&gt; ini kemungkinan akan mendorong adopsi alat &lt;em&gt;static analysis&lt;/em&gt; dan &lt;em&gt;formal verification&lt;/em&gt; yang lebih ketat untuk kode kernel, khususnya pada area yang menangani penghitung referensi dan manajemen memori. Proyek seperti &lt;em&gt;Rust for Linux&lt;/em&gt; mungkin mendapatkan dorongan adopsi lebih cepat karena bahasa Rust secara bawaan mencegah &lt;em&gt;use-after-free&lt;/em&gt; di tingkat kompilasi.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. Percepatan siklus patch distribusi&lt;/strong&gt;
+Kejadian ini akan menekan distribusi Linux — terutama Debian, Ubuntu, dan turunannya — untuk mempersingkat waktu antara rilis patch upstream dan ketersediaan paket keamanan bagi pengguna akhir. Sistem notifikasi dan update mekanisme &lt;em&gt;live patching&lt;/em&gt; (seperti Ksplice, KernelCare, Livepatch) juga akan semakin diandalkan.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. Meningkatnya permintaan untuk &lt;em&gt;kernel hardening&lt;/em&gt;&lt;/strong&gt;
+Fitur keamanan kernel seperti &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CONFIG_SLAB_FREELIST_RANDOM&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CONFIG_RANDOMIZE_KSTACK_OFFSET&lt;/code&gt;, dan &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CONFIG_GCC_PLUGINS&lt;/code&gt; akan semakin menjadi standar, bukan opsi. Penggunaan &lt;em&gt;heap cookies&lt;/em&gt;, &lt;em&gt;memory tagging&lt;/em&gt; (ARM MTE), dan &lt;em&gt;Control Flow Integrity&lt;/em&gt; (CFI) akan menjadi harapan baru untuk mempersulit eksploitasi celah UAF semacam ini.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4. Perubahan praktik review kode di subsistem networking&lt;/strong&gt;
+Subsistem packet filtering (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nf_tables&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netfilter&lt;/code&gt;) selama ini menjadi ladang subur bagi celah keamanan karena kompleksitasnya yang tinggi. Insiden ini akan mendorong proses &lt;em&gt;code review&lt;/em&gt; yang lebih ketat, pengujian fuzzing berkelanjutan (seperti yang dilakukan syzkaller), dan kemungkinan penulisan ulang parsial pada bagian kritis menggunakan bahasa yang &lt;em&gt;memory-safe&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5. Implikasi geopolitik dan regulasi&lt;/strong&gt;
+Dengan serangan rantai pasok yang semakin canggih, keberadaan celah LPE yang andal di kernel Linux — tulang punggung infrastruktur kritis global — kemungkinan akan memicu regulasi keamanan siber yang lebih ketat di berbagai negara, terutama terkait kewajiban patch dan &lt;em&gt;incident response&lt;/em&gt; untuk operator infrastruktur esensial.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;6. Gelombang baru eksploitasi oleh aktor ancaman&lt;/strong&gt;
+Dengan publikasi PoC oleh Exodus Intelligence dan FuzzingLabs, dapat dipastikan bahwa berbagai kelompok &lt;em&gt;Advanced Persistent Threat&lt;/em&gt; (APT) akan mengintegrasikan eksploit ini ke dalam &lt;em&gt;toolkit&lt;/em&gt; mereka. Organisasi yang belum mem-patch sistem harus menganggap diri mereka berada dalam &lt;strong&gt;risiko tinggi&lt;/strong&gt; selama berminggu-minggu ke depan.&lt;/p&gt;
+
+&lt;h2 id=&quot;referensi&quot;&gt;Referensi&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Ars Technica&lt;/strong&gt; — Dan Goodin. &lt;em&gt;“High-severity vulnerability in Linux caused by a single faulty character”&lt;/em&gt;. 9 Juni 2026. &lt;a href=&quot;https://arstechnica.com/security/2026/06/a-single-errant-character-in-the-linux-kernel-allows-attacker-to-gain-root/&quot;&gt;https://arstechnica.com/security/2026/06/a-single-errant-character-in-the-linux-kernel-allows-attacker-to-gain-root/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NVD (National Vulnerability Database)&lt;/strong&gt; — CVE-2026-23111. &lt;a href=&quot;https://nvd.nist.gov/vuln/detail/CVE-2026-23111&quot;&gt;https://nvd.nist.gov/vuln/detail/CVE-2026-23111&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Linux Kernel Git Repository&lt;/strong&gt; — Commit perbaikan: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;f41c5d151078c5348271ffaf8e7410d96f2d82f8&lt;/code&gt;. &lt;a href=&quot;https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f41c5d151078c5348271ffaf8e7410d96f2d82f8&quot;&gt;https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f41c5d151078c5348271ffaf8e7410d96f2d82f8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Exodus Intelligence&lt;/strong&gt; — Blog publikasi teknis eksploitasi CVE-2026-23111. Juni 2026.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;FuzzingLabs&lt;/strong&gt; — Proof-of-concept publikasi awal, April 2026.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Red Hat / Canonical Security Advisories&lt;/strong&gt; — Rilis patch untuk distribusi terkait.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sat, 13 Jun 2026 02:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000//linux-kernel-single-character-root</link>
+        <link href="http://0.0.0.0:4000/linux-kernel-single-character-root"/>
+        <guid isPermaLink="true">http://0.0.0.0:4000/linux-kernel-single-character-root</guid>
+      </item>
+    
+      <item>
+        <title>Zero-Trust Agentic Federated Learning for Secure IIoT Defense Systems — Keamanan Federated Learning untuk Pertahanan Industri IoT</title>
+        <description>&lt;h2 id=&quot;research-background&quot;&gt;Research Background&lt;/h2&gt;
+
+&lt;p&gt;Serangan baru-baru ini pada infrastruktur kritis — termasuk pelanggaran pengolahan air Oldsmar 2021 dan kompromi sektor energi Denmark 2023 — menyoroti kesenjangan keamanan mendesak dalam deployment Industrial Internet of Things (IIoT). Federated Learning (FL) memungkinkan deteksi intrusi kolaboratif yang menjaga privasi, namun kerangka FL yang ada tetap rentan terhadap serangan Byzantine poisoning dan tidak memiliki mekanisme autentikasi agen yang kuat. Ketergantungan pada arsitektur trust-based tradisional membuat sistem FL mudah dieksploitasi oleh node jahat.&lt;/p&gt;
+
+&lt;h2 id=&quot;research-objective&quot;&gt;Research Objective&lt;/h2&gt;
+
+&lt;p&gt;Penelitian ini bertujuan untuk mengusulkan &lt;strong&gt;Zero-Trust Agentic Federated Learning (ZTA-FL)&lt;/strong&gt;, sebuah kerangka pertahanan berlapis yang menggabungkan: (1) attestasi kriptografi berbasis TPM (Trusted Platform Module), (2) algoritma agregasi SHAP-weighted untuk deteksi Byzantine yang dapat dijelaskan, dan (3) adversarial training on-device yang menjaga privasi. Tujuannya adalah menciptakan sistem FL yang aman terhadap serangan poisoning sambil mempertahankan akurasi deteksi yang tinggi.&lt;/p&gt;
+
+&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
+
+&lt;p&gt;ZTA-FL dibangun dengan tiga lapisan pertahanan:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;TPM-based Cryptographic Attestation&lt;/strong&gt;: Setiap agen FL harus membuktikan identitas dan integritas perangkat kerasnya melalui TPM, mencapai false acceptance rate (FAR) kurang dari 0.0000001 (10⁻⁷).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SHAP-weighted Aggregation Algorithm&lt;/strong&gt;: Algoritma agregasi baru yang menggunakan nilai SHAP (SHapley Additive exPlanations) untuk mendeteksi dan menimbang kontribusi setiap klien secara explainable, dengan jaminan teoretis terhadap kondisi non-IID.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Privacy-preserving On-Device Adversarial Training&lt;/strong&gt;: Pelatihan adversarial yang dilakukan langsung di perangkat untuk meningkatkan ketahanan model tanpa mengorbankan privasi data.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Evaluasi dilakukan pada tiga benchmark IDS: Edge-IIoTset, CIC-IDS2017, dan UNSW-NB15.&lt;/p&gt;
+
+&lt;h2 id=&quot;main-findings&quot;&gt;Main Findings&lt;/h2&gt;
+
+&lt;p&gt;Hasil eksperimen komprehensif menunjukkan:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Metrik&lt;/th&gt;
+      &lt;th&gt;Hasil&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Detection Accuracy&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;97.8%&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Accuracy di bawah 30% serangan Byzantine&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;93.2%&lt;/strong&gt; (mengalahkan FLAME sebesar 3.1%, p &amp;lt; 0.01)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Adversarial Robustness&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;89.3%&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Pengurangan Communication Overhead&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;34%&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;ZTA-FL secara konsisten mengungguli metode baseline termasuk FLAME, Krum, dan Trimmed Mean dalam skenario serangan Byzantine dengan berbagai tingkat keparahan.&lt;/p&gt;
+
+&lt;h2 id=&quot;contributions&quot;&gt;Contributions&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Framework keamanan berlapis pertama&lt;/strong&gt; yang menggabungkan attestasi perangkat keras TPM, agregasi SHAP, dan adversarial training dalam konteks FL untuk IIoT.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Algoritma SHAP-weighted aggregation&lt;/strong&gt; yang menyediakan deteksi Byzantine secara explainable dengan jaminan teoretis, berbeda dengan metode black-box sebelumnya.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Analisis mode kegagalan&lt;/strong&gt; yang komprehensif dan karakterisasi teoretis dari berbagai jenis serangan terhadap FL.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pengurangan komunikasi 34%&lt;/strong&gt; melalui teknik agregasi yang efisien, menjadikannya praktis untuk deployment di lingkungan IIoT dengan bandwidth terbatas.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Kode sumber terbuka&lt;/strong&gt; yang dirilis untuk reproduksibilitas.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;limitations&quot;&gt;Limitations&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Studi ini berfokus pada serangan Byzantine poisoning; vektor serangan lain seperti model inversion dan membership inference belum dieksplorasi secara mendalam.&lt;/li&gt;
+  &lt;li&gt;Ketergantungan pada TPM sebagai root of trust memperkenalkan asumsi bahwa TPM itu sendiri tidak dikompromikan.&lt;/li&gt;
+  &lt;li&gt;Overhead komputasi dari perhitungan SHAP pada perangkat IIoT dengan sumber daya terbatas belum dianalisis secara detail.&lt;/li&gt;
+  &lt;li&gt;Dataset yang digunakan bersifat publik dan mungkin tidak sepenuhnya merepresentasikan lingkungan IIoT produksi nyata.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;future-research-opportunities&quot;&gt;Future Research Opportunities&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Integrasi dengan blockchain&lt;/strong&gt;: Menggabungkan ZTA-FL dengan ledger terdistribusi untuk immutability catatan attestasi dan agregasi.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Heterogeneous FL&lt;/strong&gt;: Memperluas framework untuk menangani perangkat dengan kapabilitas komputasi yang sangat beragam.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Adaptive threat detection&lt;/strong&gt;: Mengembangkan mekanisme deteksi ancaman adaptif yang dapat merespons pola serangan yang berubah secara real-time.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Cross-domain transfer learning&lt;/strong&gt;: Mengeksplorasi transfer pengetahuan antar domain IIoT yang berbeda (misalnya, manufaktur ke energi).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;arXiv&lt;/strong&gt; - &lt;a href=&quot;https://arxiv.org/abs/2512.23809&quot; target=&quot;_blank&quot;&gt;https://arxiv.org/abs/2512.23809&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DOI&lt;/strong&gt; - &lt;a href=&quot;https://doi.org/10.48550/arXiv.2512.23809&quot; target=&quot;_blank&quot;&gt;10.48550/arXiv.2512.23809&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000//zero-trust-agentic-federated-learning-iiot</link>
+        <link href="http://0.0.0.0:4000/zero-trust-agentic-federated-learning-iiot"/>
+        <guid isPermaLink="true">http://0.0.0.0:4000/zero-trust-agentic-federated-learning-iiot</guid>
+      </item>
+    
+      <item>
+        <title>PI-Hunter: Kerangka Audit Proaktif untuk Mengekspos dan Melokalisasi Prompt Injection pada Agen LLM</title>
+        <description>&lt;h2 id=&quot;research-background&quot;&gt;Research Background&lt;/h2&gt;
+
+&lt;p&gt;Prompt injection telah muncul sebagai salah satu ancaman paling kritis terhadap aplikasi berbasis LLM, sebagaimana diakui oleh OWASP Foundation pada tahun 2025. Seiring berkembangnya LLM menjadi sistem agentic yang berinteraksi dengan alat dan lingkungan eksternal (email, halaman web, API, database), risiko baru muncul: indirect prompt injection attack melalui sumber eksternal yang tidak tepercaya.&lt;/p&gt;
+
+&lt;p&gt;Pendekatan pertahanan yang ada saat ini — seperti Spotlighting, MELON, dan PIGuard — hanya fokus pada pemblokiran konten berbahaya pada saat inferensi. Sementara itu, metode red-teaming yang ada hanya mengoptimalkan keberhasilan serangan tanpa memberikan visibilitas kepada pengembang tentang bagaimana injeksi laten muncul dan menyebar melalui agen.&lt;/p&gt;
+
+&lt;h2 id=&quot;research-objective&quot;&gt;Research Objective&lt;/h2&gt;
+
+&lt;p&gt;Penelitian ini bertujuan untuk mengembangkan PI-Hunter, sebuah kerangka auditing agentic otomatis untuk eksposur kerentanan proaktif pada agen LLM yang mampu:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Membangun test case realistis yang sadar-sumber (source-aware).&lt;/li&gt;
+  &lt;li&gt;Mengevolusi test case secara iteratif melalui eksplorasi berbasis feedback.&lt;/li&gt;
+  &lt;li&gt;Menginduksi agen untuk mengambil dan mengungkapkan instruksi jahat laten yang tertanam di lingkungan eksternal.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
+
+&lt;p&gt;PI-Hunter menggabungkan tiga komponen utama:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Analisis Statis:&lt;/strong&gt; Memetakan tools, antarmuka retrieval, skema API, dan tipe file yang digunakan agen. Mengidentifikasi saluran berisiko tinggi (email, web search, database).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Meta-Seeding Sadar-Sumber:&lt;/strong&gt; Menginisialisasi query yang menargetkan sumber/antarmuka spesifik (misalnya get_unread_email, search_web) dengan menyeimbangkan realisme, aktivasi sumber, dan eksposur.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Mutasi Berbasis Feedback:&lt;/strong&gt; Menggunakan operator mutasi umum (volume_expansion, implicit_assumption, parameter_fuzzing, instruction_hierarchy_override, role_inversion, delimiter_hijacking, encoding_obfuscation) dan operator domain-spesifik (executive_review, fraud_investigation, flight_cancellation_panic). Meta-mutasi memperhalus operator berdasarkan efektivitas historis.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Patch &amp;amp; Co-Evolution:&lt;/strong&gt; Patcher menerapkan mitigasi sementara (blacklisting instruksi, membatasi antarmuka) untuk memaksa eksplorasi permukaan serangan baru.&lt;/p&gt;
+
+&lt;p&gt;Framework diuji pada benchmark AgentDojo (4 domain) dan AgentDyn (7 domain) dengan 5 tipe serangan, 4 mekanisme pertahanan, dan 4 backbone LLM.&lt;/p&gt;
+
+&lt;h2 id=&quot;main-findings&quot;&gt;Main Findings&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Eksposur Kerentanan Unggul:&lt;/strong&gt; PI-Hunter secara substansial meningkatkan eksposur kerentanan dan cakupan permukaan serangan dibandingkan baseline red-teaming otomatis yang kuat.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Efektif Melawan Pertahanan:&lt;/strong&gt; PI-Hunter tetap efektif bahkan di bawah mekanisme pertahanan prompt injection yang ada (Spotlighting, MELON, PIGuard).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Cakupan Multi-Skenario:&lt;/strong&gt; Berhasil mengekspos kerentanan dalam berbagai skenario injeksi: single_single, single_multi, multi_single, dan multi_multi.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Diversitas Eksposur Tinggi:&lt;/strong&gt; Menghasilkan beragam vektor serangan dengan skor diversitas tinggi (berbasis entropi), mengungkap lebih banyak jalur eksploitasi potensial.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;contributions&quot;&gt;Contributions&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Pergeseran paradigma&lt;/strong&gt; dari optimasi serangan ke eksposur injeksi — fokus pada menemukan jalur ingest tersembunyi, bukan sekadar mencapai attack success.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Framework auditing agentik otomatis&lt;/strong&gt; yang menggabungkan analisis statis, generasi test case, dan mutasi berbasis feedback.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Operator mutasi komprehensif&lt;/strong&gt; — 7 operator umum dan puluhan operator domain-spesifik.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mekanisme co-evolution&lt;/strong&gt; dengan patcher untuk memaksa eksplorasi permukaan serangan baru.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;limitations&quot;&gt;Limitations&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Bergantung pada kualitas analisis statis awal — jika antarmuka atau sumber tidak terdeteksi, kerentanan terkait mungkin terlewatkan.&lt;/li&gt;
+  &lt;li&gt;Iterasi evolusioner membutuhkan biaya komputasi yang signifikan untuk agen dengan jumlah tools yang sangat besar.&lt;/li&gt;
+  &lt;li&gt;Belum diuji pada arsitektur non-ReAct atau Planner-Executor yang lebih eksotis.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;future-research-opportunities&quot;&gt;Future Research Opportunities&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Integrasi dengan Defenses Adaptif:&lt;/strong&gt; Menggabungkan PI-Hunter dengan mekanisme pertahanan adaptif yang belajar dari pola serangan yang terdeteksi.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ekspansi ke Modalitas Lain:&lt;/strong&gt; Memperluas framework untuk mencakup multimodal agents (gambar, audio, video).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Benchmark Standar:&lt;/strong&gt; Mendorong adopsi PI-Hunter sebagai benchmark industri untuk keamanan agen LLM.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Runtime Monitoring:&lt;/strong&gt; Mengadaptasi teknik eksposur untuk monitoring runtime berkelanjutan pada agen yang sudah di-deploy.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;He, P., Miculicich, L., Sharma, V., Fox, A., Lee, G., Tang, J., Pfister, T., &amp;amp; Le, L.T. (2026). “PI-Hunter: Automated Red-Teaming for Exposing and Localizing Prompt Injections.” arXiv:2606.12737 [cs.CR].&lt;/li&gt;
+  &lt;li&gt;OWASP Foundation. (2025). “OWASP Top 10 for LLM &amp;amp; Generative AI Applications.”&lt;/li&gt;
+  &lt;li&gt;Greshake, K., et al. (2023). “What’s in a Prompt? Analyzing Indirect Prompt Injection Attacks.”&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000//pi-hunter-automated-red-teaming-prompt-injections</link>
+        <link href="http://0.0.0.0:4000/pi-hunter-automated-red-teaming-prompt-injections"/>
+        <guid isPermaLink="true">http://0.0.0.0:4000/pi-hunter-automated-red-teaming-prompt-injections</guid>
+      </item>
+    
+      <item>
+        <title>Optimasi Intrusion Detection System dengan Machine Learning untuk Mendeteksi Distributed Attacks pada Server</title>
+        <description>&lt;h2 id=&quot;research-background&quot;&gt;Research Background&lt;/h2&gt;
+
+&lt;p&gt;Serangan Distributed Denial-of-Service (DDoS) merupakan salah satu ancaman siber paling serius yang dihadapi oleh infrastruktur jaringan modern. Serangan ini membanjiri server target dengan lalu lintas data dalam jumlah besar sehingga layanan menjadi tidak responsif atau bahkan lumpuh total. Di Indonesia, Badan Siber dan Sandi Negara (BSSN) mencatat bahwa anomali lalu lintas internet mencapai ratusan juta serangan setiap tahunnya, dengan DDoS sebagai salah satu vektor serangan yang paling dominan.&lt;/p&gt;
+
+&lt;p&gt;Sistem Deteksi Intrusi (Intrusion Detection System/IDS) konvensional seringkali tidak mampu mendeteksi varian serangan DDoS yang terus berevolusi. Pendekatan berbasis &lt;em&gt;signature&lt;/em&gt; memiliki keterbatasan dalam mengenali serangan baru yang belum memiliki pola yang dikenal. Oleh karena itu, diperlukan pendekatan yang lebih adaptif dan cerdas, yaitu dengan memanfaatkan teknik Machine Learning (ML) untuk mengoptimalkan kemampuan deteksi.&lt;/p&gt;
+
+&lt;h2 id=&quot;research-objective&quot;&gt;Research Objective&lt;/h2&gt;
+
+&lt;p&gt;Penelitian ini bertujuan untuk mengembangkan dan mengoptimalkan sistem deteksi intrusi dengan teknik machine learning menggunakan algoritma Decision Tree yang mampu mendeteksi serangan DDoS secara efisien dan akurat, serta memberikan notifikasi real-time kepada tim keamanan melalui Telegram Bot untuk mempercepat respons terhadap insiden.&lt;/p&gt;
+
+&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
+
+&lt;p&gt;Penelitian ini dilakukan melalui beberapa tahapan sistematis:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Studi Literatur&lt;/strong&gt;: Kajian terhadap penelitian sebelumnya tentang IDS berbasis ML dan dataset serangan DDoS.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pemilihan Dataset&lt;/strong&gt;: Menggunakan &lt;strong&gt;CIC-DDoS2019&lt;/strong&gt; dataset yang dikembangkan oleh Canadian Institute for Cybersecurity, yang mencakup berbagai skenario serangan DDoS yang komprehensif dan realistis.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Preprocessing Data&lt;/strong&gt;: Meliputi pembersihan data, normalisasi, dan seleksi fitur untuk meningkatkan kualitas dataset.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Implementasi Model&lt;/strong&gt;: Menerapkan algoritma &lt;strong&gt;Decision Tree&lt;/strong&gt; untuk klasifikasi lalu lintas jaringan sebagai normal atau serangan.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pengujian dan Validasi&lt;/strong&gt;: Mengukur performa model menggunakan metrik akurasi, presisi, recall, dan F1-score.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Integrasi Notifikasi&lt;/strong&gt;: Menghubungkan sistem dengan &lt;strong&gt;Telegram Bot&lt;/strong&gt; untuk memberikan notifikasi real-time saat serangan terdeteksi, mencakup detail seperti sumber serangan, jenis serangan, waktu deteksi, dan protokol yang terlibat.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;main-findings&quot;&gt;Main Findings&lt;/h2&gt;
+
+&lt;p&gt;Penelitian ini menghasilkan temuan yang signifikan:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Deteksi 100%&lt;/strong&gt;: Sistem IDS yang dikembangkan berhasil mencapai &lt;strong&gt;tingkat deteksi 100%&lt;/strong&gt; pada dataset CIC-DDoS2019, yang merupakan hasil luar biasa dalam lingkungan keamanan jaringan.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Respons Real-time&lt;/strong&gt;: Setiap deteksi serangan langsung memicu notifikasi melalui Telegram Bot, memastikan tim keamanan dapat bereaksi dengan cepat untuk melakukan isolasi dan penanganan serangan.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Informasi Detail&lt;/strong&gt;: Notifikasi mencakup informasi lengkap seperti sumber serangan, jenis serangan, waktu deteksi, dan informasi protokol yang terlibat, memungkinkan respons yang lebih terinformasi dan strategis.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Kinerja Algoritma Decision Tree&lt;/strong&gt;: Algoritma Decision Tree terbukti sangat efektif untuk klasifikasi lalu lintas DDoS dengan kompleksitas komputasi yang rendah dan interpretasi model yang mudah.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Skalabilitas&lt;/strong&gt;: Sistem dirancang untuk dapat diintegrasikan ke dalam infrastruktur jaringan yang sudah ada dan mendukung penyesuaian di berbagai skenario operasional.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;contributions&quot;&gt;Contributions&lt;/h2&gt;
+
+&lt;p&gt;Kontribusi utama dari penelitian ini adalah:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;IDS Optimal dengan Akurasi Sempurna&lt;/strong&gt;: Menunjukkan bahwa algoritma Decision Tree, meskipun sederhana, mampu mencapai akurasi deteksi DDoS 100% pada dataset standar.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Integrasi Notifikasi Real-time&lt;/strong&gt;: Menggabungkan kemampuan deteksi ML dengan sistem notifikasi Telegram Bot untuk respons insiden yang lebih cepat.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Validasi dengan Dataset Standar&lt;/strong&gt;: Menggunakan CIC-DDoS2019 sebagai tolok ukur yang diakui secara internasional, memungkinkan perbandingan yang adil dengan penelitian lain.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Solusi Open Source&lt;/strong&gt;: Penelitian dipublikasikan secara terbuka dan dapat direproduksi, mendukung pengembangan keamanan siber di Indonesia.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;limitations&quot;&gt;Limitations&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Pengujian Dataset Spesifik&lt;/strong&gt;: Akurasi 100% dicapai pada dataset CIC-DDoS2019 dan mungkin berbeda pada dataset lain atau lingkungan produksi nyata.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Serangan Terbatas pada DDoS&lt;/strong&gt;: Sistem saat ini difokuskan pada deteksi serangan DDoS dan belum mencakup jenis serangan siber lainnya.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Overfitting Potensial&lt;/strong&gt;: Meskipun akurasi tinggi, terdapat risiko overfitting pada dataset tertentu yang perlu divalidasi dengan data dunia nyata.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ketergantungan pada Dataset Historis&lt;/strong&gt;: Model ML sangat bergantung pada data pelatihan, sehingga serangan dengan pola yang benar-benar baru mungkin tidak terdeteksi (&lt;em&gt;zero-day attacks&lt;/em&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;future-research-opportunities&quot;&gt;Future Research Opportunities&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Pengujian di Lingkungan Produksi&lt;/strong&gt;: Menerapkan dan menguji sistem pada infrastruktur jaringan nyata untuk memvalidasi efektivitas di dunia nyata.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Eksplorasi Algoritma Lain&lt;/strong&gt;: Membandingkan kinerja Decision Tree dengan algoritma lain seperti Random Forest, XGBoost, atau Deep Learning untuk deteksi DDoS.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Deteksi Multi-Vektor&lt;/strong&gt;: Memperluas cakupan deteksi untuk mencakup berbagai jenis serangan siber selain DDoS.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Sistem Hibrid&lt;/strong&gt;: Menggabungkan pendekatan signature-based dan anomaly-based detection untuk meningkatkan ketahanan terhadap serangan baru.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Deteksi Real-time Skala Besar&lt;/strong&gt;: Mengoptimalkan sistem untuk menangani lalu lintas jaringan berskala besar di lingkungan enterprise.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Yuliswar, T., Elfitri, I., &amp;amp; Purbo, O. W. (2025). Optimization of Intrusion Detection System with Machine Learning for Detecting Distributed Attacks on Server. &lt;em&gt;INOVTEK Polbeng - Seri Informatika&lt;/em&gt;, 10(1), 367-376. DOI: &lt;a href=&quot;https://doi.org/10.35314/vem9da98&quot;&gt;10.35314/vem9da98&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Sharafaldin, I., Lashkari, A. H., Hakak, S., &amp;amp; Ghorbani, A. A. (2019). Developing Realistic Distributed Denial of Service (DDoS) Attack Dataset and Taxonomy. &lt;em&gt;2019 International Carnahan Conference on Security Technology (ICCST)&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Canadian Institute for Cybersecurity. (2019). CIC-DDoS2019 Dataset. University of New Brunswick.&lt;/li&gt;
+  &lt;li&gt;BSSN. (2024). Laporan Tahunan Monitoring Keamanan Siber. Badan Siber dan Sandi Negara Indonesia.&lt;/li&gt;
+  &lt;li&gt;Sommer, R. &amp;amp; Paxson, V. (2010). Outside the Closed World: On Using Machine Learning for Network Intrusion Detection. &lt;em&gt;IEEE Symposium on Security and Privacy&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000//optimasi-ids-machine-learning-ddos</link>
+        <link href="http://0.0.0.0:4000/optimasi-ids-machine-learning-ddos"/>
+        <guid isPermaLink="true">http://0.0.0.0:4000/optimasi-ids-machine-learning-ddos</guid>
+      </item>
+    
+      <item>
+        <title>MAStrike: Red-Teaming Kolusif pada Sistem Multi-Agent Berbasis Shapley</title>
+        <description>&lt;h2 id=&quot;research-background&quot;&gt;Research Background&lt;/h2&gt;
+
+&lt;p&gt;Sistem multi-agent hierarkis (MAS) semakin banyak diadopsi dalam workflow berisiko tinggi di bidang keuangan, rekayasa perangkat lunak, dan CRM. Dalam sistem ini, keamanan dan keselamatan terdistribusi di seluruh agen yang memiliki peran khusus, yang secara signifikan memperluas permukaan serangan — khususnya terhadap perilaku adversarial terkoordinasi seperti privilege escalation dan collusion antar agen.&lt;/p&gt;
+
+&lt;p&gt;Pendekatan red-teaming yang ada masih sangat terbatas: metode sebelumnya hanya mengandalkan pemilihan agen target secara heuristik dan mengganggu alur pesan secara terisolasi. Pertanyaan kritis seperti agen mana yang paling bertanggung jawab terhadap keamanan sistem, dan bagaimana agen yang dikompromikan dapat berkoordinasi untuk melewati pertahanan, masih belum terjawab.&lt;/p&gt;
+
+&lt;h2 id=&quot;research-objective&quot;&gt;Research Objective&lt;/h2&gt;
+
+&lt;p&gt;Penelitian ini bertujuan untuk mengembangkan MAStrike, sebuah framework closed-loop untuk red-teaming kolusif pada MAS hierarkis yang mampu:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Mengukur kontribusi marjinal setiap agen terhadap ketahanan sistem menggunakan analisis Shapley value tingkat agen pertama di MAS.&lt;/li&gt;
+  &lt;li&gt;Mengidentifikasi koalisi agen yang rentan dan menghasilkan manipulasi adversarial terkoordinasi yang sadar-peran.&lt;/li&gt;
+  &lt;li&gt;Menyempurnakan serangan secara iteratif melalui diagnosis kausal terstruktur.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
+
+&lt;p&gt;Peneliti memperkenalkan beberapa kontribusi metodologis utama:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Analisis Shapley Value Tingkat Agen:&lt;/strong&gt; Untuk setiap tugas q, nilai koalisi didefinisikan sebagai v_q(C) = ASR_q(C) (Attack Success Rate). Shapley value individu dihitung sebagai:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;φ_i(q) = Σ_{C ⊆ A \ {a_i}} (&lt;/td&gt;
+      &lt;td&gt;C&lt;/td&gt;
+      &lt;td&gt;!(&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+      &lt;td&gt;C&lt;/td&gt;
+      &lt;td&gt;-1)!/&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;!) × [v_q(C ∪ {a_i}) - v_q(C)]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Interaksi Shapley berpasangan mengukur sinergi antara dua agen. Estimasi efisien dilakukan melalui stratified coalition sampling.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Optimasi Red-Teaming Berbasis Shapley:&lt;/strong&gt; Koalisi optimal dipilih dengan objective fungsi yang mempertimbangkan Shapley value individu dan interaksi berpasangan. Similarity-weighted aggregation mentransfer pengetahuan dari tugas sampel ke tugas target.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Closed-Loop Iterative Optimization:&lt;/strong&gt; Red-teaming agent menghasilkan injeksi terkoordinasi untuk koalisi terpilih, menjalankannya pada MAS, mengevaluasi dengan judge, dan jika gagal, mendiagnosis kondisi blocking untuk menyempurnakan injeksi.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MABENCH Benchmark:&lt;/strong&gt; Dibangun lingkungan MAS yang dapat dikontrol di tiga domain (finansial, rekayasa perangkat lunak, CRM) dengan topologi hierarkis yang beragam.&lt;/p&gt;
+
+&lt;h2 id=&quot;main-findings&quot;&gt;Main Findings&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Kinerja Unggul:&lt;/strong&gt; MAStrike mencapai 61.8% Attack Success Rate (ASR) terhadap Claude Opus 4.7 dan 55.6% terhadap GPT-5.5, secara signifikan mengungguli baseline heuristik.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Distribusi Shapley Non-Trivial:&lt;/strong&gt; Analisis mengungkapkan bahwa kontribusi agen terhadap keamanan sistem tidak merata — beberapa agen memiliki pengaruh yang jauh lebih besar terhadap ketahanan sistem secara keseluruhan.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Pola Interaksi Tingkat Tinggi:&lt;/strong&gt; Ditemukan struktur interaksi orde-tinggi antar agen yang tidak terdeteksi oleh metode single-agent atau template-based sebelumnya.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Kerentanan Koordinasi:&lt;/strong&gt; MAStrike berhasil mengeksploitasi celah keamanan yang muncul dari koordinasi antar agen, menunjukkan bagaimana agen yang dikompromikan dapat bekerja sama untuk melewati pertahanan.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;contributions&quot;&gt;Contributions&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Analisis Shapley value tingkat agen pertama di MAS&lt;/strong&gt; — mengukur kepentingan individu dan efek interaksi dengan estimasi efisien.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Framework red-teaming closed-loop berbasis Shapley&lt;/strong&gt; — integrasi pemilihan berbasis Shapley, pembangkitan injeksi terkoordinasi, dan diagnosis kegagalan terstruktur.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;MABENCH&lt;/strong&gt; — lingkungan MAS yang dapat dikontrol dan benchmark red-teaming komprehensif di tiga domain.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Validasi ekstensif&lt;/strong&gt; di berbagai model frontier (Claude Opus 4.7, GPT-5.5, dll.) yang mengungkap pola kerentanan baru.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;limitations&quot;&gt;Limitations&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Framework saat ini berfokus pada arsitektur MAS hierarkis — belum diuji pada topologi non-hierarkis seperti MAS yang terdesentralisasi sepenuhnya atau berbasis graph.&lt;/li&gt;
+  &lt;li&gt;Asumsi bahwa penyerang memiliki pengetahuan tentang struktur MAS (peran agen, topologi komunikasi) mungkin tidak selalu realistis dalam semua skenario.&lt;/li&gt;
+  &lt;li&gt;Komputasi Shapley value membutuhkan sumber daya yang signifikan untuk sistem dengan jumlah agen yang sangat besar.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;future-research-opportunities&quot;&gt;Future Research Opportunities&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Ekstensi ke Arsitektur Non-Hierarkis:&lt;/strong&gt; Mengadaptasi MAStrike untuk topologi MAS yang lebih kompleks seperti graph-based atau fully decentralized.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Partial-Knowledge Attacks:&lt;/strong&gt; Mengembangkan varian yang bekerja dengan pengetahuan terbatas tentang struktur MAS.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Defense Mechanisms:&lt;/strong&gt; Merancang mekanisme pertahanan berdasarkan wawasan Shapley value untuk melindungi agen-agen kritis.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Real-time Shapley Estimation:&lt;/strong&gt; Mengoptimalkan estimasi Shapley value untuk penggunaan real-time dalam sistem produksi.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Xu, C., Chen, Z., Zhang, J., Lecue, F., Kothari, A., Tan, S., Guo, W., &amp;amp; Li, B. (2026). “MAStrike: Shapley-Guided Collusive Red-Teaming on Multi-Agent Systems.” arXiv:2606.12918 [cs.CR].&lt;/li&gt;
+  &lt;li&gt;OWASP Foundation. (2025). “OWASP Top 10 for LLM Applications.”&lt;/li&gt;
+  &lt;li&gt;Shapley, L.S. (1953). “A Value for n-Person Games.” Contributions to the Theory of Games.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000//mastrike-collusive-red-teaming-multi-agent</link>
+        <link href="http://0.0.0.0:4000/mastrike-collusive-red-teaming-multi-agent"/>
+        <guid isPermaLink="true">http://0.0.0.0:4000/mastrike-collusive-red-teaming-multi-agent</guid>
+      </item>
+    
+      <item>
+        <title>Market Basket Analysis pada Mini Market dengan Algoritma Apriori — Studi Kasus Data Mining Ritel</title>
+        <description>&lt;h2 id=&quot;research-background&quot;&gt;Research Background&lt;/h2&gt;
+
+&lt;p&gt;Data mining telah menjadi teknik penting untuk menggali informasi berharga dari data warehouse. Dalam bisnis ritel seperti mini market, data transaksi harian terus bertambah namun seringkali hanya disimpan sebagai arsip tanpa dianalisis lebih lanjut. Mini Market Ayu yang berlokasi di Kota Batam — dekat dengan kawasan pemukiman penduduk — memiliki volume penjualan yang signifikan namun belum memanfaatkan data transaksinya untuk pengambilan keputusan strategis. Padahal, data transaksi tersebut menyimpan pola tersembunyi tentang kebiasaan belanja konsumen yang dapat digunakan untuk optimalisasi tata letak produk, promosi silang, dan manajemen inventaris.&lt;/p&gt;
+
+&lt;h2 id=&quot;research-objective&quot;&gt;Research Objective&lt;/h2&gt;
+
+&lt;p&gt;Penelitian ini bertujuan untuk menerapkan algoritma Apriori dalam menganalisis keranjang belanja (Market Basket Analysis) pada Mini Market Ayu di Kota Batam. Tujuan spesifiknya adalah mengidentifikasi pola asosiasi antar produk yang sering dibeli secara bersamaan oleh konsumen, serta menghitung nilai support dan confidence dari setiap aturan asosiasi yang terbentuk.&lt;/p&gt;
+
+&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
+
+&lt;p&gt;Penelitian menggunakan pendekatan kuantitatif dengan metode Market Basket Analysis yang diimplementasikan melalui algoritma Apriori. Algoritma Apriori bekerja dengan mencari frequent itemset — kumpulan item yang sering muncul bersama dalam transaksi — kemudian menghasilkan aturan asosiasi yang memenuhi ambang batas minimum support dan confidence. Proses analisis meliputi:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pengumpulan data transaksi penjualan&lt;/li&gt;
+  &lt;li&gt;Transformasi data ke format transaksional&lt;/li&gt;
+  &lt;li&gt;Penentuan nilai minimum support dan confidence&lt;/li&gt;
+  &lt;li&gt;Eksekusi algoritma Apriori untuk menemukan frequent itemset&lt;/li&gt;
+  &lt;li&gt;Pembentukan aturan asosiasi dari itemset yang memenuhi syarat&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;main-findings&quot;&gt;Main Findings&lt;/h2&gt;
+
+&lt;p&gt;Hasil penelitian menunjukkan bahwa aturan asosiasi dengan nilai tertinggi adalah hubungan antara pembelian &lt;strong&gt;Minyak dan Susu&lt;/strong&gt;, dengan nilai &lt;em&gt;support&lt;/em&gt; sebesar &lt;strong&gt;42.85%&lt;/strong&gt; dan &lt;em&gt;confidence&lt;/em&gt; sebesar &lt;strong&gt;85.71%&lt;/strong&gt;. Nilai support 42.85% mengindikasikan bahwa kombinasi Minyak dan Susu muncul bersama dalam 42.85% dari seluruh transaksi. Sementara itu, nilai confidence 85.71% menunjukkan bahwa probabilitas konsumen yang membeli Minyak juga membeli Susu sangat tinggi — mencapai 85.71%. Temuan ini memberikan bukti kuat adanya pola pembelian simultan antara kedua produk tersebut.&lt;/p&gt;
+
+&lt;h2 id=&quot;contributions&quot;&gt;Contributions&lt;/h2&gt;
+
+&lt;p&gt;Penelitian ini memberikan kontribusi praktis bagi pengelola Mini Market Ayu berupa rekomendasi berbasis data untuk:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Optimalisasi penempatan produk secara berdampingan (Minyak dan Susu diletakkan berdekatan)&lt;/li&gt;
+  &lt;li&gt;Strategi promosi silang dan bundling produk&lt;/li&gt;
+  &lt;li&gt;Manajemen stok yang lebih efisien berdasarkan pola pembelian&lt;/li&gt;
+  &lt;li&gt;Peningkatan penjualan melalui cross-selling yang terarah
+Di samping itu, penelitian ini turut memperkaya literatur penerapan data mining pada sektor ritel skala kecil-menengah di Indonesia.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;limitations&quot;&gt;Limitations&lt;/h2&gt;
+
+&lt;p&gt;Penelitian memiliki beberapa keterbatasan. Pertama, hanya menggunakan satu dataset dari satu mini market sehingga generalisasi temuan terbatas. Kedua, analisis hanya fokus pada dua item (Minyak dan Susu) tanpa mengeksplorasi kombinasi itemset yang lebih luas. Ketiga, belum mempertimbangkan faktor temporal seperti musim, hari libur, atau tren musiman yang dapat memengaruhi pola pembelian.&lt;/p&gt;
+
+&lt;h2 id=&quot;future-research-opportunities&quot;&gt;Future Research Opportunities&lt;/h2&gt;
+
+&lt;p&gt;Penelitian selanjutnya dapat memperluas cakupan dengan:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Menggunakan dataset dari multiple store atau periode waktu yang lebih panjang&lt;/li&gt;
+  &lt;li&gt;Menerapkan algoritma data mining lain seperti FP-Growth untuk perbandingan performa&lt;/li&gt;
+  &lt;li&gt;Mengintegrasikan analisis sentimen atau data demografis konsumen&lt;/li&gt;
+  &lt;li&gt;Mengembangkan sistem rekomendasi real-time berbasis pola asosiasi untuk e-commerce&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Elisa, E. (2018). Market Basket Analysis pada Mini Market Ayu dengan Algoritma Apriori. &lt;em&gt;Jurnal Rekayasa Sistem dan Teknologi Informasi (RESTI)&lt;/em&gt;, 2(2). DOI: 10.29207/resti.v2i2.280&lt;/li&gt;
+  &lt;li&gt;https://www.neliti.com/publications/240153/market-basket-analysis-pada-mini-market-ayu-dengan-algoritma-apriori&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000//market-basket-analysis-apriori-resti</link>
+        <link href="http://0.0.0.0:4000/market-basket-analysis-apriori-resti"/>
+        <guid isPermaLink="true">http://0.0.0.0:4000/market-basket-analysis-apriori-resti</guid>
+      </item>
+    
+      <item>
+        <title>Governing Cloud Data Pipelines with Agentic AI — Arsitektur Kontrol Berbasis Kebijakan untuk Pipeline Data Cloud</title>
+        <description>&lt;h2 id=&quot;research-background&quot;&gt;Research Background&lt;/h2&gt;
+
+&lt;p&gt;Pipeline data cloud modern beroperasi di bawah beban kerja dinamis, skema yang terus berkembang, batasan biaya, dan persyaratan tata kelola yang ketat. Meskipun ada kemajuan dalam kerangka orkestrasi cloud-native, sebagian besar pipeline produksi masih mengandalkan konfigurasi statis dan praktik operasional reaktif. Hal ini mengakibatkan waktu pemulihan yang berkepanjangan, utilisasi sumber daya yang tidak efisien, dan overhead manual yang tinggi. Kesenjangan antara kebutuhan tata kelola yang kompleks dan kemampuan orkestrasi statis menjadi masalah kritis di lingkungan enterprise berskala besar.&lt;/p&gt;
+
+&lt;h2 id=&quot;research-objective&quot;&gt;Research Objective&lt;/h2&gt;
+
+&lt;p&gt;Penelitian ini bertujuan untuk mengusulkan dan mengevaluasi &lt;strong&gt;Agentic Cloud Data Engineering&lt;/strong&gt; — sebuah arsitektur kontrol sadar-kebijakan yang mengintegrasikan AI agent terikat (bounded AI agents) ke dalam bidang kendali dan tata kelola pipeline data cloud. Tujuan utamanya adalah mengurangi intervensi manual, menurunkan biaya operasional, dan mempercepat pemulihan kegagalan pipeline sambil mempertahankan kepatuhan terhadap kebijakan tata kelola data.&lt;/p&gt;
+
+&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
+
+&lt;p&gt;Peneliti merancang platform Agentic Cloud Data Engineering dengan komponen-komponen berikut:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Specialized AI Agents&lt;/strong&gt;: Agen khusus yang menganalisis telemetri dan metadata pipeline, melakukan penalaran atas kebijakan biaya dan kepatuhan deklaratif, serta mengusulkan tindakan operasional terbatas.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Constrained Action Space&lt;/strong&gt;: Tindakan yang diusulkan dibatasi pada rekonfigurasi sumber daya adaptif, rekonsiliasi skema, dan pemulihan kegagalan otomatis.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Policy Validation Layer&lt;/strong&gt;: Semua tindakan agen divalidasi terhadap kebijakan tata kelola untuk memastikan perilaku yang dapat diprediksi dan diaudit.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Evaluasi dilakukan menggunakan beban kerja batch dan streaming analitik representatif yang dibangun dari dataset publik bergaya enterprise.&lt;/p&gt;
+
+&lt;h2 id=&quot;main-findings&quot;&gt;Main Findings&lt;/h2&gt;
+
+&lt;p&gt;Hasil eksperimen menunjukkan peningkatan signifikan pada tiga metrik utama:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Mean pipeline recovery time&lt;/strong&gt;: Berkurang hingga &lt;strong&gt;45%&lt;/strong&gt; dibandingkan orkestrasi statis.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Operational cost&lt;/strong&gt;: Turun sekitar &lt;strong&gt;25%&lt;/strong&gt; melalui alokasi sumber daya yang lebih efisien.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Manual intervention events&lt;/strong&gt;: Menurun lebih dari &lt;strong&gt;70%&lt;/strong&gt; karena agen AI menangani kegagalan secara otonom.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Seluruh peningkatan ini dicapai tanpa mengorbankan &lt;strong&gt;data freshness&lt;/strong&gt; dan &lt;strong&gt;policy compliance&lt;/strong&gt;, yang tetap terjaga pada tingkat yang sama dengan pendekatan tradisional.&lt;/p&gt;
+
+&lt;h2 id=&quot;contributions&quot;&gt;Contributions&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Arsitektur baru&lt;/strong&gt; untuk tata kelola pipeline data cloud yang memadukan AI agent dengan kebijakan deklaratif.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Validasi empiris&lt;/strong&gt; pada beban kerja batch dan streaming yang menunjukkan pengurangan biaya dan waktu pemulihan yang signifikan.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pendekatan policy-bounded agentic control&lt;/strong&gt; yang memastikan tindakan agen dapat diaudit dan diprediksi, mengatasi masalah kepercayaan pada AI otonom di enterprise.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Kerangka kerja&lt;/strong&gt; yang dapat direproduksi menggunakan dataset publik untuk memfasilitasi penelitian lanjutan.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;limitations&quot;&gt;Limitations&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Evaluasi dilakukan pada dataset sintetis bergaya enterprise, bukan pada pipeline produksi langsung dari perusahaan tertentu.&lt;/li&gt;
+  &lt;li&gt;Studi ini tidak membahas aspek keamanan siber secara mendalam, seperti potensi serangan adversarial terhadap agen AI itu sendiri.&lt;/li&gt;
+  &lt;li&gt;Skalabilitas arsitektur pada lingkungan dengan ribuan pipeline paralel belum diuji secara ekstensif.&lt;/li&gt;
+  &lt;li&gt;Biaya komputasi tambahan dari menjalankan AI agent belum dianalisis secara detail.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;future-research-opportunities&quot;&gt;Future Research Opportunities&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Integrasi dengan MLOps&lt;/strong&gt;: Menggabungkan agentic control dengan pipeline machine learning untuk governance model端-to-end.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Multi-cloud orchestration&lt;/strong&gt;: Memperluas arsitektur untuk menangani pipeline yang tersebar di beberapa penyedia cloud.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Human-in-the-loop optimization&lt;/strong&gt;: Meneliti keseimbangan optimal antara otonomi agen dan pengawasan manusia.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Real-time policy adaptation&lt;/strong&gt;: Mengembangkan mekanisme pembaruan kebijakan dinamis berdasarkan perubahan kondisi bisnis dan regulasi.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;arXiv&lt;/strong&gt; - &lt;a href=&quot;https://arxiv.org/abs/2512.23737&quot; target=&quot;_blank&quot;&gt;https://arxiv.org/abs/2512.23737&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;IJCST Volume 13 Issue 6&lt;/strong&gt; - &lt;a href=&quot;https://www.ijcstjournal.org/volume-13/issue-6/IJCST-V13I6P44.pdf&quot; target=&quot;_blank&quot;&gt;https://www.ijcstjournal.org/volume-13/issue-6/IJCST-V13I6P44.pdf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DOI&lt;/strong&gt; - &lt;a href=&quot;https://doi.org/10.5281/zenodo.18048728&quot; target=&quot;_blank&quot;&gt;10.5281/zenodo.18048728&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000//governing-cloud-data-pipelines-agentic-ai</link>
+        <link href="http://0.0.0.0:4000/governing-cloud-data-pipelines-agentic-ai"/>
+        <guid isPermaLink="true">http://0.0.0.0:4000/governing-cloud-data-pipelines-agentic-ai</guid>
+      </item>
+    
   </channel>
 </rss>

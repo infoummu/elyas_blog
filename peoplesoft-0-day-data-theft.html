@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Zero-Day Oracle PeopleSoft Dieksploitasi, Ratusan Organisasi Kehilangan GigaByte Data</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Zero-Day Oracle PeopleSoft Dieksploitasi, Ratusan Organisasi Kehilangan GigaByte Data | Elyas-Blog</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Zero-Day Oracle PeopleSoft Dieksploitasi, Ratusan Organisasi Kehilangan GigaByte Data" />
+<meta name="author" content="Tim Penerjemah" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Kelompok ransomware ShinyHunters mengeksploitasi kerentanan critical SSRF (CVE-2026-35273, skor 9.8/10) di Oracle PeopleSoft yang menyerang ~100 organisasi, dengan 68% di antaranya adalah institusi pendidikan tinggi. Hingga 48 GB data berhasil dicuri dari satu korban." />
+<meta property="og:description" content="Kelompok ransomware ShinyHunters mengeksploitasi kerentanan critical SSRF (CVE-2026-35273, skor 9.8/10) di Oracle PeopleSoft yang menyerang ~100 organisasi, dengan 68% di antaranya adalah institusi pendidikan tinggi. Hingga 48 GB data berhasil dicuri dari satu korban." />
+<link rel="canonical" href="http://0.0.0.0:4000/peoplesoft-0-day-data-theft" />
+<meta property="og:url" content="http://0.0.0.0:4000/peoplesoft-0-day-data-theft" />
+<meta property="og:site_name" content="Elyas-Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-13T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Zero-Day Oracle PeopleSoft Dieksploitasi, Ratusan Organisasi Kehilangan GigaByte Data" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tim Penerjemah"},"dateModified":"2026-06-13T00:00:00+00:00","datePublished":"2026-06-13T00:00:00+00:00","description":"Kelompok ransomware ShinyHunters mengeksploitasi kerentanan critical SSRF (CVE-2026-35273, skor 9.8/10) di Oracle PeopleSoft yang menyerang ~100 organisasi, dengan 68% di antaranya adalah institusi pendidikan tinggi. Hingga 48 GB data berhasil dicuri dari satu korban.","headline":"Zero-Day Oracle PeopleSoft Dieksploitasi, Ratusan Organisasi Kehilangan GigaByte Data","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/peoplesoft-0-day-data-theft"},"url":"http://0.0.0.0:4000/peoplesoft-0-day-data-theft"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('sidebarCollapsed') === 'true') {
+          document.body.classList.add('sidebar-pre-collapsed');
+        }
+        if (localStorage.getItem('theme') === 'light') {
+          document.body.classList.add('light-theme');
+        }
+      } catch(e) {}
+    })();
+  </script>
+  <div class="layout-wrapper">
+    <button class="mobile-hamburger" id="mobileHamburger" aria-label="Toggle menu">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <a href="/" class="sidebar-brand">
+      
+      <span class="sidebar-brand-text">elyas-blog</span>
+    </a>
+
+  </div>
+  <nav class="sidebar-nav">
+    <a href="/" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+  </span>
+  <span class="sidebar-text">Home</span>
+</a>
+<a href="/kampus" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 11V20H20V11"></path>
+      <path d="M4 11L12 7L20 11"></path>
+      <path d="M8 8V12L12 10L16 12V8L12 10L8 8Z"></path>
+      <path d="M11 20V16H13V20"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Kampus</span>
+</a>
+<a href="/news" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9"></path>
+      <path d="M10 7h8"></path>
+      <path d="M10 11h8"></path>
+      <path d="M10 15h5"></path>
+      <path d="M6 10v6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">News</span>
+</a>
+<a href="/research" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="M21 21l-4.35-4.35"></path>
+      <path d="M11 8v6"></path>
+      <path d="M8 11h6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Research</span>
+</a>
+<a href="/lnews" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9"></path>
+      <path d="M10 7h8"></path>
+      <path d="M10 11h8"></path>
+      <path d="M10 15h5"></path>
+      <path d="M6 10v6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Local News</span>
+</a>
+<a href="/about" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </svg>
+  </span>
+  <span class="sidebar-text">About</span>
+</a>
+<a href="/archive" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="21 8 21 21 3 21 3 8"></polyline>
+      <rect x="1" y="3" width="22" height="5" rx="1"></rect>
+      <line x1="10" y1="12" x2="14" y2="12"></line>
+    </svg>
+  </span>
+  <span class="sidebar-text">Archive</span>
+</a>
+
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-content">
+      <span class="sidebar-footer-text">
+        <b>Elyas-Blog</b> © 2026
+      </span>
+      <span class="sidebar-footer-icon">©</span>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </div>
+</aside>
+
+    <main class="main-content" id="mainContent">
+      <div class="container">
+        <section id="main_content">
+          <article>
+  <h2>Zero-Day Oracle PeopleSoft Dieksploitasi, Ratusan Organisasi Kehilangan GigaByte Data</h2>
+  <time datetime="2026-06-13T00:00:00+00:00" class="by-line">13 Jun 2026 | Tim Penerjemah | news</time>
+  <hr/>
+  <h2 id="summary">Summary</h2>
+
+<p>Kelompok ransomware ShinyHunters — salah satu geng kejahatan siber paling aktif di dunia — telah mengeksploitasi kerentanan zero-day kritis di Oracle PeopleSoft, sebuah suite perangkat lunak manajemen sumber daya perusahaan yang digunakan secara luas oleh perguruan tinggi, pemerintah, dan perusahaan besar. Kerentanan yang diidentifikasi sebagai CVE-2026-35273 ini adalah celah SSRF (<em>Server-Side Request Forgery</em>) dengan skor keparahan 9.8 dari 10, yang oleh para ahli digambarkan sebagai kerentanan yang “benar-benar kritis.”</p>
+
+<p>Serangan telah berlangsung setidaknya sejak 27 Mei 2026, dan Oracle baru memberikan tanda peringatan lebih dari dua minggu kemudian. Hingga 10 Juni, lebih dari 300 endpoint dari sekitar 100 organisasi telah menjadi sasaran. Sekitar 68% dari korban berada di sektor pendidikan tinggi, menjadikan universitas dan institusi akademik sebagai target utama. Salah satu korban — University of Nottingham — telah mengonfirmasi kebocoran data mahasiswa.</p>
+
+<p>Kelompok ShinyHunters, yang aktif sejak setidaknya 2019 dan sebelumnya telah menyerang Ticketmaster, Santander, dan Salesforce, menggunakan celah SSRF ini untuk mengirimkan permintaan dari server PeopleSoft yang rentan ke sistem internal lainnya. Dari sana, mereka meluncurkan serangan rekognisi menggunakan skrip Bash, mengompres data curian dengan algoritma zstd, dan mengeksfiltrasinya melalui koneksi SSH keluar ke alamat IP 176.120.22.24 — situs kebocoran data milik ShinyHunters. Setidaknya satu korban kehilangan 48 GB data dalam satu serangan, dan data telah dipublikasikan di situs DLS (<em>Data Leak Site</em>) ShinyHunters setelah korban gagal membayar tebusan.</p>
+
+<h2 id="key-points">Key Points</h2>
+
+<ul>
+  <li><strong>Kerentanan Kritis</strong>: CVE-2026-35273 — SSRF (<em>Server-Side Request Forgery</em>) pada Oracle PeopleSoft dengan skor CVSS 9.8/10. Belum ada patch penuh dari Oracle; mitigasi sementara baru dirilis.</li>
+  <li><strong>Aktor</strong>: ShinyHunters, kelompok ransomware/shaktor yang aktif sejak 2019. Sebelumnya menyerang Ticketmaster, Santander, Salesforce, dan lainnya.</li>
+  <li><strong>Korban</strong>: ~100 organisasi, 68% di sektor pendidikan tinggi. ~300 endpoint telah menjadi sasaran.</li>
+  <li><strong>Data Dicuri</strong>: Hingga 48 GB per korban. University of Nottingham mengonfirmasi kompromi data mahasiswa.</li>
+  <li><strong>Metode Eksfiltrasi</strong>: Data dikompres dengan zstd, lalu dieksfiltrasi melalui koneksi SSH keluar ke IP 176.120.22.24 (milik ShinyHunters).</li>
+  <li><strong>Alat Serangan</strong>: Server <em>staging</em> ditemukan berisi alat-alat serangan; skrip Bash digunakan untuk memetakan konfigurasi PeopleSoft, melihat konfigurasi Process Scheduler dan WebLogic XML.</li>
+  <li><strong>Timeline</strong>: Eksploitasi sejak 27 Mei 2026. Oracle memberi peringatan setelah &gt;2 minggu. Data dipublikasikan di DLS jika tebusan tidak dibayar.</li>
+  <li><strong>Mitigasi</strong>: Oracle merilis mitigasi sementara (stopgap). Mandiant dan Rapid7 menyediakan IoC (<em>Indicators of Compromise</em>) dan langkah remediasi mendesak.</li>
+</ul>
+
+<h2 id="why-it-matters">Why It Matters</h2>
+
+<p>Kerentanan Oracle PeopleSoft ini menjadi salah satu serangan siber paling signifikan di tahun 2026, terutama karena dampaknya yang sangat terfokus pada sektor pendidikan tinggi. Universitas dan institusi akademik menyimpan data sensitif dalam jumlah besar — mulai dari data pribadi mahasiswa, catatan keuangan, hingga riset akademik dan kekayaan intelektual — menjadikannya target yang sangat menarik bagi kelompok ransomware.</p>
+
+<p>Fakta bahwa kerentanan ini memiliki skor 9.8 dari 10 menunjukkan betapa mudahnya celah ini dieksploitasi dari jarak jauh tanpa autentikasi. Lebih mengkhawatirkan lagi, Oracle membutuhkan waktu lebih dari dua minggu sejak eksploitasi aktif dimulai untuk memberikan peringatan, dan hingga saat ini patch penuh belum dirilis. Situasi ini menempatkan ratusan organisasi dalam posisi rentan dengan hanya mitigasi sementara sebagai perlindungan.</p>
+
+<p>ShinyHunters sendiri bukan aktor sembarangan. Kelompok ini telah terbukti mampu menyerang perusahaan multinasional besar dan berhasil mengekstrak data dalam jumlah masif. Penggunaan server <em>staging</em> dan skrip Bash untuk rekognisi menunjukkan tingkat sofistikasi yang cukup tinggi dalam operasi mereka.</p>
+
+<p>Dampak pada pendidikan tinggi juga menimbulkan kekhawatiran serius: data mahasiswa yang dicuri dapat digunakan untuk pencurian identitas, serangan phishing yang lebih terarah, dan bahkan pemerasan individu. Lebih dari 48 GB data dari satu institusi menandakan volume kerugian yang sangat besar.</p>
+
+<h2 id="future-impact">Future Impact</h2>
+
+<ul>
+  <li><strong>Patch Darurat</strong>: Tekanan publik dan luasnya dampak akan memaksa Oracle untuk merilis patch penuh dalam waktu dekat. Namun, kerusakan telah terjadi pada ratusan organisasi.</li>
+  <li><strong>Serangan Lanjutan</strong>: Dengan detail teknis CVE-2026-35273 yang semakin banyak diketahui, aktor ancaman lain kemungkinan akan mengadopsi metode yang sama. Organisasi yang belum menerapkan mitigasi sementara menjadi sasaran empuk.</li>
+  <li><strong>Peningkatan Target Pendidikan Tinggi</strong>: Keberhasilan ShinyHunters menyerang sektor pendidikan akan mendorong kelompok ransomware lain untuk meniru pendekatan ini, menjadikan universitas sebagai target prioritas tinggi.</li>
+  <li><strong>Perubahan Kebijakan Keamanan</strong>: Institusi pendidikan tinggi akan dipaksa untuk meningkatkan postur keamanan siber mereka secara signifikan — termasuk segmentasi jaringan, pemantauan koneksi SSH keluar yang mencurigakan, dan pembatasan akses server PeopleSoft.</li>
+  <li><strong>Kepatuhan Regulasi</strong>: Kebocoran data mahasiswa dalam skala besar ini dapat memicu penyelidikan regulator di berbagai yurisdiksi, terutama terkait kepatuhan terhadap GDPR di Eropa dan undang-undang perlindungan data di negara lain.</li>
+  <li><strong>Efek Domino</strong>: Data yang dicuri dari universitas dapat digunakan untuk serangan lebih lanjut terhadap jaringan alumni, mitra riset, dan organisasi afiliasi lainnya.</li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li>Ars Technica — “PeopleSoft 0-day affecting hundreds of organizations steals gigabytes of data” oleh Dan Goodin, 12 Juni 2026. https://arstechnica.com/security/2026/06/peoplesoft-0-day-affecting-hundreds-of-organizations-steals-gigabytes-of-data/</li>
+  <li>Mandiant (Google Cloud) — “ShinyHunters Targets Education Sector with Oracle PeopleSoft Exploit”. https://cloud.google.com/blog/topics/threat-intelligence/shinyhunters-targets-education-sector-oracle-exploit</li>
+  <li>Rapid7 — “Active Exploitation of Oracle PeopleSoft Zero-Day CVE-2026-35273”. https://www.rapid7.com/blog/post/etr-active-exploitation-of-oracle-peoplesoft-zero-day-cve-2026-35273/</li>
+  <li>Oracle Security Advisory — CVE-2026-35273 dan mitigasi sementara.</li>
+</ol>
+
+<hr />
+
+<p><em>Artikel ini diterjemahkan dan diringkas dari laporan asli Ars Technica oleh Dan Goodin. Dipublikasikan: 13 Juni 2026.</em></p>
+
+</article>
+        </section>
+      </div>
+
+      
+
+      <footer>
+  <div class="footer-inner">
+    <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US" class="footer-link">
+      <span><b>Elyas-Blog</b></span>
+      
+      <span>© 2026</span>
+    </a>
+  </div>
+</footer>
+    </main>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var sidebar = document.getElementById('sidebar');
+      var toggleBtn = document.getElementById('sidebarToggle');
+      var mainContent = document.getElementById('mainContent');
+      var hamburger = document.getElementById('mobileHamburger');
+      var themeToggle = document.getElementById('themeToggle');
+
+      // Load saved sidebar state
+      var isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+      if (isCollapsed) {
+        sidebar.classList.add('collapsed');
+        mainContent.classList.add('expanded');
+      }
+      // Clean up FOUC-prevention class, allowing toggle to work normally
+      document.body.classList.remove('sidebar-pre-collapsed');
+
+      // ---- Desktop sidebar toggle (collapsed/expanded) ----
+      toggleBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('collapsed');
+        mainContent.classList.toggle('expanded');
+        localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+      });
+
+      // ---- Mobile hamburger 3-state cycling ----
+      var mobilePhase = 0; // 0=hidden, 1=icon(up), 2=full, 3=icon(down)
+      var layoutWrapper = document.querySelector('.layout-wrapper');
+      var sidebarHeader = sidebar.querySelector('.sidebar-header');
+
+      function applyMobileState(phase) {
+        sidebar.classList.remove('mobile-icon', 'mobile-full');
+        mainContent.classList.remove('hamburger-sidebar-visible');
+        
+        if (phase === 1 || phase === 3) {
+          sidebar.classList.add('mobile-icon');
+          mainContent.classList.add('hamburger-sidebar-visible');
+          // Move hamburger INSIDE sidebar header (merges with sidebar)
+          if (hamburger && hamburger.parentNode !== sidebarHeader) {
+            sidebarHeader.insertBefore(hamburger, sidebarHeader.firstChild);
+          }
+        } else if (phase === 2) {
+          sidebar.classList.add('mobile-full');
+          mainContent.classList.add('hamburger-sidebar-visible');
+          // Move hamburger INSIDE sidebar header (merges with sidebar)
+          if (hamburger && hamburger.parentNode !== sidebarHeader) {
+            sidebarHeader.insertBefore(hamburger, sidebarHeader.firstChild);
+          }
+        } else {
+          // phase 0: hidden - move hamburger OUTSIDE sidebar (floating fixed)
+          if (hamburger && hamburger.parentNode !== layoutWrapper) {
+            layoutWrapper.insertBefore(hamburger, sidebar);
+          }
+        }
+      }
+
+      if (hamburger) {
+        // Check if a saved mobile phase exists
+        var savedPhase = parseInt(localStorage.getItem('mobilePhase'), 10);
+        if (!isNaN(savedPhase) && savedPhase >= 0 && savedPhase <= 3) {
+          mobilePhase = savedPhase;
+          applyMobileState(mobilePhase);
+        } else {
+          // Ensure hamburger starts outside sidebar on fresh load
+          mobilePhase = 0;
+          applyMobileState(0);
+        }
+
+        hamburger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          mobilePhase = (mobilePhase + 1) % 4;
+          applyMobileState(mobilePhase);
+          localStorage.setItem('mobilePhase', mobilePhase);
+        });
+      }
+
+      // ---- Close sidebar when tapping outside on mobile ----
+      function closeMobileSidebar(e) {
+        if (sidebar.classList.contains('mobile-icon') || sidebar.classList.contains('mobile-full')) {
+          // Don't close if clicking inside sidebar or on the hamburger button
+          if (!sidebar.contains(e.target) && (!hamburger || !hamburger.contains(e.target))) {
+            mobilePhase = 0;
+            applyMobileState(0);
+            localStorage.setItem('mobilePhase', 0);
+          }
+        }
+      }
+      document.addEventListener('mousedown', closeMobileSidebar);
+      document.addEventListener('touchstart', closeMobileSidebar, { passive: true });
+
+      // ---- Theme toggle ----
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          if (document.body.classList.contains('light-theme')) {
+            document.body.classList.remove('light-theme');
+            localStorage.setItem('theme', 'dark');
+          } else {
+            document.body.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
+          }
+        });
+      }
+    });
+  </script>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+
+      // The scrollable element is the main content area
+      var scrollContainer = document.getElementById('mainContent');
+
+      function checkScroll() {
+        if (scrollContainer.scrollTop > 300) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+      }
+
+      scrollContainer.addEventListener('scroll', checkScroll);
+      checkScroll();
+
+      btn.addEventListener('click', function() {
+        scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+  
+</body>
+
+</html>

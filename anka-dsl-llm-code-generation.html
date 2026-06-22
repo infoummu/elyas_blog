@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Anka — Domain-Specific Language untuk Generasi Kode LLM yang Andal dengan Akurasi 95,8%</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Anka — Domain-Specific Language untuk Generasi Kode LLM yang Andal dengan Akurasi 95,8% | Elyas-Blog</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Anka — Domain-Specific Language untuk Generasi Kode LLM yang Andal dengan Akurasi 95,8%" />
+<meta name="author" content="Saif Khalfan Saif Al Mazrouei" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Anka adalah domain-specific language (DSL) untuk pipeline transformasi data yang dirancang khusus agar LLM dapat menghasilkan kode andal dengan akurasi 95,8% dan keunggulan 40 poin persen atas Python." />
+<meta property="og:description" content="Anka adalah domain-specific language (DSL) untuk pipeline transformasi data yang dirancang khusus agar LLM dapat menghasilkan kode andal dengan akurasi 95,8% dan keunggulan 40 poin persen atas Python." />
+<link rel="canonical" href="http://0.0.0.0:4000/anka-dsl-llm-code-generation" />
+<meta property="og:url" content="http://0.0.0.0:4000/anka-dsl-llm-code-generation" />
+<meta property="og:site_name" content="Elyas-Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-13T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Anka — Domain-Specific Language untuk Generasi Kode LLM yang Andal dengan Akurasi 95,8%" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Saif Khalfan Saif Al Mazrouei"},"dateModified":"2026-06-13T00:00:00+00:00","datePublished":"2026-06-13T00:00:00+00:00","description":"Anka adalah domain-specific language (DSL) untuk pipeline transformasi data yang dirancang khusus agar LLM dapat menghasilkan kode andal dengan akurasi 95,8% dan keunggulan 40 poin persen atas Python.","headline":"Anka — Domain-Specific Language untuk Generasi Kode LLM yang Andal dengan Akurasi 95,8%","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/anka-dsl-llm-code-generation"},"url":"http://0.0.0.0:4000/anka-dsl-llm-code-generation"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('sidebarCollapsed') === 'true') {
+          document.body.classList.add('sidebar-pre-collapsed');
+        }
+        if (localStorage.getItem('theme') === 'light') {
+          document.body.classList.add('light-theme');
+        }
+      } catch(e) {}
+    })();
+  </script>
+  <div class="layout-wrapper">
+    <button class="mobile-hamburger" id="mobileHamburger" aria-label="Toggle menu">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <a href="/" class="sidebar-brand">
+      
+      <span class="sidebar-brand-text">elyas-blog</span>
+    </a>
+
+  </div>
+  <nav class="sidebar-nav">
+    <a href="/" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+  </span>
+  <span class="sidebar-text">Home</span>
+</a>
+<a href="/kampus" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 11V20H20V11"></path>
+      <path d="M4 11L12 7L20 11"></path>
+      <path d="M8 8V12L12 10L16 12V8L12 10L8 8Z"></path>
+      <path d="M11 20V16H13V20"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Kampus</span>
+</a>
+<a href="/news" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9"></path>
+      <path d="M10 7h8"></path>
+      <path d="M10 11h8"></path>
+      <path d="M10 15h5"></path>
+      <path d="M6 10v6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">News</span>
+</a>
+<a href="/research" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="M21 21l-4.35-4.35"></path>
+      <path d="M11 8v6"></path>
+      <path d="M8 11h6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Research</span>
+</a>
+<a href="/lnews" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9"></path>
+      <path d="M10 7h8"></path>
+      <path d="M10 11h8"></path>
+      <path d="M10 15h5"></path>
+      <path d="M6 10v6"></path>
+    </svg>
+  </span>
+  <span class="sidebar-text">Local News</span>
+</a>
+<a href="/about" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </svg>
+  </span>
+  <span class="sidebar-text">About</span>
+</a>
+<a href="/archive" class="sidebar-link">
+  <span class="sidebar-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="21 8 21 21 3 21 3 8"></polyline>
+      <rect x="1" y="3" width="22" height="5" rx="1"></rect>
+      <line x1="10" y1="12" x2="14" y2="12"></line>
+    </svg>
+  </span>
+  <span class="sidebar-text">Archive</span>
+</a>
+
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-content">
+      <span class="sidebar-footer-text">
+        <b>Elyas-Blog</b> © 2026
+      </span>
+      <span class="sidebar-footer-icon">©</span>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </div>
+</aside>
+
+    <main class="main-content" id="mainContent">
+      <div class="container">
+        <section id="main_content">
+          <article>
+  <h2>Anka — Domain-Specific Language untuk Generasi Kode LLM yang Andal dengan Akurasi 95,8%</h2>
+  <time datetime="2026-06-13T00:00:00+00:00" class="by-line">13 Jun 2026 | Saif Khalfan Saif Al Mazrouei | research</time>
+  <hr/>
+  <h2 id="research-background">Research Background</h2>
+
+<p>Large Language Models (LLM) telah menunjukkan kemampuan luar biasa dalam generasi kode, namun mereka masih menunjukkan kesalahan sistematis pada tugas pemrograman kompleks yang memerlukan banyak langkah (multi-step). Kesalahan ini sering terjadi karena fleksibilitas bahasa pemrograman tujuan umum (seperti Python) yang memungkinkan banyak pendekatan valid dan memerlukan manajemen state implisit. Hipotesis penelitian ini adalah bahwa error tersebut berasal dari fleksibilitas bahasa general-purpose yang memberikan terlalu banyak kebebasan kepada LLM dalam memilih pendekatan.</p>
+
+<h2 id="research-objective">Research Objective</h2>
+
+<p>Penelitian ini bertujuan untuk menguji hipotesis bahwa <strong>constrained syntax</strong> dalam bentuk Domain-Specific Language (DSL) dapat secara signifikan mengurangi error generasi kode LLM pada tugas multi-step yang kompleks. Peneliti memperkenalkan <strong>Anka</strong>, sebuah DSL untuk pipeline transformasi data yang dirancang dengan sintaks eksplisit dan terbatas untuk mengurangi ambiguitas dalam generasi kode oleh LLM.</p>
+
+<h2 id="methodology">Methodology</h2>
+
+<p>Peneliti merancang Anka sebagai DSL dengan karakteristik berikut:</p>
+
+<ol>
+  <li><strong>Sintaks eksplisit dan terbatas</strong> yang hanya menyediakan konstruksi yang diperlukan untuk transformasi data pipeline.</li>
+  <li><strong>Manajemen state implisit dihilangkan</strong> — setiap operasi dalam pipeline bersifat eksplisit dan berurutan.</li>
+  <li><strong>Validasi sintaks ketat</strong> yang memastikan hanya kode yang valid secara grammar yang dapat dihasilkan.</li>
+</ol>
+
+<p>Evaluasi dilakukan dengan:</p>
+<ul>
+  <li><strong>Model LLM</strong>: Claude 3.5 Haiku (utama) dan GPT-4o-mini (cross-validation)</li>
+  <li><strong>Benchmark</strong>: 100 masalah pipeline transformasi data</li>
+  <li><strong>Metrik</strong>: Parse success rate, overall task accuracy, dan perbandingan dengan Python</li>
+  <li><strong>Kondisi</strong>: LLM tidak memiliki pelatihan atau paparan sebelumnya terhadap Anka — hanya diberikan prompt in-context</li>
+</ul>
+
+<h2 id="main-findings">Main Findings</h2>
+
+<p>Hasil eksperimen menunjukkan temuan yang signifikan:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metrik</th>
+      <th>Anka</th>
+      <th>Python</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Parse Success Rate</td>
+      <td><strong>99.9%</strong></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>Overall Task Accuracy</td>
+      <td><strong>95.8%</strong></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>Multi-step Task Accuracy</td>
+      <td><strong>100%</strong></td>
+      <td><strong>60%</strong></td>
+    </tr>
+    <tr>
+      <td>Keunggulan pada Multi-step</td>
+      <td>+40 poin persen</td>
+      <td>baseline</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Cross-model validation dengan GPT-4o-mini mengkonfirmasi keunggulan ini dengan <strong>+26.7 poin persen</strong> pada tugas multi-step.</p>
+
+<p><strong>Temuan kunci:</strong></p>
+<ol>
+  <li>LLM dapat mempelajari DSL baru sepenuhnya dari prompt in-context, mencapai akurasi mendekati native.</li>
+  <li>Constrained syntax secara signifikan mengurangi error pada tugas kompleks.</li>
+  <li>DSL yang dirancang khusus untuk generasi LLM dapat mengungguli bahasa general-purpose di mana LLM memiliki pelatihan ekstensif.</li>
+</ol>
+
+<h2 id="contributions">Contributions</h2>
+
+<ol>
+  <li><strong>Anka DSL</strong>: Bahasa domain-spesifik pertama yang dirancang khusus untuk generasi kode LLM yang andal pada pipeline transformasi data.</li>
+  <li><strong>Validasi empiris</strong>: Bukti bahwa LLM dapat mengadopsi DSL baru dari in-context prompts dengan akurasi tinggi (95.8%).</li>
+  <li><strong>Benchmark suite</strong>: 100 masalah pipeline transformasi data yang dirilis untuk komunitas riset.</li>
+  <li><strong>Prinsip desain bahasa</strong>: Wawasan bahwa constrained syntax lebih efektif untuk generasi kode LLM daripada bahasa general-purpose yang fleksibel.</li>
+  <li><strong>Kode dan implementasi</strong>: Seluruh bahasa, benchmark, dan framework evaluasi dirilis di GitHub.</li>
+</ol>
+
+<h2 id="limitations">Limitations</h2>
+
+<ol>
+  <li>Studi ini terbatas pada domain transformasi data pipeline; DSL untuk domain lain belum dieksplorasi.</li>
+  <li>Hanya dua model LLM (Claude 3.5 Haiku dan GPT-4o-mini) yang digunakan untuk validasi.</li>
+  <li>Skala masalah terbatas pada 100 benchmark; validasi pada skala yang lebih besar diperlukan.</li>
+  <li>Belum ada studi tentang bagaimana performa Anka pada LLM yang lebih baru atau lebih besar.</li>
+  <li>Tidak ada analisis tentang kemudahan pemeliharaan kode Anka oleh manusia dibandingkan Python.</li>
+</ol>
+
+<h2 id="future-research-opportunities">Future Research Opportunities</h2>
+
+<ol>
+  <li><strong>DSL untuk domain lain</strong>: Mengembangkan DSL serupa untuk domain seperti konfigurasi infrastruktur, pipeline CI/CD, atau query database.</li>
+  <li><strong>Multi-model validation</strong>: Menguji Anka pada spektrum LLM yang lebih luas termasuk model open-source seperti Llama dan DeepSeek.</li>
+  <li><strong>Hybrid approach</strong>: Menggabungkan DSL untuk bagian kritis dengan kode general-purpose untuk fleksibilitas.</li>
+  <li><strong>LLM-native language design</strong>: Mengembangkan prinsip-prinsip desain bahasa pemrograman yang dioptimalkan untuk generasi oleh LLM.</li>
+  <li><strong>Integration with agentic coding</strong>: Menggabungkan DSL seperti Anka ke dalam workflow AI coding agent untuk meningkatkan keandalan.</li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><strong>arXiv</strong> - <a href="https://arxiv.org/abs/2512.23214" target="_blank">https://arxiv.org/abs/2512.23214</a></li>
+  <li><strong>GitHub (Code &amp; Benchmark)</strong> - <a href="https://github.com/BleBlo/Anka" target="_blank">https://github.com/BleBlo/Anka</a></li>
+</ul>
+
+</article>
+        </section>
+      </div>
+
+      
+
+      <footer>
+  <div class="footer-inner">
+    <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US" class="footer-link">
+      <span><b>Elyas-Blog</b></span>
+      
+      <span>© 2026</span>
+    </a>
+  </div>
+</footer>
+    </main>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var sidebar = document.getElementById('sidebar');
+      var toggleBtn = document.getElementById('sidebarToggle');
+      var mainContent = document.getElementById('mainContent');
+      var hamburger = document.getElementById('mobileHamburger');
+      var themeToggle = document.getElementById('themeToggle');
+
+      // Load saved sidebar state
+      var isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+      if (isCollapsed) {
+        sidebar.classList.add('collapsed');
+        mainContent.classList.add('expanded');
+      }
+      // Clean up FOUC-prevention class, allowing toggle to work normally
+      document.body.classList.remove('sidebar-pre-collapsed');
+
+      // ---- Desktop sidebar toggle (collapsed/expanded) ----
+      toggleBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('collapsed');
+        mainContent.classList.toggle('expanded');
+        localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+      });
+
+      // ---- Mobile hamburger 3-state cycling ----
+      var mobilePhase = 0; // 0=hidden, 1=icon(up), 2=full, 3=icon(down)
+      var layoutWrapper = document.querySelector('.layout-wrapper');
+      var sidebarHeader = sidebar.querySelector('.sidebar-header');
+
+      function applyMobileState(phase) {
+        sidebar.classList.remove('mobile-icon', 'mobile-full');
+        mainContent.classList.remove('hamburger-sidebar-visible');
+        
+        if (phase === 1 || phase === 3) {
+          sidebar.classList.add('mobile-icon');
+          mainContent.classList.add('hamburger-sidebar-visible');
+          // Move hamburger INSIDE sidebar header (merges with sidebar)
+          if (hamburger && hamburger.parentNode !== sidebarHeader) {
+            sidebarHeader.insertBefore(hamburger, sidebarHeader.firstChild);
+          }
+        } else if (phase === 2) {
+          sidebar.classList.add('mobile-full');
+          mainContent.classList.add('hamburger-sidebar-visible');
+          // Move hamburger INSIDE sidebar header (merges with sidebar)
+          if (hamburger && hamburger.parentNode !== sidebarHeader) {
+            sidebarHeader.insertBefore(hamburger, sidebarHeader.firstChild);
+          }
+        } else {
+          // phase 0: hidden - move hamburger OUTSIDE sidebar (floating fixed)
+          if (hamburger && hamburger.parentNode !== layoutWrapper) {
+            layoutWrapper.insertBefore(hamburger, sidebar);
+          }
+        }
+      }
+
+      if (hamburger) {
+        // Check if a saved mobile phase exists
+        var savedPhase = parseInt(localStorage.getItem('mobilePhase'), 10);
+        if (!isNaN(savedPhase) && savedPhase >= 0 && savedPhase <= 3) {
+          mobilePhase = savedPhase;
+          applyMobileState(mobilePhase);
+        } else {
+          // Ensure hamburger starts outside sidebar on fresh load
+          mobilePhase = 0;
+          applyMobileState(0);
+        }
+
+        hamburger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          mobilePhase = (mobilePhase + 1) % 4;
+          applyMobileState(mobilePhase);
+          localStorage.setItem('mobilePhase', mobilePhase);
+        });
+      }
+
+      // ---- Close sidebar when tapping outside on mobile ----
+      function closeMobileSidebar(e) {
+        if (sidebar.classList.contains('mobile-icon') || sidebar.classList.contains('mobile-full')) {
+          // Don't close if clicking inside sidebar or on the hamburger button
+          if (!sidebar.contains(e.target) && (!hamburger || !hamburger.contains(e.target))) {
+            mobilePhase = 0;
+            applyMobileState(0);
+            localStorage.setItem('mobilePhase', 0);
+          }
+        }
+      }
+      document.addEventListener('mousedown', closeMobileSidebar);
+      document.addEventListener('touchstart', closeMobileSidebar, { passive: true });
+
+      // ---- Theme toggle ----
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          if (document.body.classList.contains('light-theme')) {
+            document.body.classList.remove('light-theme');
+            localStorage.setItem('theme', 'dark');
+          } else {
+            document.body.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
+          }
+        });
+      }
+    });
+  </script>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+
+      // The scrollable element is the main content area
+      var scrollContainer = document.getElementById('mainContent');
+
+      function checkScroll() {
+        if (scrollContainer.scrollTop > 300) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+      }
+
+      scrollContainer.addEventListener('scroll', checkScroll);
+      checkScroll();
+
+      btn.addEventListener('click', function() {
+        scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+  
+</body>
+
+</html>
